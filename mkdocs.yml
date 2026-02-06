@@ -1,0 +1,52 @@
+site_name: CSE461 - Intro to Robotics
+
+theme:
+  name: material
+  logo: assets/logo.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Syllabus: syllabus/index.md
+  - Schedule: schedule/index.md
+  # - Assignments: assignments/index.md
+  - Chapters:
+      - Overview: chapters/index.md
+      - "Chapter 1":
+        - Lecture One: chapters/01/lecture1.md
+        - Lecture Two: chapters/01/lecture2.md
+        - Lecture Three: chapters/01/lecture3.md
+      - "Chapter 2": chapters/02/index.md
+      - "Chapter 3": chapters/03/index.md
+      - "Chapter 4": chapters/04/index.md
+      - "Chapter 5": chapters/05/index.md
+  - Resources: resources/index.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
+  - js/math.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+
+
