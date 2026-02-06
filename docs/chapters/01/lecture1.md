@@ -1,6 +1,5 @@
 # 📘 Chapter 1: Introduction to Robotics 
 
-<span style="color:blue">Lecture *One*</span>
 ---
 
 # 1. What is a Robot?
