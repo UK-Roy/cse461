@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lecture-2" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -515,6 +520,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -737,9 +744,1161 @@
 
 
 
-  <h1>Lecture Two</h1>
-
-
+<h1 id="lecture-2">Lecture 2<a class="headerlink" href="#lecture-2" title="Permanent link">&para;</a></h1>
+<h1 id="robotics-primitives-sense-plan-act-learn">Robotics Primitives: Sense, Plan, Act, Learn<a class="headerlink" href="#robotics-primitives-sense-plan-act-learn" title="Permanent link">&para;</a></h1>
+<p>Robots operate using a small set of core abilities.<br />
+These are called the <strong>primitives of robotics</strong>.</p>
+<p>They describe how a robot interacts with the world and completes tasks.</p>
+<p>The four main primitives are:</p>
+<ul>
+<li>Sense  </li>
+<li>Plan  </li>
+<li>Act  </li>
+<li>Learn  </li>
+</ul>
+<p>Together, they form the basic intelligence loop of a robot.</p>
+<hr />
+<h1 id="1-sense">1) Sense<a class="headerlink" href="#1-sense" title="Permanent link">&para;</a></h1>
+<p>Sensing is how a robot gathers information about the world.</p>
+<p>A robot uses sensors to detect:
+- distance<br />
+- light<br />
+- sound<br />
+- position<br />
+- obstacles<br />
+- people  </p>
+<p>Without sensing, a robot is blind to its environment.</p>
+<hr />
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>Environment → Sensors → Robot</p>
+<p>Example explanation:</p>
+<p>A robot vacuum uses:
+- distance sensors to detect walls<br />
+- bump sensors to detect collisions<br />
+- cameras or LIDAR to understand layout  </p>
+<p>If sensing fails, the robot cannot make good decisions.</p>
+<hr />
+<h1 id="2-plan">2) Plan<a class="headerlink" href="#2-plan" title="Permanent link">&para;</a></h1>
+<p>Planning is deciding what to do next based on sensed information.</p>
+<p>The robot:
+- interprets sensor data<br />
+- chooses a goal<br />
+- decides a sequence of actions  </p>
+<p>Planning answers:
+"What should I do now?"</p>
+<hr />
+<h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
+<p>Start → Path → Goal</p>
+<p>Example explanation:</p>
+<p>A delivery robot plans:
+- shortest path to destination<br />
+- how to avoid obstacles<br />
+- when to turn or stop  </p>
+<p>Planning can be simple or very complex depending on the task.</p>
+<hr />
+<h1 id="3-act">3) Act<a class="headerlink" href="#3-act" title="Permanent link">&para;</a></h1>
+<p>Acting is when the robot physically does something.</p>
+<p>Actions are executed through:
+- motors<br />
+- wheels<br />
+- arms<br />
+- grippers  </p>
+<p>Acting changes the real world.</p>
+<hr />
+<h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
+<p>Decision → Motor Command → Movement</p>
+<p>Example explanation:</p>
+<p>A robot arm receives command:
+"Move to position X"</p>
+<p>Motors rotate → arm moves → object is picked.</p>
+<p>Without action, sensing and planning have no effect.</p>
+<hr />
+<h1 id="4-learn">4) Learn<a class="headerlink" href="#4-learn" title="Permanent link">&para;</a></h1>
+<p>Learning allows a robot to improve over time.</p>
+<p>A learning robot:
+- remembers past experiences<br />
+- adjusts behavior<br />
+- improves performance  </p>
+<p>Learning is common in AI-based robots.</p>
+<hr />
+<h2 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h2>
+<p>Example explanation:</p>
+<p>A robot vacuum learns:
+- which areas are usually dirty<br />
+- which paths are faster<br />
+- where obstacles often appear  </p>
+<p>Over time, it becomes more efficient.</p>
+<hr />
+<h1 id="putting-it-together">Putting It Together<a class="headerlink" href="#putting-it-together" title="Permanent link">&para;</a></h1>
+<p>A robot continuously loops:</p>
+<p>Sense → Plan → Act → (Learn) → Sense again</p>
+<p>This loop runs many times per second in real robots.</p>
+<hr />
+<h3 id="key-idea">Key Idea<a class="headerlink" href="#key-idea" title="Permanent link">&para;</a></h3>
+<p>All robots, from simple to advanced, rely on these primitives.</p>
+<p>More advanced robots:
+- sense better<br />
+- plan smarter<br />
+- act more precisely<br />
+- learn faster</p>
+<hr />
+<h1 id="what-is-a-paradigm">What is a Paradigm?<a class="headerlink" href="#what-is-a-paradigm" title="Permanent link">&para;</a></h1>
+<p>Before learning different robot control styles,<br />
+we must understand one important word:</p>
+<p>Paradigm.</p>
+<hr />
+<h1 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h1>
+<p>A paradigm is a set of ideas, methods, and assumptions<br />
+that guide how problems are understood and solved.</p>
+<p>It is like a "way of thinking" or a framework.</p>
+<p>A paradigm influences:
+- how we design systems<br />
+- how we solve problems<br />
+- what we believe is important</p>
+<p>When a paradigm changes,<br />
+the way we build systems also changes.</p>
+<hr />
+<h1 id="simple-meaning">Simple Meaning<a class="headerlink" href="#simple-meaning" title="Permanent link">&para;</a></h1>
+<p>A paradigm is:
+"How you think about a problem before solving it."</p>
+<p>Different paradigms lead to different solutions<br />
+for the same problem.</p>
+<hr />
+<h1 id="example-everyday-life">Example (Everyday Life)<a class="headerlink" href="#example-everyday-life" title="Permanent link">&para;</a></h1>
+<p>Write on board:</p>
+<p>Problem: Go to university</p>
+<p>Two people may use different paradigms:</p>
+<p>Person A:
+Plans full route → checks map → follows plan strictly</p>
+<p>Person B:
+Just starts walking → reacts to traffic and obstacles</p>
+<p>Both reach the destination,<br />
+but their thinking style is different.</p>
+<p>These thinking styles are like paradigms.</p>
+<hr />
+<h1 id="science-example">Science Example<a class="headerlink" href="#science-example" title="Permanent link">&para;</a></h1>
+<p>In science, paradigms change how we understand reality.</p>
+<p>Example:</p>
+<p>Newtonian Mechanics<br />
+- World is predictable<br />
+- Physics is deterministic  </p>
+<p>Quantum Mechanics<br />
+- World is probabilistic<br />
+- Outcomes are uncertain  </p>
+<p>Both explain the world,<br />
+but in very different ways.</p>
+<p>When the paradigm changed,<br />
+scientists built new models and tools.</p>
+<hr />
+<h1 id="robotics-connection">Robotics Connection<a class="headerlink" href="#robotics-connection" title="Permanent link">&para;</a></h1>
+<p>In robotics, a paradigm decides:</p>
+<ul>
+<li>How the robot thinks  </li>
+<li>How it makes decisions  </li>
+<li>How it uses sensor data  </li>
+<li>How it controls actions</li>
+</ul>
+<p>Different robotics paradigms lead to<br />
+very different robot designs.</p>
+<hr />
+<h1 id="why-paradigms-matter-in-robotics">Why Paradigms Matter in Robotics<a class="headerlink" href="#why-paradigms-matter-in-robotics" title="Permanent link">&para;</a></h1>
+<p>If you believe:
+"The robot must plan everything first"<br />
+→ you build a planning-heavy robot</p>
+<p>If you believe:
+"The robot should react instantly"<br />
+→ you build a reactive robot</p>
+<p>So the paradigm shapes the robot’s behavior.</p>
+<hr />
+<h3 id="key-idea_1">Key Idea<a class="headerlink" href="#key-idea_1" title="Permanent link">&para;</a></h3>
+<p>A paradigm is not right or wrong.<br />
+It is a design philosophy.</p>
+<p>Different paradigms work better<br />
+for different situations.</p>
+<p>In the next parts,<br />
+we will study major robotics paradigms.</p>
+<hr />
+<h1 id="hierarchical-deliberative-paradigm">Hierarchical / Deliberative Paradigm<a class="headerlink" href="#hierarchical-deliberative-paradigm" title="Permanent link">&para;</a></h1>
+<hr />
+<p>Now that we understand what a paradigm is,<br />
+the next question is:</p>
+<p>How should a robot make decisions?</p>
+<p>Should it:
+- think carefully first, then act?<br />
+OR<br />
+- act immediately based on sensors?</p>
+<p>Early robotics researchers believed:</p>
+<p>"A robot should think before acting."</p>
+<p>This idea led to the <strong>Hierarchical (Deliberative) Paradigm</strong>.</p>
+<hr />
+<h2 id="core-idea">Core Idea<a class="headerlink" href="#core-idea" title="Permanent link">&para;</a></h2>
+<p>Think first, act later.</p>
+<p>The robot:
+1) builds a model of the world<br />
+2) plans what to do<br />
+3) executes the plan</p>
+<p>Sense → Plan → Act</p>
+<p>Planning is the most important step.</p>
+<hr />
+<h2 id="why-it-is-called-hierarchical">Why It Is Called Hierarchical<a class="headerlink" href="#why-it-is-called-hierarchical" title="Permanent link">&para;</a></h2>
+<p>It is hierarchical because decisions are layered:</p>
+<p>High level:
+- Goals<br />
+- Missions<br />
+- Long-term planning  </p>
+<p>Low level:
+- Movements<br />
+- Motor commands  </p>
+<p>The top level controls the lower levels.</p>
+<hr />
+<h2 id="world-model-concept">World Model Concept<a class="headerlink" href="#world-model-concept" title="Permanent link">&para;</a></h2>
+<p>The robot maintains a <strong>global world model</strong>.</p>
+<p>This is an internal map or representation of the environment.</p>
+<p>Example:
+- map of a building<br />
+- positions of obstacles<br />
+- known locations</p>
+<p>The robot thinks using this model<br />
+before making a move.</p>
+<hr />
+<h2 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h2>
+<p>Sense → Build Map → Plan Path → Act</p>
+<p>Example explanation:</p>
+<p>A robot wants to go to an office.</p>
+<p>Step 1:
+It scans environment and builds a map.</p>
+<p>Step 2:
+It calculates the best route.</p>
+<p>Step 3:
+It moves according to the plan.</p>
+<p>It trusts its plan.</p>
+<hr />
+<h2 id="strips-idea-simple-view">STRIPS Idea (Simple View)<a class="headerlink" href="#strips-idea-simple-view" title="Permanent link">&para;</a></h2>
+<p>Early planning systems assumed:
+- the world is predictable<br />
+- the model is correct<br />
+- nothing unexpected happens</p>
+<p>This is called a <strong>closed-world assumption</strong>.</p>
+<p>Meaning:
+"If it is not in the model, it does not exist."</p>
+<hr />
+<h2 id="strengths">Strengths<a class="headerlink" href="#strengths" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Logical and structured  </li>
+<li>Good for known environments  </li>
+<li>Clear decision-making process  </li>
+<li>Works well when world is stable</li>
+</ul>
+<hr />
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<p>Real world is messy.</p>
+<p>Problems:
+- planning takes time<br />
+- world changes unexpectedly<br />
+- sensor errors break plans  </p>
+<p>Example:
+Robot plans path → chair moves → plan fails.</p>
+<p>The robot must re-plan again and again.</p>
+<p>This makes it slow.</p>
+<hr />
+<h2 id="why-some-people-disliked-it">Why Some People Disliked It<a class="headerlink" href="#why-some-people-disliked-it" title="Permanent link">&para;</a></h2>
+<p>Users:
+- too slow in real environments  </p>
+<p>Control engineers:
+- not closed-loop enough  </p>
+<p>AI researchers:
+- too monolithic and rigid</p>
+<hr />
+<h3 id="key-idea_2">Key Idea<a class="headerlink" href="#key-idea_2" title="Permanent link">&para;</a></h3>
+<p>Hierarchical paradigm assumes:
+"If the robot thinks enough, it will act correctly."</p>
+<p>But real environments are dynamic.</p>
+<p>This leads to a big question:</p>
+<p>What if the robot stops planning so much<br />
+and just reacts?</p>
+<p>That question leads to the next paradigm.</p>
+<hr />
+<h1 id="reactive-paradigm">Reactive Paradigm<a class="headerlink" href="#reactive-paradigm" title="Permanent link">&para;</a></h1>
+<hr />
+<p>We just saw that the hierarchical paradigm<br />
+plans a lot before acting.</p>
+<p>But real environments change quickly.</p>
+<p>People noticed:
+- robots were too slow<br />
+- plans became outdated<br />
+- unexpected obstacles broke plans</p>
+<p>So researchers asked:</p>
+<p>"What if robots stop overthinking<br />
+and simply react to the world?"</p>
+<p>This idea led to the <strong>Reactive Paradigm</strong>.</p>
+<hr />
+<h2 id="core-idea_1">Core Idea<a class="headerlink" href="#core-idea_1" title="Permanent link">&para;</a></h2>
+<p>The world is its own best model.</p>
+<p>Instead of building a big internal map,<br />
+the robot directly reacts to sensor inputs.</p>
+<p>Sense → Act</p>
+<p>No heavy planning step.</p>
+<hr />
+<h2 id="key-principle">Key Principle<a class="headerlink" href="#key-principle" title="Permanent link">&para;</a></h2>
+<p>Direct connection between perception and action.</p>
+<p>Sensors trigger actions immediately.</p>
+<p>Example:
+If obstacle detected → turn<br />
+If path clear → move forward</p>
+<p>No long-term thinking required.</p>
+<hr />
+<h2 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h2>
+<p>Sensor Input → Immediate Action</p>
+<p>Example explanation:</p>
+<p>A wall-following robot:</p>
+<p>Wall appears → sensor detects → robot turns<br />
+Path clears → robot moves forward<br />
+Another object appears → robot turns again</p>
+<p>The robot only looks at current sensor values.</p>
+<hr />
+<h2 id="characteristics">Characteristics<a class="headerlink" href="#characteristics" title="Permanent link">&para;</a></h2>
+<ul>
+<li>No global map  </li>
+<li>No long-term memory  </li>
+<li>No complex planning  </li>
+<li>Tight coupling of sensing and action  </li>
+<li>Focus on real-time response</li>
+</ul>
+<p>Each behavior works independently.</p>
+<hr />
+<h2 id="biological-inspiration">Biological Inspiration<a class="headerlink" href="#biological-inspiration" title="Permanent link">&para;</a></h2>
+<p>Many animals behave this way.</p>
+<p>Example:
+An insect avoids obstacles<br />
+without building a map of the world.</p>
+<p>Reactive robotics takes inspiration<br />
+from such biological systems.</p>
+<hr />
+<h2 id="strengths_1">Strengths<a class="headerlink" href="#strengths_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Very fast responses  </li>
+<li>Works well in dynamic environments  </li>
+<li>Simple to implement  </li>
+<li>Robust to sudden changes</li>
+</ul>
+<p>Robots do not waste time planning.</p>
+<hr />
+<h2 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">&para;</a></h2>
+<p>No big-picture thinking.</p>
+<p>Problems include:
+- local minima (getting stuck)<br />
+- wandering without direction<br />
+- no memory of past mistakes  </p>
+<p>Example:
+Robot stuck in a corner<br />
+keeps turning randomly.</p>
+<p>Sometimes random motion is used<br />
+to escape traps.</p>
+<hr />
+<h2 id="why-people-reacted-to-it">Why People Reacted to It<a class="headerlink" href="#why-people-reacted-to-it" title="Permanent link">&para;</a></h2>
+<p>Users:
+- liked it because it worked in real time  </p>
+<p>AI researchers:
+- liked it but wanted planning back  </p>
+<p>Control engineers:
+- disliked lack of formal guarantees</p>
+<hr />
+<h3 id="key-idea_3">Key Idea<a class="headerlink" href="#key-idea_3" title="Permanent link">&para;</a></h3>
+<p>Reactive paradigm assumes:
+"Fast reaction is better than deep planning."</p>
+<p>But now another question appears:</p>
+<p>What if we want both?
+- global planning<br />
+AND<br />
+- fast reactions?</p>
+<p>That leads to the next paradigm.</p>
+<hr />
+<h1 id="hybrid-deliberative-reactive-paradigm">Hybrid Deliberative / Reactive Paradigm<a class="headerlink" href="#hybrid-deliberative-reactive-paradigm" title="Permanent link">&para;</a></h1>
+<hr />
+<p>We have seen two extremes:</p>
+<p>Hierarchical paradigm:
+- smart planning<br />
+- but slow and fragile in dynamic worlds  </p>
+<p>Reactive paradigm:
+- fast and robust<br />
+- but lacks long-term direction  </p>
+<p>So researchers asked:</p>
+<p>"Why not combine both?"</p>
+<p>Use planning for direction,<br />
+and reactions for safety.</p>
+<p>This idea led to the <strong>Hybrid Paradigm</strong>.</p>
+<hr />
+<h2 id="core-idea_2">Core Idea<a class="headerlink" href="#core-idea_2" title="Permanent link">&para;</a></h2>
+<p>Think globally, act locally.</p>
+<p>The robot:
+- plans at a high level<br />
+- reacts at a low level  </p>
+<p>Both systems work together.</p>
+<hr />
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>Two main layers:</p>
+<p>1) Planning Layer (Deliberative)
+- builds maps<br />
+- sets goals<br />
+- computes paths<br />
+- decides where to go  </p>
+<p>Answers:
+"Where should I go?"</p>
+<hr />
+<p>2) Reactive Layer
+- reads sensors continuously<br />
+- avoids obstacles<br />
+- handles surprises<br />
+- ensures safety  </p>
+<p>Answers:
+"What should I do right now?"</p>
+<hr />
+<h2 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h2>
+<p>Planner → Goal Direction<br />
+Reactive → Immediate Safety</p>
+<hr />
+<p>Example explanation:</p>
+<p>Task:
+Go from lab to office.</p>
+<p>Planner:
+Lab → corridor → stairs → office</p>
+<p>While moving:
+A chair appears</p>
+<p>Reactive layer:
+Turn immediately to avoid</p>
+<p>After avoidance:
+Control returns to planner</p>
+<p>Robot continues toward office.</p>
+<hr />
+<h2 id="simple-rule">Simple Rule<a class="headerlink" href="#simple-rule" title="Permanent link">&para;</a></h2>
+<p>Planner gives purpose.<br />
+Reactive layer ensures survival.</p>
+<p>One thinks long-term.<br />
+One acts short-term.</p>
+<hr />
+<h2 id="local-vs-global-models">Local vs Global Models<a class="headerlink" href="#local-vs-global-models" title="Permanent link">&para;</a></h2>
+<p>Hybrid systems use both:</p>
+<p>Global model:
+- maps<br />
+- mission goals<br />
+- long-term route</p>
+<p>Local model:
+- current obstacles<br />
+- nearby people<br />
+- immediate surroundings</p>
+<p>Both are necessary for good performance.</p>
+<hr />
+<h2 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Practical in real environments  </li>
+<li>Balances intelligence and speed  </li>
+<li>Modular design  </li>
+<li>Asynchronous processing</li>
+</ul>
+<p>Planner can compute next goals<br />
+while robot reacts to obstacles.</p>
+<hr />
+<h2 id="why-people-liked-it">Why People Liked It<a class="headerlink" href="#why-people-liked-it" title="Permanent link">&para;</a></h2>
+<p>Users:
+- liked it because it worked reliably  </p>
+<p>AI researchers:
+- liked the planning component  </p>
+<p>Control engineers:
+- accepted it due to closed-loop behavior</p>
+<p>It satisfied many groups.</p>
+<hr />
+<h3 id="key-idea_4">Key Idea<a class="headerlink" href="#key-idea_4" title="Permanent link">&para;</a></h3>
+<p>Hybrid paradigm assumes:</p>
+<p>"Plan for direction, react for safety."</p>
+<p>This is how many modern robots operate today.</p>
+<hr />
+<h1 id="local-vs-global-models-in-robotics">Local vs Global Models in Robotics<a class="headerlink" href="#local-vs-global-models-in-robotics" title="Permanent link">&para;</a></h1>
+<hr />
+<p>In the hybrid paradigm we said:</p>
+<ul>
+<li>Planner thinks globally  </li>
+<li>Reactive layer acts locally  </li>
+</ul>
+<p>But what does "local" and "global" actually mean?</p>
+<p>Why does a robot need both?</p>
+<p>To answer this, we discuss<br />
+local and global models.</p>
+<hr />
+<h2 id="global-model">Global Model<a class="headerlink" href="#global-model" title="Permanent link">&para;</a></h2>
+<p>A global model is the robot’s<br />
+big-picture understanding of the world.</p>
+<p>It includes:
+- maps<br />
+- known locations<br />
+- mission goals<br />
+- planned routes</p>
+<p>It helps the robot decide<br />
+long-term direction.</p>
+<hr />
+<h3 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h3>
+<p>Write:</p>
+<p>Global Model = Map + Goal + Route</p>
+<p>Example:</p>
+<p>A robot knows:
+- where the lab is<br />
+- where the office is<br />
+- which corridor connects them</p>
+<p>So it plans:
+Lab → Corridor → Office</p>
+<p>This is global thinking.</p>
+<hr />
+<h2 id="local-model">Local Model<a class="headerlink" href="#local-model" title="Permanent link">&para;</a></h2>
+<p>A local model is the robot’s<br />
+immediate understanding of its surroundings.</p>
+<p>It includes:
+- nearby obstacles<br />
+- moving people<br />
+- sudden changes<br />
+- current sensor readings</p>
+<p>It helps the robot act safely<br />
+right now.</p>
+<hr />
+<h3 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h3>
+<p>Local Model = Current Sensors</p>
+<p>Example:</p>
+<p>While moving to office:
+A person walks in front.</p>
+<p>Local model detects person<br />
+→ robot slows down or turns.</p>
+<p>This is local control.</p>
+<hr />
+<h2 id="why-global-alone-is-not-enough">Why Global Alone Is Not Enough<a class="headerlink" href="#why-global-alone-is-not-enough" title="Permanent link">&para;</a></h2>
+<p>If robot only uses global model:
+- it may ignore sudden obstacles<br />
+- it may collide with people<br />
+- map may be outdated</p>
+<p>Global planning assumes<br />
+the world stays the same.</p>
+<p>But real world changes.</p>
+<hr />
+<h2 id="why-local-alone-is-not-enough">Why Local Alone Is Not Enough<a class="headerlink" href="#why-local-alone-is-not-enough" title="Permanent link">&para;</a></h2>
+<p>If robot only reacts locally:
+- it has no long-term goal<br />
+- it may wander randomly<br />
+- it may never reach destination</p>
+<p>Reactive robots survive<br />
+but may not achieve missions.</p>
+<hr />
+<h2 id="balanced-approach">Balanced Approach<a class="headerlink" href="#balanced-approach" title="Permanent link">&para;</a></h2>
+<p>Good robots combine both.</p>
+<p>Global model:
+- decides where to go</p>
+<p>Local model:
+- decides how to move safely</p>
+<p>Together they provide:
+- direction<br />
+- safety<br />
+- adaptability</p>
+<hr />
+<h3 id="key-idea_5">Key Idea<a class="headerlink" href="#key-idea_5" title="Permanent link">&para;</a></h3>
+<p>Global = Purpose<br />
+Local = Safety</p>
+<p>A successful robot needs both<br />
+to perform well in real environments.</p>
+<hr />
+<h1 id="how-robots-work-robot-subsystems">How Robots Work: Robot Subsystems<a class="headerlink" href="#how-robots-work-robot-subsystems" title="Permanent link">&para;</a></h1>
+<hr />
+<p>So far we discussed:
+- how robots think (paradigms)<br />
+- how they plan and react<br />
+- how they use local and global models  </p>
+<p>Now a practical question:</p>
+<p>What actually makes a robot work?</p>
+<p>A robot is not just intelligence.<br />
+It is a combination of subsystems<br />
+working together.</p>
+<hr />
+<h2 id="core-robot-subsystems">Core Robot Subsystems<a class="headerlink" href="#core-robot-subsystems" title="Permanent link">&para;</a></h2>
+<p>A robot typically has:</p>
+<ul>
+<li>Sense (Perception/Recognition)  </li>
+<li>Plan (Control/Decision)  </li>
+<li>Act (Motion/Manipulation)  </li>
+<li>Power  </li>
+<li>Communication</li>
+</ul>
+<p>Each subsystem has a role.</p>
+<hr />
+<h2 id="1-sense-perception">1) Sense (Perception)<a class="headerlink" href="#1-sense-perception" title="Permanent link">&para;</a></h2>
+<p>This subsystem gathers information<br />
+from the environment.</p>
+<p>It answers:
+"What is happening around me?"</p>
+<p>Examples:
+- camera<br />
+- LIDAR<br />
+- ultrasonic sensors<br />
+- GPS<br />
+- IMU</p>
+<p>Without sensing:
+The robot is blind.</p>
+<hr />
+<h3 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h3>
+<p>World → Sensors → Robot</p>
+<p>Example explanation:</p>
+<p>A robot vacuum detects:
+- walls<br />
+- furniture<br />
+- stairs</p>
+<p>This data allows safe movement.</p>
+<hr />
+<h2 id="2-plan-controldecision">2) Plan (Control/Decision)<a class="headerlink" href="#2-plan-controldecision" title="Permanent link">&para;</a></h2>
+<p>This subsystem processes information<br />
+and decides actions.</p>
+<p>It answers:
+"What should I do next?"</p>
+<p>Examples:
+- path planning<br />
+- obstacle avoidance decisions<br />
+- task scheduling</p>
+<p>Planning turns data into decisions.</p>
+<hr />
+<h3 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h3>
+<p>Sensor Data → Decision → Command</p>
+<p>Example:</p>
+<p>If obstacle detected<br />
+→ decide to turn.</p>
+<hr />
+<h2 id="3-act-motionmanipulation">3) Act (Motion/Manipulation)<a class="headerlink" href="#3-act-motionmanipulation" title="Permanent link">&para;</a></h2>
+<p>This subsystem executes actions<br />
+in the real world.</p>
+<p>Examples:
+- wheels moving<br />
+- robotic arms lifting<br />
+- grippers holding objects</p>
+<p>It answers:
+"How do I perform the action?"</p>
+<hr />
+<h3 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h3>
+<p>Command → Motors → Movement</p>
+<p>Example:</p>
+<p>Robot arm receives command<br />
+→ motors rotate<br />
+→ object is picked.</p>
+<hr />
+<h2 id="4-power">4) Power<a class="headerlink" href="#4-power" title="Permanent link">&para;</a></h2>
+<p>Robots need energy to operate.</p>
+<p>Examples:
+- batteries<br />
+- wired power supply<br />
+- solar power</p>
+<p>Without power:
+Nothing works.</p>
+<p>Power limits:
+- operation time<br />
+- motor strength<br />
+- computation ability</p>
+<hr />
+<h2 id="5-communication">5) Communication<a class="headerlink" href="#5-communication" title="Permanent link">&para;</a></h2>
+<p>Allows robots to send and receive data.</p>
+<p>Examples:
+- Wi-Fi<br />
+- Bluetooth<br />
+- radio signals<br />
+- wired networks</p>
+<p>Used for:
+- remote control<br />
+- cloud processing<br />
+- multi-robot coordination</p>
+<hr />
+<h2 id="putting-it-all-together">Putting It All Together<a class="headerlink" href="#putting-it-all-together" title="Permanent link">&para;</a></h2>
+<p>All subsystems work in a loop:</p>
+<p>Sense → Plan → Act<br />
+     ↑         ↓<br />
+   Power &amp; Communication support all</p>
+<p>If one subsystem fails,<br />
+robot performance drops.</p>
+<hr />
+<h3 id="key-idea_6">Key Idea<a class="headerlink" href="#key-idea_6" title="Permanent link">&para;</a></h3>
+<p>A robot is a system-of-systems.</p>
+<p>Good robotics requires:
+- good sensors<br />
+- smart planning<br />
+- reliable actuation<br />
+- stable power<br />
+- effective communication</p>
+<hr />
+<h1 id="sensors-in-robotics">Sensors in Robotics<a class="headerlink" href="#sensors-in-robotics" title="Permanent link">&para;</a></h1>
+<hr />
+<p>We said robots must sense the world.</p>
+<p>But how do they actually do that?</p>
+<p>Robots cannot see, hear, or feel like humans.<br />
+They rely on <strong>sensors</strong>.</p>
+<p>Sensors are the robot’s connection<br />
+to the real world.</p>
+<p>Without sensors:
+- no awareness<br />
+- no safe navigation<br />
+- no intelligent behavior</p>
+<hr />
+<h2 id="what-is-a-sensor">What is a Sensor?<a class="headerlink" href="#what-is-a-sensor" title="Permanent link">&para;</a></h2>
+<p>A sensor is a device that detects<br />
+physical properties of the environment<br />
+and converts them into signals<br />
+a robot can process.</p>
+<p>Sensors measure things like:
+- distance<br />
+- light<br />
+- temperature<br />
+- motion<br />
+- position</p>
+<hr />
+<h2 id="active-vs-passive-sensors">Active vs Passive Sensors<a class="headerlink" href="#active-vs-passive-sensors" title="Permanent link">&para;</a></h2>
+<p>This is a key classification.</p>
+<hr />
+<h2 id="active-sensors">Active Sensors<a class="headerlink" href="#active-sensors" title="Permanent link">&para;</a></h2>
+<p>Active sensors send out energy<br />
+and measure the response.</p>
+<p>They emit signals like:
+- sound waves<br />
+- infrared light<br />
+- laser pulses</p>
+<p>Then they measure the reflection.</p>
+<hr />
+<h3 id="example-logic">Example Logic<a class="headerlink" href="#example-logic" title="Permanent link">&para;</a></h3>
+<p>Send signal → hit object → return signal  → compute distance</p>
+<hr />
+<h3 id="why-they-are-useful">Why They Are Useful<a class="headerlink" href="#why-they-are-useful" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Work in darkness  </li>
+<li>Give direct distance info  </li>
+<li>Less dependent on lighting</li>
+</ul>
+<hr />
+<h3 id="why-they-are-not-always-ideal">Why They Are Not Always Ideal<a class="headerlink" href="#why-they-are-not-always-ideal" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Consume more power  </li>
+<li>Can be affected by interference  </li>
+<li>Sometimes limited range</li>
+</ul>
+<hr />
+<h2 id="passive-sensors">Passive Sensors<a class="headerlink" href="#passive-sensors" title="Permanent link">&para;</a></h2>
+<p>Passive sensors do NOT emit energy.<br />
+They only detect energy from environment.</p>
+<p>Examples:
+- cameras<br />
+- microphones<br />
+- light sensors</p>
+<hr />
+<h3 id="why-they-are-useful_1">Why They Are Useful<a class="headerlink" href="#why-they-are-useful_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Low power consumption  </li>
+<li>Rich environmental information  </li>
+<li>Natural sensing</li>
+</ul>
+<hr />
+<h3 id="why-they-are-not-always-ideal_1">Why They Are Not Always Ideal<a class="headerlink" href="#why-they-are-not-always-ideal_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Depend on lighting or conditions  </li>
+<li>Harder to estimate distance directly  </li>
+<li>Sensitive to noise</li>
+</ul>
+<hr />
+<h1 id="1-ultrasonic-sensor">1) Ultrasonic Sensor<a class="headerlink" href="#1-ultrasonic-sensor" title="Permanent link">&para;</a></h1>
+<p>Type: Active</p>
+<hr />
+<h2 id="how-it-works_1">How It Works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Sends ultrasonic sound waves  </li>
+<li>Measures echo return time  </li>
+<li>Calculates distance</li>
+</ul>
+<hr />
+<h3 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h3>
+<p>Send sound → Echo returns → Distance</p>
+<hr />
+<h2 id="good-because">Good Because<a class="headerlink" href="#good-because" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Cheap  </li>
+<li>Simple  </li>
+<li>Works in dark  </li>
+<li>Good for obstacle detection</li>
+</ul>
+<hr />
+<h2 id="not-ideal-because">Not Ideal Because<a class="headerlink" href="#not-ideal-because" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Low resolution  </li>
+<li>Wide beam (less precise)  </li>
+<li>Soft materials absorb sound</li>
+</ul>
+<p>Example issue:
+Curtains may not reflect well.</p>
+<hr />
+<h1 id="2-infrared-ir-sensor">2) Infrared (IR) Sensor<a class="headerlink" href="#2-infrared-ir-sensor" title="Permanent link">&para;</a></h1>
+<p>Type: Active (usually)</p>
+<hr />
+<h2 id="how-it-works_2">How It Works<a class="headerlink" href="#how-it-works_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Emits infrared light  </li>
+<li>Measures reflected light</li>
+</ul>
+<hr />
+<h2 id="good-because_1">Good Because<a class="headerlink" href="#good-because_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Small and low-cost  </li>
+<li>Good for short distances  </li>
+<li>Fast response</li>
+</ul>
+<p>Used in:
+- line-following robots<br />
+- proximity detection</p>
+<hr />
+<h2 id="not-ideal-because_1">Not Ideal Because<a class="headerlink" href="#not-ideal-because_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Sensitive to sunlight  </li>
+<li>Affected by surface color  </li>
+<li>Limited range</li>
+</ul>
+<p>Example issue:
+Black surfaces absorb IR.</p>
+<hr />
+<h1 id="3-lidar">3) LiDAR<a class="headerlink" href="#3-lidar" title="Permanent link">&para;</a></h1>
+<p>Type: Active</p>
+<hr />
+<h2 id="how-it-works_3">How It Works<a class="headerlink" href="#how-it-works_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Sends laser pulses  </li>
+<li>Measures return time  </li>
+<li>Builds precise distance map</li>
+</ul>
+<hr />
+<h3 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h3>
+<p>Laser pulse → Reflection → 3D Map</p>
+<hr />
+<h2 id="good-because_2">Good Because<a class="headerlink" href="#good-because_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Very accurate  </li>
+<li>High resolution  </li>
+<li>Creates maps  </li>
+<li>Great for navigation</li>
+</ul>
+<p>Used in:
+- self-driving cars<br />
+- mapping robots<br />
+- SLAM systems</p>
+<hr />
+<h2 id="not-ideal-because_2">Not Ideal Because<a class="headerlink" href="#not-ideal-because_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Expensive  </li>
+<li>Higher power use  </li>
+<li>Can struggle in rain/fog</li>
+</ul>
+<hr />
+<h1 id="quick-comparison">Quick Comparison<a class="headerlink" href="#quick-comparison" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Accuracy</th>
+<th>Cost</th>
+<th>Range</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ultrasonic</td>
+<td>Medium</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Simple obstacle detection</td>
+</tr>
+<tr>
+<td>IR</td>
+<td>Low-Medium</td>
+<td>Very Low</td>
+<td>Short</td>
+<td>Sensitive to surfaces</td>
+</tr>
+<tr>
+<td>LiDAR</td>
+<td>Very High</td>
+<td>High</td>
+<td>Long</td>
+<td>Mapping and navigation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary-of-sensors">Summary of Sensors<a class="headerlink" href="#summary-of-sensors" title="Permanent link">&para;</a></h2>
+<p>Sensors are critical because they:
+- provide environmental awareness<br />
+- enable safe movement<br />
+- support planning and control</p>
+<p>No single sensor is perfect.</p>
+<p>Good robots often use:
+<strong>multiple sensors together (sensor fusion)</strong></p>
+<p>Example:
+Camera + LiDAR + IMU<br />
+→ more reliable perception</p>
+<hr />
+<h3 id="key-idea_7">Key Idea<a class="headerlink" href="#key-idea_7" title="Permanent link">&para;</a></h3>
+<p>Better sensing leads to:
+- better decisions<br />
+- safer robots<br />
+- smarter behavior</p>
+<p>A robot is only as good as the information it receives.</p>
+<hr />
+<h1 id="lecture-2-self-check-quiz">Lecture 2 — Self Check Quiz<a class="headerlink" href="#lecture-2-self-check-quiz" title="Permanent link">&para;</a></h1>
+<hr />
+<h1 id="part-a-mcq-choose-one-best-answer">Part A — MCQ (Choose ONE best answer)<a class="headerlink" href="#part-a-mcq-choose-one-best-answer" title="Permanent link">&para;</a></h1>
+<hr />
+<h3 id="q1">Q1<a class="headerlink" href="#q1" title="Permanent link">&para;</a></h3>
+<p>Which sequence best represents the core robotics loop?</p>
+<p>A) Plan → Sense → Act<br />
+B) Sense → Plan → Act<br />
+C) Act → Sense → Plan<br />
+D) Sense → Act → Forget</p>
+<hr />
+<h3 id="q2">Q2<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h3>
+<p>Which paradigm relies MOST on a global world model?</p>
+<p>A) Reactive<br />
+B) Hybrid<br />
+C) Hierarchical/Deliberative<br />
+D) Behavior-based</p>
+<hr />
+<h3 id="q3">Q3<a class="headerlink" href="#q3" title="Permanent link">&para;</a></h3>
+<p>A robot that turns immediately when a sensor detects a wall is using:</p>
+<p>A) Deliberative control<br />
+B) Reactive control<br />
+C) Hybrid planning<br />
+D) Global modeling</p>
+<hr />
+<h3 id="q4">Q4<a class="headerlink" href="#q4" title="Permanent link">&para;</a></h3>
+<p>Which is a passive sensor?</p>
+<p>A) LiDAR<br />
+B) Ultrasonic<br />
+C) Camera<br />
+D) IR proximity sensor</p>
+<hr />
+<h3 id="q5">Q5<a class="headerlink" href="#q5" title="Permanent link">&para;</a></h3>
+<p>Why is LiDAR widely used in navigation?</p>
+<p>A) Cheapest sensor<br />
+B) Needs no power<br />
+C) High accuracy mapping<br />
+D) Works only indoors</p>
+<hr />
+<h1 id="part-b-truefalse-careful">Part B — True/False (Careful!)<a class="headerlink" href="#part-b-truefalse-careful" title="Permanent link">&para;</a></h1>
+<hr />
+<h3 id="q6">Q6<a class="headerlink" href="#q6" title="Permanent link">&para;</a></h3>
+<p>Reactive robots do not need any sensors.</p>
+<hr />
+<h3 id="q7">Q7<a class="headerlink" href="#q7" title="Permanent link">&para;</a></h3>
+<p>Hierarchical robots assume their world model is correct.</p>
+<hr />
+<h3 id="q8">Q8<a class="headerlink" href="#q8" title="Permanent link">&para;</a></h3>
+<p>Local models focus on immediate surroundings.</p>
+<hr />
+<h3 id="q9">Q9<a class="headerlink" href="#q9" title="Permanent link">&para;</a></h3>
+<p>A robot without learning cannot be intelligent.</p>
+<hr />
+<h3 id="q10">Q10<a class="headerlink" href="#q10" title="Permanent link">&para;</a></h3>
+<p>Active sensors emit energy to measure the environment.</p>
+<hr />
+<h1 id="answers-with-explanation">Answers with Explanation<a class="headerlink" href="#answers-with-explanation" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="mcq">MCQ<a class="headerlink" href="#mcq" title="Permanent link">&para;</a></h2>
+<p><strong>Q1 — B</strong><br />
+Robotics loop is Sense → Plan → Act.</p>
+<hr />
+<p><strong>Q2 — C</strong><br />
+Hierarchical relies on global models.</p>
+<hr />
+<p><strong>Q3 — B</strong><br />
+Immediate reaction = reactive control.</p>
+<hr />
+<p><strong>Q4 — C</strong><br />
+Camera is passive (no emission).</p>
+<hr />
+<p><strong>Q5 — C</strong><br />
+LiDAR is used for accurate mapping.</p>
+<hr />
+<h2 id="truefalse">True/False<a class="headerlink" href="#truefalse" title="Permanent link">&para;</a></h2>
+<p><strong>Q6 — False</strong><br />
+Reactive robots rely heavily on sensors.</p>
+<hr />
+<p><strong>Q7 — True</strong><br />
+Deliberative assumes model correctness.</p>
+<hr />
+<p><strong>Q8 — True</strong><br />
+Local = immediate surroundings.</p>
+<hr />
+<p><strong>Q9 — False</strong><br />
+Learning is optional in many robots.</p>
+<hr />
+<p><strong>Q10 — True</strong><br />
+Active sensors emit energy.</p>
+<hr />
+<h1 id="scenarios">Scenarios<a class="headerlink" href="#scenarios" title="Permanent link">&para;</a></h1>
+<hr />
+<h1 id="scenario-1-the-smart-tour-guide-robot">Scenario 1 — The “Smart” Tour Guide Robot<a class="headerlink" href="#scenario-1-the-smart-tour-guide-robot" title="Permanent link">&para;</a></h1>
+<p>A museum robot:
+- has a full map of the building<br />
+- plans routes between exhibits<br />
+- BUT if a child steps in front, it immediately stops or turns</p>
+<hr />
+<h3 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h3>
+<p>Which paradigm BEST describes this robot?</p>
+<p>A) Reactive<br />
+B) Hierarchical/Deliberative<br />
+C) Hybrid  </p>
+<hr />
+<h3 id="correct-answer">Correct Answer<a class="headerlink" href="#correct-answer" title="Permanent link">&para;</a></h3>
+<p><strong>C) Hybrid</strong></p>
+<hr />
+<h3 id="why">Why<a class="headerlink" href="#why" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Uses global map → deliberative component  </li>
+<li>Reacts instantly to people → reactive component  </li>
+<li>Combines planning + reaction</li>
+</ul>
+<hr />
+<h3 id="why-not-others">Why NOT Others<a class="headerlink" href="#why-not-others" title="Permanent link">&para;</a></h3>
+<p>Reactive:
+- No map or planning</p>
+<p>Hierarchical:
+- Would stop and re-plan fully instead of quick avoidance</p>
+<hr />
+<h1 id="scenario-2-the-overconfident-planner">Scenario 2 — The Overconfident Planner<a class="headerlink" href="#scenario-2-the-overconfident-planner" title="Permanent link">&para;</a></h1>
+<p>A robot in a warehouse:
+- builds a perfect map<br />
+- computes full path<br />
+- follows it strictly even when obstacles appear<br />
+- frequently stops to re-plan</p>
+<hr />
+<h3 id="question_1">Question<a class="headerlink" href="#question_1" title="Permanent link">&para;</a></h3>
+<p>Which paradigm is this?</p>
+<p>A) Reactive<br />
+B) Hierarchical<br />
+C) Hybrid  </p>
+<hr />
+<h3 id="correct-answer_1">Correct Answer<a class="headerlink" href="#correct-answer_1" title="Permanent link">&para;</a></h3>
+<p><strong>B) Hierarchical</strong></p>
+<hr />
+<h3 id="why_1">Why<a class="headerlink" href="#why_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Heavy reliance on planning  </li>
+<li>Strong world model  </li>
+<li>Stops to re-plan</li>
+</ul>
+<hr />
+<h3 id="why-not-others_1">Why NOT Others<a class="headerlink" href="#why-not-others_1" title="Permanent link">&para;</a></h3>
+<p>Reactive:
+- Would not build map</p>
+<p>Hybrid:
+- Would avoid locally without constant re-planning</p>
+<hr />
+<h1 id="scenario-3-the-wandering-robot">Scenario 3 — The Wandering Robot<a class="headerlink" href="#scenario-3-the-wandering-robot" title="Permanent link">&para;</a></h1>
+<p>A robot:
+- moves using proximity sensors<br />
+- turns when near obstacles<br />
+- has no map<br />
+- sometimes loops forever</p>
+<hr />
+<h3 id="question_2">Question<a class="headerlink" href="#question_2" title="Permanent link">&para;</a></h3>
+<p>Which paradigm?</p>
+<p>A) Reactive<br />
+B) Hierarchical<br />
+C) Hybrid  </p>
+<hr />
+<h3 id="correct-answer_2">Correct Answer<a class="headerlink" href="#correct-answer_2" title="Permanent link">&para;</a></h3>
+<p><strong>A) Reactive</strong></p>
+<hr />
+<h3 id="why_2">Why<a class="headerlink" href="#why_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pure sensor-action link  </li>
+<li>No memory  </li>
+<li>No planning</li>
+</ul>
+<hr />
+<h3 id="why-not-others_2">Why NOT Others<a class="headerlink" href="#why-not-others_2" title="Permanent link">&para;</a></h3>
+<p>Hierarchical:
+- Needs global model</p>
+<p>Hybrid:
+- Would include goal direction</p>
+<hr />
+<h1 id="scenario-4-the-night-patrol-robot">Scenario 4 — The Night Patrol Robot<a class="headerlink" href="#scenario-4-the-night-patrol-robot" title="Permanent link">&para;</a></h1>
+<p>A robot patrols at night.<br />
+Engineer must choose sensor for obstacle detection.</p>
+<hr />
+<h3 id="question_3">Question<a class="headerlink" href="#question_3" title="Permanent link">&para;</a></h3>
+<p>Best sensor?</p>
+<p>A) Camera<br />
+B) LiDAR<br />
+C) Microphone  </p>
+<hr />
+<h3 id="correct-answer_3">Correct Answer<a class="headerlink" href="#correct-answer_3" title="Permanent link">&para;</a></h3>
+<p><strong>B) LiDAR</strong></p>
+<hr />
+<h3 id="why_3">Why<a class="headerlink" href="#why_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Active sensor  </li>
+<li>Works in darkness  </li>
+<li>Gives distance</li>
+</ul>
+<hr />
+<h3 id="why-not-others_3">Why NOT Others<a class="headerlink" href="#why-not-others_3" title="Permanent link">&para;</a></h3>
+<p>Camera:
+- Passive, needs light</p>
+<p>Microphone:
+- Not for obstacle distance</p>
+<hr />
+<h1 id="scenario-5-the-energy-limited-robot">Scenario 5 — The Energy-Limited Robot<a class="headerlink" href="#scenario-5-the-energy-limited-robot" title="Permanent link">&para;</a></h1>
+<p>A small robot:
+- must save power<br />
+- only needs general scene understanding<br />
+- operates in well-lit area</p>
+<hr />
+<h3 id="question_4">Question<a class="headerlink" href="#question_4" title="Permanent link">&para;</a></h3>
+<p>Best sensor?</p>
+<p>A) LiDAR<br />
+B) Ultrasonic<br />
+C) Camera  </p>
+<hr />
+<h3 id="correct-answer_4">Correct Answer<a class="headerlink" href="#correct-answer_4" title="Permanent link">&para;</a></h3>
+<p><strong>C) Camera</strong></p>
+<hr />
+<h3 id="why_4">Why<a class="headerlink" href="#why_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Passive sensor  </li>
+<li>Low power  </li>
+<li>Rich visual info</li>
+</ul>
+<hr />
+<h3 id="why-not-others_4">Why NOT Others<a class="headerlink" href="#why-not-others_4" title="Permanent link">&para;</a></h3>
+<p>LiDAR:
+- High power use</p>
+<p>Ultrasonic:
+- Limited scene info</p>
+<hr />
+<h1 id="scenario-6-the-delivery-drone">Scenario 6 — The Delivery Drone<a class="headerlink" href="#scenario-6-the-delivery-drone" title="Permanent link">&para;</a></h1>
+<p>A drone:
+- plans route using GPS<br />
+- avoids birds instantly using sensors<br />
+- resumes route after avoidance</p>
+<hr />
+<h3 id="question_5">Question<a class="headerlink" href="#question_5" title="Permanent link">&para;</a></h3>
+<p>Which paradigm?</p>
+<p>A) Reactive<br />
+B) Hierarchical<br />
+C) Hybrid  </p>
+<hr />
+<h3 id="correct-answer_5">Correct Answer<a class="headerlink" href="#correct-answer_5" title="Permanent link">&para;</a></h3>
+<p><strong>C) Hybrid</strong></p>
+<hr />
+<h3 id="why_5">Why<a class="headerlink" href="#why_5" title="Permanent link">&para;</a></h3>
+<p>Planning + reactive avoidance.</p>
+<hr />
+<h3 id="why-not-others_5">Why NOT Others<a class="headerlink" href="#why-not-others_5" title="Permanent link">&para;</a></h3>
+<p>Reactive:
+- No route planning</p>
+<p>Hierarchical:
+- Would re-plan fully each time</p>
 
 
 
