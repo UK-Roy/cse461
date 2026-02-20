@@ -887,10 +887,8 @@ It is a system composed of interconnected subsystems.</p>
 <p>Energy → Actuator → Transmission → Link → End-effector → Motion</p>
 <hr />
 <h2 id="2-manipulator-robot-structure">2. Manipulator (Robot Structure)<a class="headerlink" href="#2-manipulator-robot-structure" title="Permanent link">&para;</a></h2>
-<p>Drawing:</p>
 <p>A simple 2-link arm:</p>
-<p>Joint1        Joint2
-      O———Link1———O———Link2</p>
+<p>Link1--Joint1--Link2--Joint2</p>
 <p>Explain:</p>
 <ul>
 <li>Links = rigid bodies</li>
@@ -1026,9 +1024,11 @@ Gripper moves  </p>
 <hr />
 <h2 id="1-what-is-an-actuator">1. What Is an Actuator?<a class="headerlink" href="#1-what-is-an-actuator" title="Permanent link">&para;</a></h2>
 <p>An actuator is a device that converts energy into mechanical motion.</p>
-<p>It produces:
-- Linear motion
-- Rotational motion</p>
+<p>It produces:</p>
+<ul>
+<li>Linear motion</li>
+<li>Rotational motion</li>
+</ul>
 <p>Without actuators,
 the robot cannot move.</p>
 <hr />
@@ -1045,11 +1045,13 @@ the robot cannot move.</p>
 <p>Uses compressed air.</p>
 <p>Air pressure pushes a piston.
 The piston moves linearly.</p>
-<p>Characteristics:
-- Fast
-- Simple
-- Clean
-- Light to medium load</p>
+<p>Characteristics:</p>
+<ul>
+<li>Fast</li>
+<li>Simple</li>
+<li>Clean</li>
+<li>Light to medium load</li>
+</ul>
 <hr />
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
 <p>Compressed Air → Cylinder → Piston → Motion (See the image in the slide)</p>
@@ -1062,22 +1064,28 @@ The piston moves linearly.</p>
 <li>Operation repeats rapidly</li>
 </ul>
 <p>Why this fits:</p>
-<p>Pneumatic systems are:
-- Fast
-- Cheap
-- Suitable for repetitive tasks</p>
-<p>But they are not good for:
-- Very high precision
-- Very heavy loads</p>
+<p>Pneumatic systems are:</p>
+<ul>
+<li>Fast</li>
+<li>Cheap</li>
+<li>Suitable for repetitive tasks</li>
+</ul>
+<p>But they are not good for:</p>
+<ul>
+<li>Very high precision</li>
+<li>Very heavy loads</li>
+</ul>
 <hr />
 <h2 id="4-hydraulic-actuator">4. Hydraulic Actuator<a class="headerlink" href="#4-hydraulic-actuator" title="Permanent link">&para;</a></h2>
 <p>Uses pressurized fluid (oil).</p>
 <p>Fluid pressure creates very high force.</p>
-<p>Characteristics:
-- Very high torque
-- Heavy-duty
-- Powerful
-- Slower than pneumatic</p>
+<p>Characteristics:</p>
+<ul>
+<li>Very high torque</li>
+<li>Heavy-duty</li>
+<li>Powerful</li>
+<li>Slower than pneumatic</li>
+</ul>
 <hr />
 <h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
 <p>Pump → Pressurized Oil → Cylinder → Heavy Load Moves (See an animation in the slide)</p>
@@ -1085,21 +1093,25 @@ The piston moves linearly.</p>
 <h3 id="example-excavator-arm">Example: Excavator Arm<a class="headerlink" href="#example-excavator-arm" title="Permanent link">&para;</a></h3>
 <p>Construction machines use hydraulic cylinders.</p>
 <p>Why this fits:</p>
-<p>Excavator arms:
-- Lift tons of weight
-- Need strong force
-- Operate in harsh conditions</p>
+<p>Excavator arms:</p>
+<ul>
+<li>Lift tons of weight</li>
+<li>Need strong force</li>
+<li>Operate in harsh conditions</li>
+</ul>
 <p>Hydraulics provide:
 High force with controlled motion.</p>
 <hr />
 <h3 id="5-electric-actuator">5. Electric Actuator<a class="headerlink" href="#5-electric-actuator" title="Permanent link">&para;</a></h3>
 <p>Uses electric motors.</p>
 <p>Converts electrical energy into rotation.</p>
-<p>Characteristics:
-- High precision
-- Easy control
-- Low maintenance
-- Clean operation</p>
+<p>Characteristics:</p>
+<ul>
+<li>High precision</li>
+<li>Easy control</li>
+<li>Low maintenance</li>
+<li>Clean operation</li>
+</ul>
 <hr />
 <h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
 <p>Battery → Motor → Gear → Joint Rotation</p>
@@ -1112,17 +1124,21 @@ High force with controlled motion.</p>
 <li>Works with digital controller</li>
 </ul>
 <p>Why this fits:</p>
-<p>Electric actuators:
-- Integrate easily with control systems
-- Provide accurate positioning
-- Require less maintenance</p>
+<p>Electric actuators:</p>
+<ul>
+<li>Integrate easily with control systems</li>
+<li>Provide accurate positioning</li>
+<li>Require less maintenance</li>
+</ul>
 <hr />
 <h2 id="6-when-do-we-choose-which">6. When Do We Choose Which?<a class="headerlink" href="#6-when-do-we-choose-which" title="Permanent link">&para;</a></h2>
 <p>Ask students:</p>
-<p>If I need:
-- Very high force → Hydraulic
-- Very fast simple motion → Pneumatic
-- High precision control → Electric</p>
+<p>If I need:</p>
+<ul>
+<li>Very high force → Hydraulic</li>
+<li>Very fast simple motion → Pneumatic</li>
+<li>High precision control → Electric</li>
+</ul>
 <p>There is no “best” actuator.
 There is only “best for the application”.</p>
 <hr />
@@ -1151,10 +1167,12 @@ There is only “best for the application”.</p>
 <h2 id="1-dc-motor">1. DC Motor<a class="headerlink" href="#1-dc-motor" title="Permanent link">&para;</a></h2>
 <h3 id="basic-theory">Basic Theory<a class="headerlink" href="#basic-theory" title="Permanent link">&para;</a></h3>
 <p>A DC motor converts electrical energy into continuous rotational motion.</p>
-<p>Basic parts:
-- Stator (magnetic field)
-- Rotor (armature)
-- Commutator (maintains rotation)</p>
+<p>Basic parts:</p>
+<ul>
+<li>Stator (magnetic field)</li>
+<li>Rotor (armature)</li>
+<li>Commutator (maintains rotation)</li>
+</ul>
 <p>When current flows, magnetic interaction creates torque.</p>
 <p>Speed is controlled by:
 Changing the input voltage.</p>
@@ -1172,15 +1190,19 @@ Changing the input voltage.</p>
 <li>Wheels rotate</li>
 </ul>
 <p>Why this fits:</p>
-<p>DC motor:
-- Simple
-- Continuous rotation
-- No position control by default</p>
+<p>DC motor:</p>
+<ul>
+<li>Simple</li>
+<li>Continuous rotation</li>
+<li>No position control by default</li>
+</ul>
 <hr />
 <h3 id="limitation">Limitation<a class="headerlink" href="#limitation" title="Permanent link">&para;</a></h3>
-<p>DC motor:
-- Cannot directly control exact angle
-- Needs external feedback for precision</p>
+<p>DC motor:</p>
+<ul>
+<li>Cannot directly control exact angle</li>
+<li>Needs external feedback for precision</li>
+</ul>
 <hr />
 <h2 id="2-stepper-motor">2. Stepper Motor<a class="headerlink" href="#2-stepper-motor" title="Permanent link">&para;</a></h2>
 <h3 id="basic-theory_1">Basic Theory<a class="headerlink" href="#basic-theory_1" title="Permanent link">&para;</a></h3>
@@ -1189,10 +1211,12 @@ Changing the input voltage.</p>
 → Moves the motor a fixed angle.</p>
 <p>Example:
 1 pulse = 1.8°</p>
-<p>Characteristics:
-- Precise positioning
-- No feedback required (open-loop possible)
-- Holds position when energized</p>
+<p>Characteristics:</p>
+<ul>
+<li>Precise positioning</li>
+<li>No feedback required (open-loop possible)</li>
+<li>Holds position when energized</li>
+</ul>
 <hr />
 <h3 id="explanation_1">Explanation<a class="headerlink" href="#explanation_1" title="Permanent link">&para;</a></h3>
 <p>Pulse 1 → Step<br />
@@ -1203,10 +1227,12 @@ Pulse 3 → Step  </p>
 <h3 id="example-3d-printer">Example: 3D Printer<a class="headerlink" href="#example-3d-printer" title="Permanent link">&para;</a></h3>
 <p>3D printer uses stepper motors.</p>
 <p>Why this fits:</p>
-<p>3D printing requires:
-- Precise position
-- Controlled movement
-- No overshoot</p>
+<p>3D printing requires:</p>
+<ul>
+<li>Precise position</li>
+<li>Controlled movement</li>
+<li>No overshoot</li>
+</ul>
 <p>Stepper motors provide controlled discrete motion.</p>
 <hr />
 <h3 id="limitation_1">Limitation<a class="headerlink" href="#limitation_1" title="Permanent link">&para;</a></h3>
@@ -1218,10 +1244,12 @@ Pulse 3 → Step  </p>
 <h2 id="3-servo-motor">3. Servo Motor<a class="headerlink" href="#3-servo-motor" title="Permanent link">&para;</a></h2>
 <h2 id="basic-theory_2">Basic Theory<a class="headerlink" href="#basic-theory_2" title="Permanent link">&para;</a></h2>
 <p>A servo motor is a closed-loop system.</p>
-<p>It includes:
-- Motor
-- Feedback sensor
-- Controller</p>
+<p>It includes:</p>
+<ul>
+<li>Motor</li>
+<li>Feedback sensor</li>
+<li>Controller</li>
+</ul>
 <p>It continuously checks:
 Desired position vs Actual position.</p>
 <p>If error exists:
@@ -1239,10 +1267,12 @@ It corrects automatically.</p>
 <li>Must react to disturbance</li>
 </ul>
 <p>Why this fits:</p>
-<p>Servo motor:
-- High precision
-- Real-time correction
-- Stable under load</p>
+<p>Servo motor:</p>
+<ul>
+<li>High precision</li>
+<li>Real-time correction</li>
+<li>Stable under load</li>
+</ul>
 <hr />
 <h2 id="4-quick-comparison">4. Quick Comparison<a class="headerlink" href="#4-quick-comparison" title="Permanent link">&para;</a></h2>
 <p>DC Motor:
@@ -1254,10 +1284,12 @@ Closed-loop, high precision, industrial use.</p>
 <hr />
 <h2 id="engineering-insight">Engineering Insight<a class="headerlink" href="#engineering-insight" title="Permanent link">&para;</a></h2>
 <p>Choose motor based on:</p>
-<p>If you need:
-- Simple rotation → DC
-- Precise incremental positioning → Stepper
-- Accurate and stable industrial motion → Servo</p>
+<p>If you need:</p>
+<ul>
+<li>Simple rotation → DC</li>
+<li>Precise incremental positioning → Stepper</li>
+<li>Accurate and stable industrial motion → Servo</li>
+</ul>
 <p>There is no universal best motor. Only application-driven selection.</p>
 <h1 id="part-5-control-hardware">Part 5 — Control Hardware<a class="headerlink" href="#part-5-control-hardware" title="Permanent link">&para;</a></h1>
 <p>So far we discussed:</p>
@@ -1296,10 +1328,12 @@ a robot cannot operate.</p>
 <li>Timers</li>
 <li>ADC (Analog to Digital Converter)</li>
 </ul>
-<p>It is designed for:
-- Real-time control
-- Low power
-- Embedded systems</p>
+<p>It is designed for:</p>
+<ul>
+<li>Real-time control</li>
+<li>Low power</li>
+<li>Embedded systems</li>
+</ul>
 <hr />
 <h3 id="explanation_3">Explanation<a class="headerlink" href="#explanation_3" title="Permanent link">&para;</a></h3>
 <p>Sensor → MCU → Motor Driver → Motor</p>
@@ -1313,11 +1347,13 @@ a robot cannot operate.</p>
 <li>PWM signal sent to motor</li>
 </ul>
 <p>Why this fits:</p>
-<p>Microcontrollers:
-- Handle real-time tasks
-- Cheap
-- Low power
-- Ideal for small robots</p>
+<p>Microcontrollers:</p>
+<ul>
+<li>Handle real-time tasks</li>
+<li>Cheap</li>
+<li>Low power</li>
+<li>Ideal for small robots</li>
+</ul>
 <hr />
 <h3 id="characteristics">Characteristics<a class="headerlink" href="#characteristics" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1347,11 +1383,13 @@ a robot cannot operate.</p>
 <li>Runs continuously for years</li>
 </ul>
 <p>Why this fits:</p>
-<p>Factories need:
-- Reliability
-- Stability
-- Safety
-- Long-term operation</p>
+<p>Factories need:</p>
+<ul>
+<li>Reliability</li>
+<li>Stability</li>
+<li>Safety</li>
+<li>Long-term operation</li>
+</ul>
 <p>PLC provides industrial robustness.</p>
 <hr />
 <h3 id="characteristics_1">Characteristics<a class="headerlink" href="#characteristics_1" title="Permanent link">&para;</a></h3>
@@ -1393,25 +1431,33 @@ a robot cannot operate.</p>
 <li>Path planning</li>
 </ul>
 <p>Why this fits:</p>
-<p>AI and vision require:
-- High computation
-- GPU acceleration
-- Operating system</p>
+<p>AI and vision require:</p>
+<ul>
+<li>High computation</li>
+<li>GPU acceleration</li>
+<li>Operating system</li>
+</ul>
 <p>Microcontrollers cannot handle heavy AI.</p>
 <hr />
 <h2 id="5-quick-comparison">5. Quick Comparison<a class="headerlink" href="#5-quick-comparison" title="Permanent link">&para;</a></h2>
-<p>Microcontroller:
-- Real-time
-- Low power
-- Simple control tasks</p>
-<p>PLC:
-- Industrial automation
-- High reliability
-- Factory systems</p>
-<p>SBC:
-- High computation
-- AI and vision
-- Operating system based</p>
+<p>Microcontroller:</p>
+<ul>
+<li>Real-time</li>
+<li>Low power</li>
+<li>Simple control tasks</li>
+</ul>
+<p>PLC:</p>
+<ul>
+<li>Industrial automation</li>
+<li>High reliability</li>
+<li>Factory systems</li>
+</ul>
+<p>SBC:</p>
+<ul>
+<li>High computation</li>
+<li>AI and vision</li>
+<li>Operating system based</li>
+</ul>
 <hr />
 <h2 id="engineering-insight_1">Engineering Insight<a class="headerlink" href="#engineering-insight_1" title="Permanent link">&para;</a></h2>
 <p>Often robots use BOTH:</p>
