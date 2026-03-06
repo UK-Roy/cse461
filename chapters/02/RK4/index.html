@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://uk-roy.github.io/cse461/chapters/05/">
+        <link rel="canonical" href="https://uk-roy.github.io/cse461/chapters/02/RK4/">
       
       
-        <link rel="prev" href="../04/">
+        <link rel="prev" href="../RK3/">
       
       
-        <link rel="next" href="../../resources/">
+        <link rel="next" href="../../03/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Chapter 5 - CSE461 - Intro to Robotics</title>
+        <title>Lecture Four - CSE461 - Intro to Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -50,7 +50,7 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#homogeneous-transformation-matrix" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -77,9 +82,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CSE461 - Intro to Robotics" class="md-header__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-header__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 5
+              Lecture Four
             
           </span>
         </div>
@@ -171,7 +176,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -190,7 +195,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../syllabus/" class="md-tabs__link">
+      <a href="../../../syllabus/" class="md-tabs__link">
         
   
   
@@ -213,7 +218,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -231,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../resources/" class="md-tabs__link">
+      <a href="../../../resources/" class="md-tabs__link">
         
   
   
@@ -268,9 +273,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CSE461 - Intro to Robotics" class="md-nav__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-nav__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     CSE461 - Intro to Robotics
@@ -285,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -312,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syllabus/" class="md-nav__link">
+      <a href="../../../syllabus/" class="md-nav__link">
         
   
   
@@ -396,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -479,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01/lecture1/" class="md-nav__link">
+      <a href="../../01/lecture1/" class="md-nav__link">
         
   
   
@@ -507,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01/lecture2/" class="md-nav__link">
+      <a href="../../01/lecture2/" class="md-nav__link">
         
   
   
@@ -535,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01/lecture3/" class="md-nav__link">
+      <a href="../../01/lecture3/" class="md-nav__link">
         
   
   
@@ -568,6 +573,8 @@
                 
   
   
+    
+  
   
   
     
@@ -583,11 +590,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
@@ -608,7 +615,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -626,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02/RK1/" class="md-nav__link">
+      <a href="../RK1/" class="md-nav__link">
         
   
   
@@ -654,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02/RK2/" class="md-nav__link">
+      <a href="../RK2/" class="md-nav__link">
         
   
   
@@ -682,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02/RK3/" class="md-nav__link">
+      <a href="../RK3/" class="md-nav__link">
         
   
   
@@ -707,10 +714,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../02/RK4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Four
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -726,6 +760,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-homogeneous-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Do We Need Homogeneous Matrices?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -746,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03/" class="md-nav__link">
+      <a href="../../03/" class="md-nav__link">
         
   
   
@@ -774,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04/" class="md-nav__link">
+      <a href="../../04/" class="md-nav__link">
         
   
   
@@ -799,17 +864,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../05/" class="md-nav__link">
         
   
   
@@ -825,7 +883,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -845,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/" class="md-nav__link">
+      <a href="../../../resources/" class="md-nav__link">
         
   
   
@@ -882,9 +939,151 @@
 
 
 
-  <h1>Chapter 5</h1>
-
-
+<h1 id="homogeneous-transformation-matrix">Homogeneous Transformation Matrix<a class="headerlink" href="#homogeneous-transformation-matrix" title="Permanent link">&para;</a></h1>
+<p>In robotics, we often need to describe <strong>both position and orientation</strong> of one coordinate frame relative to another.<br />
+To represent these transformations in a compact and systematic way, we use the <strong>Homogeneous Transformation Matrix</strong>.</p>
+<p>A homogeneous transformation matrix combines:</p>
+<ul>
+<li><strong>Rotation</strong></li>
+<li><strong>Translation</strong></li>
+</ul>
+<p>into a single <strong>4×4 matrix</strong>.</p>
+<hr />
+<h2 id="why-do-we-need-homogeneous-matrices">Why Do We Need Homogeneous Matrices?<a class="headerlink" href="#why-do-we-need-homogeneous-matrices" title="Permanent link">&para;</a></h2>
+<p>If we use normal vectors, we must treat rotation and translation separately.</p>
+<p>However, robot motion usually includes <strong>both rotation and translation at the same time</strong>.</p>
+<p>For example:</p>
+<ul>
+<li>A robotic arm rotates at a joint.</li>
+<li>The next link also translates to a new position.</li>
+</ul>
+<p>Using homogeneous matrices allows us to <strong>combine all transformations into one matrix multiplication</strong>.</p>
+<hr />
+<h1 id="structure-of-the-homogeneous-transformation-matrix">Structure of the Homogeneous Transformation Matrix<a class="headerlink" href="#structure-of-the-homogeneous-transformation-matrix" title="Permanent link">&para;</a></h1>
+<p>The general form of a homogeneous transformation matrix is</p>
+<div class="arithmatex">\[
+T =
+\begin{bmatrix}
+R &amp; P \\
+0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>Where</p>
+<ul>
+<li><span class="arithmatex">\(R\)</span> → <strong>3×3 rotation matrix</strong></li>
+<li><span class="arithmatex">\(P\)</span> → <strong>3×1 position vector</strong></li>
+</ul>
+<p>More explicitly,</p>
+<div class="arithmatex">\[
+T =
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; p_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; p_y \\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; p_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<hr />
+<h2 id="interpretation-of-the-matrix">Interpretation of the Matrix<a class="headerlink" href="#interpretation-of-the-matrix" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(R\)</span></td>
+<td>Orientation of the new coordinate frame</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P\)</span></td>
+<td>Position of the new coordinate frame</td>
+</tr>
+<tr>
+<td>Bottom row</td>
+<td>Keeps the matrix compatible for transformation operations</td>
+</tr>
+</tbody>
+</table>
+<p>So the matrix describes <strong>both rotation and translation together</strong>.</p>
+<hr />
+<h1 id="homogeneous-transformation-in-robotics">Homogeneous Transformation in Robotics<a class="headerlink" href="#homogeneous-transformation-in-robotics" title="Permanent link">&para;</a></h1>
+<p>For a robot, we usually want to know:</p>
+<ul>
+<li>The position of the <strong>end-effector</strong></li>
+<li>The orientation of the <strong>tool frame</strong></li>
+</ul>
+<p>To compute this, we multiply the transformation matrices of each link.</p>
+<p>For example, if a robot has three joints:</p>
+<div class="arithmatex">\[
+T_0^3 = T_0^1 \; T_1^2 \; T_2^3
+\]</div>
+<p>Where</p>
+<ul>
+<li><span class="arithmatex">\(T_0^1\)</span> → transformation from frame 0 to frame 1  </li>
+<li><span class="arithmatex">\(T_1^2\)</span> → transformation from frame 1 to frame 2  </li>
+<li><span class="arithmatex">\(T_2^3\)</span> → transformation from frame 2 to frame 3  </li>
+</ul>
+<p>The final matrix <span class="arithmatex">\(T_0^3\)</span> gives the <strong>end-effector pose relative to the base frame</strong>.</p>
+<hr />
+<h1 id="homogeneous-matrix-from-dh-parameters">Homogeneous Matrix from DH Parameters<a class="headerlink" href="#homogeneous-matrix-from-dh-parameters" title="Permanent link">&para;</a></h1>
+<p>Using DH parameters, the transformation matrix between two links becomes</p>
+<div class="arithmatex">\[
+T_i =
+\begin{bmatrix}
+\cos\theta_i &amp; -\sin\theta_i\cos\alpha_i &amp; \sin\theta_i\sin\alpha_i &amp; a_i\cos\theta_i \\
+\sin\theta_i &amp; \cos\theta_i\cos\alpha_i &amp; -\cos\theta_i\sin\alpha_i &amp; a_i\sin\theta_i \\
+0 &amp; \sin\alpha_i &amp; \cos\alpha_i &amp; d_i \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>This matrix contains <strong>all four DH parameters</strong>:</p>
+<ul>
+<li><span class="arithmatex">\(a_i\)</span></li>
+<li><span class="arithmatex">\(d_i\)</span></li>
+<li><span class="arithmatex">\(\alpha_i\)</span></li>
+<li><span class="arithmatex">\(\theta_i\)</span></li>
+</ul>
+<hr />
+<h1 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h1>
+<p>Suppose a robot joint has:</p>
+<div class="arithmatex">\[
+a_1 = L_1, \quad d_1 = 0, \quad \alpha_1 = 0
+\]</div>
+<p>Then the transformation matrix becomes</p>
+<div class="arithmatex">\[
+T_1 =
+\begin{bmatrix}
+\cos\theta_1 &amp; -\sin\theta_1 &amp; 0 &amp; L_1\cos\theta_1 \\
+\sin\theta_1 &amp; \cos\theta_1 &amp; 0 &amp; L_1\sin\theta_1 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>This matrix describes:</p>
+<ul>
+<li>rotation by <span class="arithmatex">\( \theta_1 \)</span></li>
+<li>translation by <span class="arithmatex">\(L_1\)</span></li>
+</ul>
+<hr />
+<h1 id="why-homogeneous-matrices-are-powerful">Why Homogeneous Matrices Are Powerful<a class="headerlink" href="#why-homogeneous-matrices-are-powerful" title="Permanent link">&para;</a></h1>
+<p>Homogeneous matrices allow us to:</p>
+<ul>
+<li>Represent <strong>rotation and translation together</strong></li>
+<li>Combine multiple transformations using <strong>matrix multiplication</strong></li>
+<li>Compute <strong>forward kinematics systematically</strong></li>
+<li>Model complex robotic systems</li>
+</ul>
+<p>This is why homogeneous transformation matrices are a <strong>fundamental tool in robotics kinematics</strong>.</p>
+<hr />
+<h1 id="key-idea">Key Idea<a class="headerlink" href="#key-idea" title="Permanent link">&para;</a></h1>
+<p>In robotics,</p>
+<div class="arithmatex">\[
+\text{Robot Pose} = \text{Product of Transformation Matrices}
+\]</div>
+<p>Using DH parameters and homogeneous matrices, we can compute the <strong>position and orientation of any link or end-effector</strong> in a robot manipulator.</p>
 
 
 
@@ -940,16 +1139,16 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
       
-        <script src="../../js/math.js"></script>
+        <script src="../../../js/math.js"></script>
       
     
   </body>

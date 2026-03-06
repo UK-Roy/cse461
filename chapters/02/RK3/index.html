@@ -14,7 +14,7 @@
         <link rel="prev" href="../RK2/">
       
       
-        <link rel="next" href="../../03/">
+        <link rel="next" href="../RK4/">
       
       
         
@@ -66,6 +66,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-denavithartenberg-dh-parameters" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -690,6 +695,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Three
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -708,6 +733,97 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-motivation-why-do-we-need-a-systematic-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Motivation: Why Do We Need a Systematic Method?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-are-dh-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What are DH Parameters?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dh-parameter-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DH Parameter Illustration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-four-dh-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Four DH Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RK4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Four
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -856,9 +972,189 @@
 
 
 
-  <h1>Lecture Three</h1>
-
-<p>The Part of DH parameter is coming very soon</p>
+<h1 id="chapter-2-denavithartenberg-dh-parameters">Chapter 2: Denavit–Hartenberg (DH) Parameters<a class="headerlink" href="#chapter-2-denavithartenberg-dh-parameters" title="Permanent link">&para;</a></h1>
+<h2 id="1-motivation-why-do-we-need-a-systematic-method">1. Motivation: Why Do We Need a Systematic Method?<a class="headerlink" href="#1-motivation-why-do-we-need-a-systematic-method" title="Permanent link">&para;</a></h2>
+<p>In the previous lecture, we solved forward kinematics using <strong>trigonometry</strong>.</p>
+<p>Although this approach works for simple robots, it has several limitations:</p>
+<ul>
+<li>The method becomes <strong>complicated when the robot has many links</strong>.</li>
+<li>It is <strong>not systematic</strong>, meaning every robot requires a new geometric derivation.</li>
+<li>If the <strong>joint orientation changes</strong>, the whole derivation must be redone.</li>
+<li>It becomes very difficult to extend this method to <strong>3D robot manipulators</strong>.</li>
+</ul>
+<p>Because of these limitations, robotics researchers introduced a <strong>standard mathematical framework</strong> called the <strong>Denavit–Hartenberg (DH) Parameter Method</strong>.</p>
+<p>The DH method provides a <strong>structured way to describe the geometry of a robot</strong> and is widely used in robotics software and industrial robot modeling.</p>
+<hr />
+<h2 id="2-what-are-dh-parameters">2. What are DH Parameters?<a class="headerlink" href="#2-what-are-dh-parameters" title="Permanent link">&para;</a></h2>
+<p>The <strong>Denavit–Hartenberg convention</strong> is a systematic method to describe the <strong>relative transformation between consecutive robot links</strong>.</p>
+<p>Instead of manually writing equations, each joint is described using <strong>four parameters</strong>.</p>
+<p>These parameters define how one coordinate frame moves relative to the previous frame.</p>
+<hr />
+<h2 id="dh-parameter-illustration">DH Parameter Illustration<a class="headerlink" href="#dh-parameter-illustration" title="Permanent link">&para;</a></h2>
+<p>Add the following image to help visualize the parameters.</p>
+<p>Place the image in:
+<img alt="DH Parameters Illustration" src="../images/dh_parameters.png" /></p>
+<h2 id="3-the-four-dh-parameters">3. The Four DH Parameters<a class="headerlink" href="#3-the-four-dh-parameters" title="Permanent link">&para;</a></h2>
+<p>Each joint in a robot is described using <strong>four Denavit–Hartenberg (DH) parameters</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(a_i\)</span></td>
+<td>Link Length</td>
+<td>Distance between <span class="arithmatex">\(z_{i-1}\)</span> and <span class="arithmatex">\(z_i\)</span> measured along <span class="arithmatex">\(x_i\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(d_i\)</span></td>
+<td>Joint Offset</td>
+<td>Distance between <span class="arithmatex">\(x_{i-1}\)</span> and <span class="arithmatex">\(x_i\)</span> measured along <span class="arithmatex">\(z_{i-1}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\alpha_i\)</span></td>
+<td>Link Twist</td>
+<td>Angle between <span class="arithmatex">\(z_{i-1}\)</span> and <span class="arithmatex">\(z_i\)</span> measured about <span class="arithmatex">\(x_i\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta_i\)</span></td>
+<td>Joint Angle</td>
+<td>Angle between <span class="arithmatex">\(x_{i-1}\)</span> and <span class="arithmatex">\(x_i\)</span> measured about <span class="arithmatex">\(z_{i-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Each of these parameters represents a <strong>geometric relationship between two adjacent links</strong>.</p>
+<hr />
+<h1 id="4-understanding-each-parameter">4. Understanding Each Parameter<a class="headerlink" href="#4-understanding-each-parameter" title="Permanent link">&para;</a></h1>
+<h2 id="41-link-length-a_i">4.1 Link Length <span class="arithmatex">\(a_i\)</span><a class="headerlink" href="#41-link-length-a_i" title="Permanent link">&para;</a></h2>
+<p>The <strong>link length</strong> represents the distance between two joint axes.</p>
+<p>Mathematically,</p>
+<div class="arithmatex">\[
+a_i = \text{distance between } z_{i-1} \text{ and } z_i \text{ measured along } x_i
+\]</div>
+<h3 id="intuition">Intuition<a class="headerlink" href="#intuition" title="Permanent link">&para;</a></h3>
+<p>Imagine moving from axis <span class="arithmatex">\(z_{i-1}\)</span> to axis <span class="arithmatex">\(z_i\)</span> <strong>only along the <span class="arithmatex">\(x_i\)</span> direction</strong>.</p>
+<p>The distance you travel is the <strong>link length</strong>.</p>
+<h3 id="important-observation">Important Observation<a class="headerlink" href="#important-observation" title="Permanent link">&para;</a></h3>
+<p>Sometimes the two axes are separated, but <strong>not along the <span class="arithmatex">\(x_i\)</span> direction</strong>.</p>
+<p>In that case,</p>
+<div class="arithmatex">\[
+a_i = 0
+\]</div>
+<p>because DH only measures the distance <strong>along the <span class="arithmatex">\(x_i\)</span> axis</strong>.</p>
+<hr />
+<h2 id="42-joint-offset-d_i">4.2 Joint Offset <span class="arithmatex">\(d_i\)</span><a class="headerlink" href="#42-joint-offset-d_i" title="Permanent link">&para;</a></h2>
+<p>The <strong>joint offset</strong> measures how much the coordinate frame shifts along the previous joint axis.</p>
+<div class="arithmatex">\[
+d_i = \text{distance between } x_{i-1} \text{ and } x_i \text{ measured along } z_{i-1}
+\]</div>
+<h3 id="intuition_1">Intuition<a class="headerlink" href="#intuition_1" title="Permanent link">&para;</a></h3>
+<p>Imagine walking from <span class="arithmatex">\(x_{i-1}\)</span> to <span class="arithmatex">\(x_i\)</span> along the direction of <span class="arithmatex">\(z_{i-1}\)</span>.</p>
+<p>The distance traveled represents the <strong>joint offset</strong>.</p>
+<p>In many planar robots,</p>
+<div class="arithmatex">\[
+d_i = 0
+\]</div>
+<p>because there is <strong>no displacement along the vertical direction</strong>.</p>
+<hr />
+<h2 id="43-link-twist-alpha_i">4.3 Link Twist <span class="arithmatex">\( \alpha_i \)</span><a class="headerlink" href="#43-link-twist-alpha_i" title="Permanent link">&para;</a></h2>
+<p>Link twist measures the <strong>rotation between the two z-axes</strong>.</p>
+<div class="arithmatex">\[
+\alpha_i = \text{angle between } z_{i-1} \text{ and } z_i \text{ measured about } x_i
+\]</div>
+<h3 id="intuition_2">Intuition<a class="headerlink" href="#intuition_2" title="Permanent link">&para;</a></h3>
+<p>Rotate the next coordinate frame around the <strong><span class="arithmatex">\(x_i\)</span> axis</strong>.</p>
+<p>The angle created between <span class="arithmatex">\(z_{i-1}\)</span> and <span class="arithmatex">\(z_i\)</span> is the <strong>link twist</strong>.</p>
+<p>Typical values include:</p>
+<ul>
+<li><span class="arithmatex">\(0^\circ\)</span></li>
+<li><span class="arithmatex">\(+90^\circ\)</span></li>
+<li><span class="arithmatex">\(-90^\circ\)</span></li>
+</ul>
+<p>depending on the robot configuration.</p>
+<hr />
+<h2 id="44-joint-angle-theta_i">4.4 Joint Angle <span class="arithmatex">\( \theta_i \)</span><a class="headerlink" href="#44-joint-angle-theta_i" title="Permanent link">&para;</a></h2>
+<p>The <strong>joint angle</strong> describes the rotation of the joint itself.</p>
+<div class="arithmatex">\[
+\theta_i = \text{angle between } x_{i-1} \text{ and } x_i \text{ measured about } z_{i-1}
+\]</div>
+<h3 id="intuition_3">Intuition<a class="headerlink" href="#intuition_3" title="Permanent link">&para;</a></h3>
+<p>Rotate the coordinate frame around the <strong>joint axis <span class="arithmatex">\(z_{i-1}\)</span></strong>.</p>
+<p>The angle between <span class="arithmatex">\(x_{i-1}\)</span> and <span class="arithmatex">\(x_i\)</span> is the <strong>joint angle</strong>.</p>
+<p>For <strong>revolute joints</strong>, this value changes when the motor rotates.</p>
+<hr />
+<h1 id="5-why-dh-is-useful">5. Why DH is Useful<a class="headerlink" href="#5-why-dh-is-useful" title="Permanent link">&para;</a></h1>
+<p>The DH convention allows us to describe complex robots using a <strong>simple table representation</strong>.</p>
+<p>Once the DH parameters are known, we can automatically compute:</p>
+<ul>
+<li>Forward kinematics</li>
+<li>Transformation matrices</li>
+<li>End-effector position</li>
+</ul>
+<p>This makes DH parameters a <strong>standard method in robotics modeling and simulation</strong>.</p>
+<hr />
+<h1 id="6-example-3r-planar-robot">6. Example: 3R Planar Robot<a class="headerlink" href="#6-example-3r-planar-robot" title="Permanent link">&para;</a></h1>
+<p>Now we apply the DH method to a <strong>3R planar robot manipulator</strong>.</p>
+<p>Add the image from the slides here.
+<img alt="3R Planar Robot Example" src="../images/3R_planar_robot_DH.png" /></p>
+<p>This robot contains:</p>
+<ul>
+<li>Three <strong>revolute joints</strong></li>
+<li>Link lengths <span class="arithmatex">\(L_1, L_2, L_3\)</span></li>
+<li>Joint angles <span class="arithmatex">\( \theta_1, \theta_2, \theta_3 \)</span></li>
+<li>End-effector position <span class="arithmatex">\(P(x,y)\)</span></li>
+</ul>
+<hr />
+<h2 id="7-constructing-the-dh-table">7. Constructing the DH Table<a class="headerlink" href="#7-constructing-the-dh-table" title="Permanent link">&para;</a></h2>
+<p>Using the definitions of DH parameters, we construct the following table.</p>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th><span class="arithmatex">\( \theta_i \)</span></th>
+<th><span class="arithmatex">\( a_i \)</span></th>
+<th><span class="arithmatex">\( d_i \)</span></th>
+<th><span class="arithmatex">\( \alpha_i \)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="arithmatex">\(+\theta_1\)</span></td>
+<td><span class="arithmatex">\(L_1\)</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="arithmatex">\(-\theta_2\)</span></td>
+<td><span class="arithmatex">\(L_2\)</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="arithmatex">\(+\theta_3\)</span></td>
+<td><span class="arithmatex">\(L_3\)</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-are-many-parameters-zero">Why are many parameters zero?<a class="headerlink" href="#why-are-many-parameters-zero" title="Permanent link">&para;</a></h3>
+<p>Because this robot is <strong>planar</strong>:</p>
+<ul>
+<li>All joint axes are parallel → <span class="arithmatex">\( \alpha_i = 0 \)</span></li>
+<li>No vertical displacement → <span class="arithmatex">\( d_i = 0 \)</span></li>
+</ul>
+<hr />
+<h2 id="key-takeaway">Key Takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h2>
+<p>The <strong>Denavit–Hartenberg convention</strong> provides a systematic way to represent robot geometry using <strong>four parameters per joint</strong>.</p>
+<p>Once these parameters are known, the robot's kinematics can be derived using <strong>matrix multiplication</strong>, making the analysis scalable to complex robotic systems.</p>
 
 
 
