@@ -1,0 +1,1691 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://uk-roy.github.io/cse461/chapters/02/RK1/">
+      
+      
+        <link rel="prev" href="../../01/lecture3/">
+      
+      
+        <link rel="next" href="../RK2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Lecture One - CSE461 - Intro to Robotics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-forward-kinematics-using-trigonometry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-header__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CSE461 - Intro to Robotics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture One
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../syllabus/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Syllabus
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-nav__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    CSE461 - Intro to Robotics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Three
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture One
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-kinematics-in-simple-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Kinematics in Simple Words
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Kinematics in Simple Words">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-forward-kinematics-vs-inverse-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Forward Kinematics vs Inverse Kinematics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Forward Kinematics vs Inverse Kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-example-fits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this example fits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-before-starting-fk-angle-sign-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Before Starting FK: Angle Sign Convention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Before Starting FK: Angle Sign Convention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-example-fits_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this example fits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-3r-planar-robot-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 3R Planar Robot Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 3R Planar Robot Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important note
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-start-from-the-simplest-case-single-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Start from the Simplest Case: Single Link
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Start from the Simplest Case: Single Link">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-example-fits_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this example fits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-two-link-planar-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Two-Link Planar Robot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Two-Link Planar Robot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-is-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this is needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-three-link-planar-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Three-Link Planar Robot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Three-Link Planar Robot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meaning-of-this-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meaning of this equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cleaner-extension-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Cleaner Extension Form
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Cleaner Extension Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-students-should-notice-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why students should notice this
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-step-by-step-fk-calculation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Step-by-Step FK Calculation Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Step-by-Step FK Calculation Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-why-forward-kinematics-is-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Why Forward Kinematics is Important
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Why Forward Kinematics is Important">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RK2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RK3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Three
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-2-forward-kinematics-using-trigonometry">Chapter 2 – Forward Kinematics using Trigonometry<a class="headerlink" href="#chapter-2-forward-kinematics-using-trigonometry" title="Permanent link">&para;</a></h1>
+<p>Forward kinematics answers a direct and practical question:</p>
+<blockquote>
+<p>If the joint angles are known, where will the end-effector be?</p>
+</blockquote>
+<p>In other words, <strong>forward kinematics maps joint variables to position</strong>.</p>
+<p>For a robot arm, this means:</p>
+<ul>
+<li><strong>Input:</strong> link lengths and joint angles  </li>
+<li><strong>Output:</strong> end-effector position such as <span class="arithmatex">\(P(x,y)\)</span></li>
+</ul>
+<hr />
+<h2 id="1-kinematics-in-simple-words">1. Kinematics in Simple Words<a class="headerlink" href="#1-kinematics-in-simple-words" title="Permanent link">&para;</a></h2>
+<p>Kinematics is the study of motion <strong>without discussing the forces that cause the motion</strong>.</p>
+<p>In robotics, kinematics tells us how the motion of joints changes the position of the end-effector.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>If a robot arm rotates its joints by certain angles, the hand of the robot moves to a new location.<br />
+Forward kinematics tells us exactly <strong>where that hand goes</strong>.</p>
+<hr />
+<h2 id="2-forward-kinematics-vs-inverse-kinematics">2. Forward Kinematics vs Inverse Kinematics<a class="headerlink" href="#2-forward-kinematics-vs-inverse-kinematics" title="Permanent link">&para;</a></h2>
+<p><img alt="Types of Kinematics" src="../images/fk_types_of_kinematics.png" /></p>
+<ul>
+<li><strong>Forward Kinematics (FK):</strong> joint angles <span class="arithmatex">\(\rightarrow\)</span> end-effector position</li>
+<li><strong>Inverse Kinematics (IK):</strong> end-effector position <span class="arithmatex">\(\rightarrow\)</span> joint angles</li>
+</ul>
+<h3 id="why-this-example-fits">Why this example fits<a class="headerlink" href="#why-this-example-fits" title="Permanent link">&para;</a></h3>
+<p>In class, when we are <strong>given angles</strong> and asked to compute <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>, that is forward kinematics.<br />
+If instead we are <strong>given <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span></strong> and asked to find the angles, that becomes inverse kinematics.</p>
+<hr />
+<h2 id="3-before-starting-fk-angle-sign-convention">3. Before Starting FK: Angle Sign Convention<a class="headerlink" href="#3-before-starting-fk-angle-sign-convention" title="Permanent link">&para;</a></h2>
+<p><img alt="Angle Sign Convention" src="../images/fk_angle_sign_convention.png" /></p>
+<p>Before writing any FK equation, we must define the angle direction correctly.</p>
+<h3 id="rule">Rule<a class="headerlink" href="#rule" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Counter-clockwise (CCW)</strong> angle = positive</li>
+<li><strong>Clockwise (CW)</strong> angle = negative</li>
+</ul>
+<h3 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
+<p>Trigonometric equations depend on angle sign.<br />
+If we use the wrong sign convention, the final position of the robot will also be wrong.</p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<p>If a link rotates <span class="arithmatex">\(30^\circ\)</span> counter-clockwise from the positive x-axis, then:</p>
+<div class="arithmatex">\[
+\theta = +30^\circ
+\]</div>
+<p>If it rotates <span class="arithmatex">\(30^\circ\)</span> clockwise, then:</p>
+<div class="arithmatex">\[
+\theta = -30^\circ
+\]</div>
+<h3 id="why-this-example-fits_1">Why this example fits<a class="headerlink" href="#why-this-example-fits_1" title="Permanent link">&para;</a></h3>
+<p>Both angles have the same magnitude, but they point in different directions.<br />
+So the endpoint coordinates will also be different.</p>
+<hr />
+<h2 id="4-3r-planar-robot-setup">4. 3R Planar Robot Setup<a class="headerlink" href="#4-3r-planar-robot-setup" title="Permanent link">&para;</a></h2>
+<p><img alt="3R Planar Robot" src="../images/fk_3r_planar_robot.png" /></p>
+<p>We consider a <strong>3R planar robot</strong>:</p>
+<ul>
+<li><span class="arithmatex">\(L_1, L_2, L_3\)</span> = link lengths</li>
+<li><span class="arithmatex">\(\theta_1, \theta_2, \theta_3\)</span> = revolute joint angles</li>
+<li>Motion is restricted to the <strong>XY-plane</strong></li>
+</ul>
+<h3 id="important-note">Important note<a class="headerlink" href="#important-note" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="arithmatex">\(\theta_1\)</span> is measured from the global x-axis</li>
+<li><span class="arithmatex">\(\theta_2\)</span> is measured relative to link 1</li>
+<li><span class="arithmatex">\(\theta_3\)</span> is measured relative to link 2</li>
+</ul>
+<p>This is why FK becomes a little more careful than basic geometry.</p>
+<hr />
+<h2 id="5-start-from-the-simplest-case-single-link">5. Start from the Simplest Case: Single Link<a class="headerlink" href="#5-start-from-the-simplest-case-single-link" title="Permanent link">&para;</a></h2>
+<p>Consider one link of length <span class="arithmatex">\(L_1\)</span> making angle <span class="arithmatex">\(\theta_1\)</span> with the x-axis.</p>
+<p>The endpoint is:</p>
+<div class="arithmatex">\[
+x = L_1 \cos \theta_1
+\]</div>
+<div class="arithmatex">\[
+y = L_1 \sin \theta_1
+\]</div>
+<h3 id="why-this-works">Why this works<a class="headerlink" href="#why-this-works" title="Permanent link">&para;</a></h3>
+<p>This is just basic trigonometry:</p>
+<ul>
+<li>horizontal part = adjacent side = <span class="arithmatex">\(L_1 \cos \theta_1\)</span></li>
+<li>vertical part = opposite side = <span class="arithmatex">\(L_1 \sin \theta_1\)</span></li>
+</ul>
+<h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
+<p>If:</p>
+<div class="arithmatex">\[
+L_1 = 5,\quad \theta_1 = 30^\circ
+\]</div>
+<p>then:</p>
+<div class="arithmatex">\[
+x = 5\cos 30^\circ = 5 \times 0.866 = 4.33
+\]</div>
+<div class="arithmatex">\[
+y = 5\sin 30^\circ = 5 \times 0.5 = 2.5
+\]</div>
+<p>So the endpoint is:</p>
+<div class="arithmatex">\[
+P(x,y) = (4.33,\;2.5)
+\]</div>
+<h3 id="why-this-example-fits_2">Why this example fits<a class="headerlink" href="#why-this-example-fits_2" title="Permanent link">&para;</a></h3>
+<p>A single-link robot is the foundation of all multi-link FK.<br />
+If students understand one link, they can understand multiple links by adding contributions.</p>
+<hr />
+<h2 id="6-two-link-planar-robot">6. Two-Link Planar Robot<a class="headerlink" href="#6-two-link-planar-robot" title="Permanent link">&para;</a></h2>
+<p>Now add a second link <span class="arithmatex">\(L_2\)</span>.</p>
+<p>At first glance, we may think:</p>
+<div class="arithmatex">\[
+x = L_1 \cos \theta_1 + L_2 \cos \theta_2
+\]</div>
+<div class="arithmatex">\[
+y = L_1 \sin \theta_1 + L_2 \sin \theta_2
+\]</div>
+<p>But this is <strong>not fully correct</strong> if <span class="arithmatex">\(\theta_2\)</span> is measured relative to link 1.</p>
+<p>We need the <strong>absolute orientation</strong> of the second link with respect to the global x-axis.</p>
+<p>From the lecture geometry:</p>
+<div class="arithmatex">\[
+\theta_2' = -180^\circ + \theta_1 + \theta_2
+\]</div>
+<p>So the correct FK becomes:</p>
+<div class="arithmatex">\[
+x = L_1 \cos \theta_1 + L_2 \cos(-180^\circ + \theta_1 + \theta_2)
+\]</div>
+<div class="arithmatex">\[
+y = L_1 \sin \theta_1 + L_2 \sin(-180^\circ + \theta_1 + \theta_2)
+\]</div>
+<h3 id="why-this-is-needed">Why this is needed<a class="headerlink" href="#why-this-is-needed" title="Permanent link">&para;</a></h3>
+<p>The second joint angle is not measured from the global x-axis.<br />
+It is measured from the previous link, so we must convert it into a global direction first.</p>
+<h3 id="example-idea">Example idea<a class="headerlink" href="#example-idea" title="Permanent link">&para;</a></h3>
+<p>Think of link 1 as changing the “base direction” of link 2.<br />
+So link 2’s motion is influenced by both <span class="arithmatex">\(\theta_1\)</span> and <span class="arithmatex">\(\theta_2\)</span>.</p>
+<hr />
+<h2 id="7-three-link-planar-robot">7. Three-Link Planar Robot<a class="headerlink" href="#7-three-link-planar-robot" title="Permanent link">&para;</a></h2>
+<p>Now add the third revolute joint.</p>
+<p>The end-effector position becomes:</p>
+<div class="arithmatex">\[
+x = L_1 \cos \theta_1
++ L_2 \cos(-180^\circ + \theta_1 + \theta_2)
++ L_3 \cos(-360^\circ + \theta_1 + \theta_2 + \theta_3)
+\]</div>
+<div class="arithmatex">\[
+y = L_1 \sin \theta_1
++ L_2 \sin(-180^\circ + \theta_1 + \theta_2)
++ L_3 \sin(-360^\circ + \theta_1 + \theta_2 + \theta_3)
+\]</div>
+<h3 id="meaning-of-this-equation">Meaning of this equation<a class="headerlink" href="#meaning-of-this-equation" title="Permanent link">&para;</a></h3>
+<p>Each link contributes one part to the final <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>:</p>
+<ul>
+<li>link 1 contributes from <span class="arithmatex">\(\theta_1\)</span></li>
+<li>link 2 contributes after adjusting its angle relative to link 1</li>
+<li>link 3 contributes after adjusting its angle relative to links 1 and 2</li>
+</ul>
+<p>So FK is basically:</p>
+<blockquote>
+<p><strong>final position = sum of all link contributions</strong></p>
+</blockquote>
+<hr />
+<h2 id="8-cleaner-extension-form">8. Cleaner Extension Form<a class="headerlink" href="#8-cleaner-extension-form" title="Permanent link">&para;</a></h2>
+<p>In the slides, a cleaner form is also shown when the effective angle bookkeeping is simplified:</p>
+<div class="arithmatex">\[
+x = L_1 \cos \theta_1 + L_2 \cos(\theta_1 - \theta_2) + L_3 \cos(\theta_1 - \theta_2 + \theta_3)
+\]</div>
+<div class="arithmatex">\[
+y = L_1 \sin \theta_1 + L_2 \sin(\theta_1 - \theta_2) + L_3 \sin(\theta_1 - \theta_2 + \theta_3)
+\]</div>
+<h3 id="why-students-should-notice-this">Why students should notice this<a class="headerlink" href="#why-students-should-notice-this" title="Permanent link">&para;</a></h3>
+<p>This form is easier to read and easier to use in numerical problems.</p>
+<p>It also teaches an important lesson:</p>
+<blockquote>
+<p>FK equations depend on <strong>how the angles are defined</strong>.</p>
+</blockquote>
+<p>So always check the angle convention before solving.</p>
+<hr />
+<h2 id="9-step-by-step-fk-calculation-strategy">9. Step-by-Step FK Calculation Strategy<a class="headerlink" href="#9-step-by-step-fk-calculation-strategy" title="Permanent link">&para;</a></h2>
+<p>When solving a forward kinematics problem, follow these steps:</p>
+<h3 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
+<p>Write down all known values:
+- link lengths
+- joint angles</p>
+<h3 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
+<p>Check the <strong>angle sign convention</strong>
+- CCW positive
+- CW negative</p>
+<h3 id="step-3">Step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
+<p>Identify whether each angle is measured:
+- from the global axis, or
+- from the previous link</p>
+<h3 id="step-4">Step 4<a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h3>
+<p>Choose the correct FK equation</p>
+<h3 id="step-5">Step 5<a class="headerlink" href="#step-5" title="Permanent link">&para;</a></h3>
+<p>Substitute values carefully</p>
+<h3 id="step-6">Step 6<a class="headerlink" href="#step-6" title="Permanent link">&para;</a></h3>
+<p>Compute final <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span></p>
+<hr />
+<h2 id="10-why-forward-kinematics-is-important">10. Why Forward Kinematics is Important<a class="headerlink" href="#10-why-forward-kinematics-is-important" title="Permanent link">&para;</a></h2>
+<p>Forward kinematics is the foundation of robot motion analysis.</p>
+<p>It is used in:
+- robot arm positioning
+- simulation
+- path planning
+- motion visualization
+- control systems</p>
+<h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
+<p>If a factory robot must place an object at a certain point, the controller first needs to know:</p>
+<blockquote>
+<p>“If I rotate my joints like this, where will my hand go?”</p>
+</blockquote>
+<p>That is exactly a forward kinematics question.</p>
+<hr />
+<h2 id="11-summary">11. Summary<a class="headerlink" href="#11-summary" title="Permanent link">&para;</a></h2>
+<p>Forward kinematics means:</p>
+<blockquote>
+<p>Given the joint angles, find the position of the end-effector.</p>
+</blockquote>
+<p>For a planar manipulator:</p>
+<ul>
+<li>each link adds its own x- and y-contribution</li>
+<li>joint definitions matter</li>
+<li>angle signs matter</li>
+<li>multi-link FK is built from basic trigonometry</li>
+</ul>
+<p>Single-link FK is simple.<br />
+Two-link and three-link FK require careful angle interpretation.</p>
+<p>That is why FK using pure trigonometry is educational, but later we move to a more systematic method using <strong>DH parameters</strong>.</p>
+<hr />
+<h1 id="practice-problems">Practice Problems<a class="headerlink" href="#practice-problems" title="Permanent link">&para;</a></h1>
+<h2 id="numerical-1">Numerical 1<a class="headerlink" href="#numerical-1" title="Permanent link">&para;</a></h2>
+<p>A single-link planar robot has:</p>
+<ul>
+<li><span class="arithmatex">\(L_1 = 8\)</span></li>
+<li><span class="arithmatex">\(\theta_1 = 60^\circ\)</span></li>
+</ul>
+<p>Find the endpoint position <span class="arithmatex">\(P(x,y)\)</span>.</p>
+<h3 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h3>
+<p>Using:</p>
+<div class="arithmatex">\[
+x = L_1 \cos \theta_1,\qquad y = L_1 \sin \theta_1
+\]</div>
+<p>So,</p>
+<div class="arithmatex">\[
+x = 8\cos 60^\circ = 8 \times 0.5 = 4
+\]</div>
+<div class="arithmatex">\[
+y = 8\sin 60^\circ = 8 \times 0.866 = 6.928
+\]</div>
+<h3 id="answer">Answer<a class="headerlink" href="#answer" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+P(x,y) = (4,\;6.93)
+\]</div>
+<hr />
+<h2 id="numerical-2">Numerical 2<a class="headerlink" href="#numerical-2" title="Permanent link">&para;</a></h2>
+<p>For a 3R planar robot, use the simplified FK equation:</p>
+<div class="arithmatex">\[
+x = L_1 \cos \theta_1 + L_2 \cos(\theta_1 - \theta_2) + L_3 \cos(\theta_1 - \theta_2 + \theta_3)
+\]</div>
+<div class="arithmatex">\[
+y = L_1 \sin \theta_1 + L_2 \sin(\theta_1 - \theta_2) + L_3 \sin(\theta_1 - \theta_2 + \theta_3)
+\]</div>
+<p>Given:</p>
+<ul>
+<li><span class="arithmatex">\(L_1 = 4\)</span></li>
+<li><span class="arithmatex">\(L_2 = 3\)</span></li>
+<li><span class="arithmatex">\(L_3 = 2\)</span></li>
+<li><span class="arithmatex">\(\theta_1 = 60^\circ\)</span></li>
+<li><span class="arithmatex">\(\theta_2 = 30^\circ\)</span></li>
+<li><span class="arithmatex">\(\theta_3 = 45^\circ\)</span></li>
+</ul>
+<p>Find <span class="arithmatex">\(P(x,y)\)</span>.</p>
+<h3 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h3>
+<p>First compute the combined angles:</p>
+<div class="arithmatex">\[
+\theta_1 - \theta_2 = 60^\circ - 30^\circ = 30^\circ
+\]</div>
+<div class="arithmatex">\[
+\theta_1 - \theta_2 + \theta_3 = 60^\circ - 30^\circ + 45^\circ = 75^\circ
+\]</div>
+<p>Now,</p>
+<div class="arithmatex">\[
+x = 4\cos 60^\circ + 3\cos 30^\circ + 2\cos 75^\circ
+\]</div>
+<div class="arithmatex">\[
+x = 4(0.5) + 3(0.866) + 2(0.259)
+\]</div>
+<div class="arithmatex">\[
+x = 2 + 2.598 + 0.518 = 5.116
+\]</div>
+<p>And,</p>
+<div class="arithmatex">\[
+y = 4\sin 60^\circ + 3\sin 30^\circ + 2\sin 75^\circ
+\]</div>
+<div class="arithmatex">\[
+y = 4(0.866) + 3(0.5) + 2(0.966)
+\]</div>
+<div class="arithmatex">\[
+y = 3.464 + 1.5 + 1.932 = 6.896
+\]</div>
+<h3 id="answer_1">Answer<a class="headerlink" href="#answer_1" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+P(x,y) \approx (5.12,\;6.90)
+\]</div>
+<hr />
+<h1 id="end-of-this-section">End of This Section<a class="headerlink" href="#end-of-this-section" title="Permanent link">&para;</a></h1>
+<p>In the next part, we will study how to do the opposite problem:</p>
+<blockquote>
+<p>Given the final position, how do we find the joint angles?</p>
+</blockquote>
+<p>That problem is called <strong>Inverse Kinematics</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/math.js"></script>
+      
+    
+  </body>
+</html>
