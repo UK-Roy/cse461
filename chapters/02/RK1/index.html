@@ -1489,17 +1489,23 @@ y = L_1 \sin \theta_1 + L_2 \sin(\theta_1 - \theta_2) + L_3 \sin(\theta_1 - \the
 <h2 id="9-step-by-step-fk-calculation-strategy">9. Step-by-Step FK Calculation Strategy<a class="headerlink" href="#9-step-by-step-fk-calculation-strategy" title="Permanent link">&para;</a></h2>
 <p>When solving a forward kinematics problem, follow these steps:</p>
 <h3 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
-<p>Write down all known values:
-- link lengths
-- joint angles</p>
+<p>Write down all known values:</p>
+<ul>
+<li>link lengths</li>
+<li>joint angles</li>
+</ul>
 <h3 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<p>Check the <strong>angle sign convention</strong>
-- CCW positive
-- CW negative</p>
+<p>Check the <strong>angle sign convention</strong></p>
+<ul>
+<li>CCW positive</li>
+<li>CW negative</li>
+</ul>
 <h3 id="step-3">Step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
-<p>Identify whether each angle is measured:
-- from the global axis, or
-- from the previous link</p>
+<p>Identify whether each angle is measured:</p>
+<ul>
+<li>from the global axis, or</li>
+<li>from the previous link</li>
+</ul>
 <h3 id="step-4">Step 4<a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h3>
 <p>Choose the correct FK equation</p>
 <h3 id="step-5">Step 5<a class="headerlink" href="#step-5" title="Permanent link">&para;</a></h3>
@@ -1598,58 +1604,58 @@ P(x,y,z)
 <h2 id="step-2-compute-the-horizontal-reach-d_1">Step 2: Compute the Horizontal Reach <span class="arithmatex">\(d_1\)</span><a class="headerlink" href="#step-2-compute-the-horizontal-reach-d_1" title="Permanent link">&para;</a></h2>
 <p>From the side view, the horizontal reach comes from the horizontal components of the two links.</p>
 <div class="arithmatex">\[
-d_1 = l_1 \cos \theta_2 + l_2 \cos(\theta_3 - \theta_2)
+d_1 = l_1 \cos \theta_2 + l_2 \cos(-180 + \theta_2 + \theta_3)
 \]</div>
 <p>Substitute the values:</p>
 <div class="arithmatex">\[
-d_1 = 20\cos 60^\circ + 14\cos(95^\circ - 60^\circ)
+d_1 = 20\cos 60^\circ + 14\cos(-180 + 95^\circ + 60^\circ)
 \]</div>
 <div class="arithmatex">\[
-d_1 = 20\cos 60^\circ + 14\cos 35^\circ
+d_1 = 20\cos 60^\circ + 14\cos -25^\circ
 \]</div>
 <p>Now,</p>
 <div class="arithmatex">\[
 \cos 60^\circ = 0.5
 \]</div>
 <div class="arithmatex">\[
-\cos 35^\circ \approx 0.819
+\cos -25^\circ \approx 0.9063
 \]</div>
 <p>So,</p>
 <div class="arithmatex">\[
-d_1 = 20(0.5) + 14(0.819)
+d_1 = 20(0.5) + 14(0.9063)
 \]</div>
 <div class="arithmatex">\[
-d_1 = 10 + 11.466
+d_1 = 10 + 12.688
 \]</div>
 <div class="arithmatex">\[
-d_1 \approx 21.47
+d_1 \approx 22.68
 \]</div>
 <hr />
 <h2 id="step-3-compute-the-vertical-height-z">Step 3: Compute the Vertical Height <span class="arithmatex">\(z\)</span><a class="headerlink" href="#step-3-compute-the-vertical-height-z" title="Permanent link">&para;</a></h2>
 <p>The total vertical position is the base height plus the vertical contributions of the two links.</p>
 <div class="arithmatex">\[
-z = h + l_1 \sin \theta_2 - l_2 \sin(\theta_3 - \theta_2)
+z = h + l_1 \sin \theta_2 - l_2 \sin(-180 + \theta_2 + \theta_3)
 \]</div>
 <p>Substitute the values:</p>
 <div class="arithmatex">\[
-z = 18 + 20\sin 60^\circ - 14\sin 35^\circ
+z = 18 + 20\sin 60^\circ - 14\sin -25^\circ
 \]</div>
 <p>Now,</p>
 <div class="arithmatex">\[
 \sin 60^\circ \approx 0.866
 \]</div>
 <div class="arithmatex">\[
-\sin 35^\circ \approx 0.574
+\sin -25^\circ \approx -0.422
 \]</div>
 <p>So,</p>
 <div class="arithmatex">\[
-z = 18 + 20(0.866) - 14(0.574)
+z = 18 + 20(0.866) + 14(-0.422)
 \]</div>
 <div class="arithmatex">\[
-z = 18 + 17.32 - 8.036
+z = 18 + 17.32 - 5.908
 \]</div>
 <div class="arithmatex">\[
-z \approx 27.28
+z \approx 29.4
 \]</div>
 <hr />
 <h2 id="step-4-compute-x-and-y-using-base-rotation">Step 4: Compute <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> Using Base Rotation<a class="headerlink" href="#step-4-compute-x-and-y-using-base-rotation" title="Permanent link">&para;</a></h2>
@@ -1662,10 +1668,10 @@ y = d_1 \sin \theta_1
 \]</div>
 <p>Substitute:</p>
 <div class="arithmatex">\[
-x = 21.47 \cos 50^\circ
+x = 22.68 \cos 50^\circ
 \]</div>
 <div class="arithmatex">\[
-y = 21.47 \sin 50^\circ
+y = 22.68 \sin 50^\circ
 \]</div>
 <p>Now,</p>
 <div class="arithmatex">\[
@@ -1676,107 +1682,25 @@ y = 21.47 \sin 50^\circ
 \]</div>
 <p>So,</p>
 <div class="arithmatex">\[
-x = 21.47(0.643) \approx 13.81
+x = 22.68(0.643) \approx 14.578
 \]</div>
 <div class="arithmatex">\[
-y = 21.47(0.766) \approx 16.45
+y = 22.68(0.766) \approx 17.373
 \]</div>
 <hr />
 <h2 id="final-answer">Final Answer<a class="headerlink" href="#final-answer" title="Permanent link">&para;</a></h2>
 <p>Therefore, the end-effector position is:</p>
 <div class="arithmatex">\[
-P(x,y,z) = (13.81,\;16.45,\;27.28)
+P(x,y,z) = (14.57,\;17.37,\;29.4)
 \]</div>
 <hr />
 <h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">&para;</a></h2>
 <p>This means the robot end-effector is located at:</p>
 <ul>
-<li><strong>13.81 units along the x-axis</strong></li>
-<li><strong>16.45 units along the y-axis</strong></li>
-<li><strong>27.28 units above the base plane</strong></li>
+<li><strong>14.57 units along the x-axis</strong></li>
+<li><strong>17.37 units along the y-axis</strong></li>
+<li><strong>29.4 units above the base plane</strong></li>
 </ul>
-<hr />
-<h1 id="practice-question-1">Practice Question 1<a class="headerlink" href="#practice-question-1" title="Permanent link">&para;</a></h1>
-<p>For the same robot model, suppose:</p>
-<ul>
-<li><span class="arithmatex">\( l_1 = 16 \)</span></li>
-<li><span class="arithmatex">\( l_2 = 10 \)</span></li>
-<li><span class="arithmatex">\( h = 12 \)</span></li>
-<li><span class="arithmatex">\( \theta_1 = 30^\circ \)</span></li>
-<li><span class="arithmatex">\( \theta_2 = 45^\circ \)</span></li>
-<li><span class="arithmatex">\( \theta_3 = 80^\circ \)</span></li>
-</ul>
-<p>Find <span class="arithmatex">\(P(x,y,z)\)</span>.</p>
-<h3 id="answer_1">Answer<a class="headerlink" href="#answer_1" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-d_1 = 16\cos45^\circ + 10\cos(80^\circ - 45^\circ)
-\]</div>
-<div class="arithmatex">\[
-d_1 = 16\cos45^\circ + 10\cos35^\circ
-\]</div>
-<div class="arithmatex">\[
-d_1 \approx 11.31 + 8.19 = 19.50
-\]</div>
-<div class="arithmatex">\[
-z = 12 + 16\sin45^\circ - 10\sin35^\circ
-\]</div>
-<div class="arithmatex">\[
-z \approx 12 + 11.31 - 5.74 = 17.57
-\]</div>
-<div class="arithmatex">\[
-x = 19.50\cos30^\circ \approx 16.89
-\]</div>
-<div class="arithmatex">\[
-y = 19.50\sin30^\circ = 9.75
-\]</div>
-<p>So,</p>
-<div class="arithmatex">\[
-P(x,y,z) \approx (16.89,\;9.75,\;17.57)
-\]</div>
-<hr />
-<h1 id="practice-question-2">Practice Question 2<a class="headerlink" href="#practice-question-2" title="Permanent link">&para;</a></h1>
-<p>Suppose:</p>
-<ul>
-<li><span class="arithmatex">\( l_1 = 18 \)</span></li>
-<li><span class="arithmatex">\( l_2 = 12 \)</span></li>
-<li><span class="arithmatex">\( h = 15 \)</span></li>
-<li><span class="arithmatex">\( \theta_1 = 40^\circ \)</span></li>
-<li><span class="arithmatex">\( \theta_2 = 55^\circ \)</span></li>
-<li><span class="arithmatex">\( \theta_3 = 100^\circ \)</span></li>
-</ul>
-<p>Find <span class="arithmatex">\(P(x,y,z)\)</span>.</p>
-<h3 id="answer_2">Answer<a class="headerlink" href="#answer_2" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-d_1 = 18\cos55^\circ + 12\cos(100^\circ - 55^\circ)
-\]</div>
-<div class="arithmatex">\[
-d_1 = 18\cos55^\circ + 12\cos45^\circ
-\]</div>
-<div class="arithmatex">\[
-d_1 \approx 18(0.574) + 12(0.707)
-\]</div>
-<div class="arithmatex">\[
-d_1 \approx 10.33 + 8.48 = 18.81
-\]</div>
-<div class="arithmatex">\[
-z = 15 + 18\sin55^\circ - 12\sin45^\circ
-\]</div>
-<div class="arithmatex">\[
-z \approx 15 + 18(0.819) - 12(0.707)
-\]</div>
-<div class="arithmatex">\[
-z \approx 15 + 14.74 - 8.48 = 21.26
-\]</div>
-<div class="arithmatex">\[
-x = 18.81\cos40^\circ \approx 14.41
-\]</div>
-<div class="arithmatex">\[
-y = 18.81\sin40^\circ \approx 12.09
-\]</div>
-<p>So,</p>
-<div class="arithmatex">\[
-P(x,y,z) \approx (14.41,\;12.09,\;21.26)
-\]</div>
 <hr />
 <h1 id="end-of-this-section">End of This Section<a class="headerlink" href="#end-of-this-section" title="Permanent link">&para;</a></h1>
 <p>In the next part, we will study how to do the opposite problem:</p>
