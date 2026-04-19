@@ -1,0 +1,1483 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://uk-roy.github.io/cse461/chapters/03/pid/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Lecture 4 - CSE461 - Intro to Robotics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture-4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-header__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CSE461 - Intro to Robotics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../syllabus/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Syllabus
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-nav__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    CSE461 - Intro to Robotics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Three
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Three
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Four
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lecture-4">Lecture 4<a class="headerlink" href="#lecture-4" title="Permanent link">&para;</a></h1>
+<h1 id="pid-control-system">PID Control System<a class="headerlink" href="#pid-control-system" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>In this lecture, we introduce one of the most widely used controllers in control systems:</p>
+<ul>
+<li>Proportional (P)</li>
+<li>Integral (I)</li>
+<li>Derivative (D)</li>
+</ul>
+<p>Together, they form the <strong>PID controller</strong>.</p>
+<p>We will discuss:
+- why PID is needed
+- what each term does
+- how PID affects system behavior
+- a small worked example
+- Ziegler–Nichols tuning
+- conceptual quiz and short questions</p>
+<hr />
+<h1 id="1-why-do-we-need-pid">1) Why Do We Need PID?<a class="headerlink" href="#1-why-do-we-need-pid" title="Permanent link">&para;</a></h1>
+<p>From the previous lecture, we already know that a feedback system may still suffer from:</p>
+<ul>
+<li>slow response</li>
+<li>overshoot</li>
+<li>oscillation</li>
+<li>steady-state error</li>
+</ul>
+<p>So, even if a system uses feedback, it may not behave the way we want.</p>
+<p>A PID controller helps improve:
+- speed
+- accuracy
+- stability</p>
+<hr />
+<h1 id="2-pid-control-law">2) PID Control Law<a class="headerlink" href="#2-pid-control-law" title="Permanent link">&para;</a></h1>
+<p>The standard PID control law in time domain is:</p>
+<div class="arithmatex">\[
+u(t) = K_p e(t) + K_i \int_0^t e(\tau)\, d\tau + K_d \frac{de(t)}{dt}
+\]</div>
+<p>where:</p>
+<div class="arithmatex">\[
+e(t) = r(t) - y(t)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(r(t)\)</span> = reference or desired value</li>
+<li><span class="arithmatex">\(y(t)\)</span> = actual output</li>
+<li><span class="arithmatex">\(e(t)\)</span> = error</li>
+<li><span class="arithmatex">\(u(t)\)</span> = control input</li>
+</ul>
+<hr />
+<h2 id="intuition">Intuition<a class="headerlink" href="#intuition" title="Permanent link">&para;</a></h2>
+<p>A PID controller uses three kinds of information:</p>
+<ul>
+<li><strong>Present error</strong> → Proportional term</li>
+<li><strong>Past error</strong> → Integral term</li>
+<li><strong>Future trend of error</strong> → Derivative term</li>
+</ul>
+<p>So PID is powerful because it does not only look at what is happening now.<br />
+It also considers what has been happening and what is likely to happen next.</p>
+<hr />
+<h1 id="3-proportional-control-p">3) Proportional Control (P)<a class="headerlink" href="#3-proportional-control-p" title="Permanent link">&para;</a></h1>
+<p>The proportional controller uses only the current error:</p>
+<div class="arithmatex">\[
+u_P(t) = K_p e(t)
+\]</div>
+<hr />
+<h2 id="meaning">Meaning<a class="headerlink" href="#meaning" title="Permanent link">&para;</a></h2>
+<p>If the error becomes larger, the control action also becomes larger.</p>
+<p>If the error is small, the control action is small.</p>
+<p>So proportional control is the most direct and intuitive form of control.</p>
+<hr />
+<h2 id="example-self-balancing-robot">Example: Self-Balancing Robot<a class="headerlink" href="#example-self-balancing-robot" title="Permanent link">&para;</a></h2>
+<p>Suppose a balancing robot tilts by some angle.</p>
+<ul>
+<li>If the tilt is small, apply small motor correction</li>
+<li>If the tilt is large, apply stronger motor correction</li>
+</ul>
+<p>That means the motor command is proportional to the tilt error.</p>
+<hr />
+<h2 id="why-this-example-fits">Why this example fits<a class="headerlink" href="#why-this-example-fits" title="Permanent link">&para;</a></h2>
+<p>This example fits well because:
+- the relationship between tilt and correction is direct
+- students can easily visualize it
+- it connects naturally to robotics</p>
+<hr />
+<h2 id="advantage">Advantage<a class="headerlink" href="#advantage" title="Permanent link">&para;</a></h2>
+<ul>
+<li>simple</li>
+<li>fast reaction</li>
+<li>easy to implement</li>
+</ul>
+<hr />
+<h2 id="limitation">Limitation<a class="headerlink" href="#limitation" title="Permanent link">&para;</a></h2>
+<p>Proportional control alone often cannot remove steady-state error.</p>
+<p>That means the output may come close to the target, but not exactly reach it.</p>
+<hr />
+<h1 id="4-integral-control-i">4) Integral Control (I)<a class="headerlink" href="#4-integral-control-i" title="Permanent link">&para;</a></h1>
+<p>The integral controller uses the accumulated error over time:</p>
+<div class="arithmatex">\[
+u_I(t) = K_i \int_0^t e(\tau)\, d\tau
+\]</div>
+<hr />
+<h2 id="meaning_1">Meaning<a class="headerlink" href="#meaning_1" title="Permanent link">&para;</a></h2>
+<p>If a small error remains for a long time, the integral term keeps growing.</p>
+<p>So even if the present error is small, the controller remembers that the system has been wrong for a while.</p>
+<p>That is why integral action helps remove steady-state error.</p>
+<hr />
+<h2 id="example-motor-speed-control">Example: Motor Speed Control<a class="headerlink" href="#example-motor-speed-control" title="Permanent link">&para;</a></h2>
+<p>Suppose the desired speed is:</p>
+<div class="arithmatex">\[
+r(t) = 10 \text{ rad/s}
+\]</div>
+<p>but the motor settles at:</p>
+<div class="arithmatex">\[
+y(t) = 9.5 \text{ rad/s}
+\]</div>
+<p>Then the error is:</p>
+<div class="arithmatex">\[
+e(t) = 10 - 9.5 = 0.5
+\]</div>
+<p>If this error stays for a long time, the integral term accumulates it and increases the input until the output gets closer to the desired value.</p>
+<hr />
+<h2 id="why-this-example-fits_1">Why this example fits<a class="headerlink" href="#why-this-example-fits_1" title="Permanent link">&para;</a></h2>
+<p>This example fits because:
+- it shows a small but persistent error
+- it explains why proportional control alone may be insufficient
+- it naturally motivates the need for memory of past error</p>
+<hr />
+<h2 id="advantage_1">Advantage<a class="headerlink" href="#advantage_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>removes steady-state error</li>
+</ul>
+<hr />
+<h2 id="limitation_1">Limitation<a class="headerlink" href="#limitation_1" title="Permanent link">&para;</a></h2>
+<p>Too much integral action may cause:
+- oscillation
+- slower settling
+- instability</p>
+<hr />
+<h1 id="5-derivative-control-d">5) Derivative Control (D)<a class="headerlink" href="#5-derivative-control-d" title="Permanent link">&para;</a></h1>
+<p>The derivative controller uses the rate of change of error:</p>
+<div class="arithmatex">\[
+u_D(t) = K_d \frac{de(t)}{dt}
+\]</div>
+<hr />
+<h2 id="meaning_2">Meaning<a class="headerlink" href="#meaning_2" title="Permanent link">&para;</a></h2>
+<p>Derivative action looks at how quickly the error is changing.</p>
+<ul>
+<li>If the error is changing rapidly, derivative action reacts strongly</li>
+<li>If the error is changing slowly, derivative action is small</li>
+</ul>
+<p>So derivative control works like a predictor or damping term.</p>
+<hr />
+<h2 id="example-car-braking">Example: Car Braking<a class="headerlink" href="#example-car-braking" title="Permanent link">&para;</a></h2>
+<p>Suppose a car is approaching the target speed very quickly.</p>
+<p>Even if the current error is still not zero, the derivative term can detect that the error is dropping fast and reduce the control effort.</p>
+<p>This helps avoid overshoot.</p>
+<hr />
+<h2 id="why-this-example-fits_2">Why this example fits<a class="headerlink" href="#why-this-example-fits_2" title="Permanent link">&para;</a></h2>
+<p>This example fits because:
+- it gives strong intuition for "predicting the trend"
+- students understand braking and damping naturally
+- it shows why derivative can smooth the response</p>
+<hr />
+<h2 id="advantage_2">Advantage<a class="headerlink" href="#advantage_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>reduces overshoot</li>
+<li>improves damping</li>
+<li>helps stabilize response</li>
+</ul>
+<hr />
+<h2 id="limitation_2">Limitation<a class="headerlink" href="#limitation_2" title="Permanent link">&para;</a></h2>
+<p>Derivative action is sensitive to noise.</p>
+<p>Because noise can change rapidly, the derivative term may amplify it.</p>
+<p>That is why derivative control is rarely used alone.</p>
+<hr />
+<h1 id="6-full-pid-controller">6) Full PID Controller<a class="headerlink" href="#6-full-pid-controller" title="Permanent link">&para;</a></h1>
+<p>Combining all three terms:</p>
+<div class="arithmatex">\[
+u(t) = K_p e(t) + K_i \int_0^t e(\tau)\, d\tau + K_d \frac{de(t)}{dt}
+\]</div>
+<p>Each term plays a different role:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(K_p\)</span></td>
+<td>reacts to present error</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K_i\)</span></td>
+<td>removes persistent error</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K_d\)</span></td>
+<td>reduces overshoot and improves damping</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="example-drone-attitude-control">Example: Drone Attitude Control<a class="headerlink" href="#example-drone-attitude-control" title="Permanent link">&para;</a></h2>
+<p>A drone is disturbed by wind.</p>
+<ul>
+<li><strong>P</strong> reacts immediately to the tilt error</li>
+<li><strong>I</strong> removes small long-term drift</li>
+<li><strong>D</strong> prevents oscillation and smooths the motion</li>
+</ul>
+<hr />
+<h2 id="why-this-example-fits_3">Why this example fits<a class="headerlink" href="#why-this-example-fits_3" title="Permanent link">&para;</a></h2>
+<p>This is a very good example because:
+- drones need fast correction
+- they must remain accurate
+- too much oscillation is dangerous</p>
+<p>So all three PID terms become meaningful together.</p>
+<hr />
+<h1 id="7-effect-of-increasing-each-gain">7) Effect of Increasing Each Gain<a class="headerlink" href="#7-effect-of-increasing-each-gain" title="Permanent link">&para;</a></h1>
+<h2 id="increase-k_p">Increase <span class="arithmatex">\(K_p\)</span><a class="headerlink" href="#increase-k_p" title="Permanent link">&para;</a></h2>
+<p>Usually:
+- rise time decreases
+- response becomes faster
+- overshoot may increase</p>
+<hr />
+<h2 id="increase-k_i">Increase <span class="arithmatex">\(K_i\)</span><a class="headerlink" href="#increase-k_i" title="Permanent link">&para;</a></h2>
+<p>Usually:
+- steady-state error decreases
+- accuracy improves
+- overshoot may increase
+- settling may become slower</p>
+<hr />
+<h2 id="increase-k_d">Increase <span class="arithmatex">\(K_d\)</span><a class="headerlink" href="#increase-k_d" title="Permanent link">&para;</a></h2>
+<p>Usually:
+- overshoot decreases
+- damping improves
+- settling may improve
+- sensitivity to noise increases</p>
+<hr />
+<h1 id="8-small-pid-math-example">8) Small PID Math Example<a class="headerlink" href="#8-small-pid-math-example" title="Permanent link">&para;</a></h1>
+<p>Consider a simple error signal at some instant:</p>
+<div class="arithmatex">\[
+e(t) = 2
+\]</div>
+<p>Suppose:</p>
+<div class="arithmatex">\[
+\int_0^t e(\tau)\, d\tau = 5
+\]</div>
+<p>and</p>
+<div class="arithmatex">\[
+\frac{de(t)}{dt} = -0.4
+\]</div>
+<p>Let the gains be:</p>
+<div class="arithmatex">\[
+K_p = 3, \quad K_i = 0.5, \quad K_d = 1.2
+\]</div>
+<p>Then the PID output is:</p>
+<div class="arithmatex">\[
+u(t) = K_p e(t) + K_i \int_0^t e(\tau)\, d\tau + K_d \frac{de(t)}{dt}
+\]</div>
+<p>Substitute the values:</p>
+<div class="arithmatex">\[
+u(t) = 3(2) + 0.5(5) + 1.2(-0.4)
+\]</div>
+<div class="arithmatex">\[
+u(t) = 6 + 2.5 - 0.48
+\]</div>
+<div class="arithmatex">\[
+u(t) = 8.02
+\]</div>
+<hr />
+<h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The proportional term contributes most because current error is significant</li>
+<li>The integral term adds extra correction because past error has accumulated</li>
+<li>The derivative term subtracts a little because the error is already decreasing</li>
+</ul>
+<p>This is exactly how PID balances fast response, accuracy, and damping.</p>
+<hr />
+<h1 id="9-simple-control-example-with-a-plant">9) Simple Control Example with a Plant<a class="headerlink" href="#9-simple-control-example-with-a-plant" title="Permanent link">&para;</a></h1>
+<p>Suppose the plant is approximately:</p>
+<div class="arithmatex">\[
+G(s) = \frac{1}{s+1}
+\]</div>
+<p>If we use a proportional controller only:</p>
+<div class="arithmatex">\[
+C(s) = K_p
+\]</div>
+<p>then the open-loop transfer function becomes:</p>
+<div class="arithmatex">\[
+L(s) = C(s)G(s) = \frac{K_p}{s+1}
+\]</div>
+<p>For unity feedback, the closed-loop transfer function is:</p>
+<div class="arithmatex">\[
+T(s) = \frac{L(s)}{1+L(s)}
+\]</div>
+<p>So,</p>
+<div class="arithmatex">\[
+T(s) = \frac{\frac{K_p}{s+1}}{1+\frac{K_p}{s+1}}
+= \frac{K_p}{s+1+K_p}
+\]</div>
+<hr />
+<h2 id="what-this-shows">What this shows<a class="headerlink" href="#what-this-shows" title="Permanent link">&para;</a></h2>
+<p>If <span class="arithmatex">\(K_p\)</span> increases, the system generally responds faster.</p>
+<p>But in more complex systems, increasing <span class="arithmatex">\(K_p\)</span> too much can cause oscillation or instability.</p>
+<p>This is why tuning matters.</p>
+<hr />
+<h1 id="10-zieglernichols-tuning">10) Ziegler–Nichols Tuning<a class="headerlink" href="#10-zieglernichols-tuning" title="Permanent link">&para;</a></h1>
+<p>One classical way to tune PID is the <strong>Ziegler–Nichols closed-loop method</strong>.</p>
+<hr />
+<h2 id="idea">Idea<a class="headerlink" href="#idea" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Set:
+   $$
+   K_i = 0, \quad K_d = 0
+   $$</p>
+</li>
+<li>
+<p>Increase <span class="arithmatex">\(K_p\)</span> gradually until the system produces <strong>sustained oscillation</strong></p>
+</li>
+<li>
+<p>Record:</p>
+</li>
+<li><span class="arithmatex">\(K_u\)</span> = ultimate gain  </li>
+<li><span class="arithmatex">\(P_u\)</span> = oscillation period  </li>
+</ol>
+<p>Then use formulas to choose <span class="arithmatex">\(K_p\)</span>, <span class="arithmatex">\(K_i\)</span>, and <span class="arithmatex">\(K_d\)</span>.</p>
+<hr />
+<h1 id="11-zieglernichols-rules">11) Ziegler–Nichols Rules<a class="headerlink" href="#11-zieglernichols-rules" title="Permanent link">&para;</a></h1>
+<h2 id="p-controller">P Controller<a class="headerlink" href="#p-controller" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+K_p = 0.5 K_u
+\]</div>
+<hr />
+<h2 id="pi-controller">PI Controller<a class="headerlink" href="#pi-controller" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+K_p = 0.45 K_u
+\]</div>
+<div class="arithmatex">\[
+T_i = \frac{P_u}{1.2}
+\]</div>
+<div class="arithmatex">\[
+K_i = \frac{K_p}{T_i}
+\]</div>
+<hr />
+<h2 id="pid-controller">PID Controller<a class="headerlink" href="#pid-controller" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+K_p = 0.6 K_u
+\]</div>
+<div class="arithmatex">\[
+T_i = \frac{P_u}{2}
+\]</div>
+<div class="arithmatex">\[
+T_d = \frac{P_u}{8}
+\]</div>
+<p>and then:</p>
+<div class="arithmatex">\[
+K_i = \frac{K_p}{T_i}, \qquad K_d = K_p T_d
+\]</div>
+<hr />
+<h1 id="12-small-zieglernichols-example">12) Small Ziegler–Nichols Example<a class="headerlink" href="#12-small-zieglernichols-example" title="Permanent link">&para;</a></h1>
+<p>Suppose after testing the system, you find:</p>
+<div class="arithmatex">\[
+K_u = 20, \qquad P_u = 4 \text{ s}
+\]</div>
+<p>For PID tuning:</p>
+<div class="arithmatex">\[
+K_p = 0.6K_u = 0.6(20) = 12
+\]</div>
+<div class="arithmatex">\[
+T_i = \frac{P_u}{2} = \frac{4}{2} = 2
+\]</div>
+<div class="arithmatex">\[
+T_d = \frac{P_u}{8} = \frac{4}{8} = 0.5
+\]</div>
+<p>Now compute:</p>
+<div class="arithmatex">\[
+K_i = \frac{K_p}{T_i} = \frac{12}{2} = 6
+\]</div>
+<div class="arithmatex">\[
+K_d = K_p T_d = 12(0.5) = 6
+\]</div>
+<p>So the tuned PID gains become:</p>
+<div class="arithmatex">\[
+K_p = 12, \qquad K_i = 6, \qquad K_d = 6
+\]</div>
+<hr />
+<h2 id="why-this-section-is-useful">Why this section is useful<a class="headerlink" href="#why-this-section-is-useful" title="Permanent link">&para;</a></h2>
+<p>Students often hear that PID tuning is important, but they do not know how to begin.</p>
+<p>Ziegler–Nichols gives them:
+- a practical starting method
+- a repeatable procedure
+- a connection between experiment and controller design</p>
+<hr />
+<h1 id="13-limitations-of-zieglernichols">13) Limitations of Ziegler–Nichols<a class="headerlink" href="#13-limitations-of-zieglernichols" title="Permanent link">&para;</a></h1>
+<p>Ziegler–Nichols is useful, but not perfect.</p>
+<p>It may produce:
+- aggressive tuning
+- overshoot
+- noisy behavior in real systems</p>
+<p>So in practice, engineers often:
+- start with Ziegler–Nichols
+- then fine-tune manually</p>
+<hr />
+<h1 id="14-final-summary">14) Final Summary<a class="headerlink" href="#14-final-summary" title="Permanent link">&para;</a></h1>
+<p>PID combines:
+- present error
+- past error
+- future trend</p>
+<p>That is why it works so well.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>P</strong> gives fast reaction</li>
+<li><strong>I</strong> removes steady-state error</li>
+<li><strong>D</strong> improves damping and reduces overshoot</li>
+<li>PID is powerful because it combines all three</li>
+<li>Ziegler–Nichols provides a practical tuning method</li>
+</ul>
+<hr />
+<h1 id="self-check-quiz">Self Check Quiz<a class="headerlink" href="#self-check-quiz" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="part-a-conceptual-mcq">Part A — Conceptual MCQ<a class="headerlink" href="#part-a-conceptual-mcq" title="Permanent link">&para;</a></h2>
+<h3 id="q1">Q1<a class="headerlink" href="#q1" title="Permanent link">&para;</a></h3>
+<p>Which PID term reacts to the current error?</p>
+<p>A) Integral<br />
+B) Derivative<br />
+C) Proportional<br />
+D) Sensor</p>
+<p><strong>Answer:</strong> C</p>
+<hr />
+<h3 id="q2">Q2<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h3>
+<p>Which PID term helps remove steady-state error?</p>
+<p>A) P<br />
+B) I<br />
+C) D<br />
+D) None</p>
+<p><strong>Answer:</strong> B</p>
+<hr />
+<h3 id="q3">Q3<a class="headerlink" href="#q3" title="Permanent link">&para;</a></h3>
+<p>Which PID term is most sensitive to measurement noise?</p>
+<p>A) P<br />
+B) I<br />
+C) D<br />
+D) All equally</p>
+<p><strong>Answer:</strong> C</p>
+<hr />
+<h3 id="q4">Q4<a class="headerlink" href="#q4" title="Permanent link">&para;</a></h3>
+<p>If a system responds too slowly, which gain is usually increased first?</p>
+<p>A) <span class="arithmatex">\(K_p\)</span><br />
+B) <span class="arithmatex">\(K_i\)</span><br />
+C) <span class="arithmatex">\(K_d\)</span><br />
+D) Sensor gain</p>
+<p><strong>Answer:</strong> A</p>
+<hr />
+<h3 id="q5">Q5<a class="headerlink" href="#q5" title="Permanent link">&para;</a></h3>
+<p>If a system has too much overshoot, which term is often useful?</p>
+<p>A) P<br />
+B) I<br />
+C) D<br />
+D) Input reference</p>
+<p><strong>Answer:</strong> C</p>
+<hr />
+<h3 id="q6">Q6<a class="headerlink" href="#q6" title="Permanent link">&para;</a></h3>
+<p>In Ziegler–Nichols tuning, which values are measured experimentally?</p>
+<p>A) <span class="arithmatex">\(K_p\)</span> and <span class="arithmatex">\(K_i\)</span><br />
+B) <span class="arithmatex">\(K_u\)</span> and <span class="arithmatex">\(P_u\)</span><br />
+C) <span class="arithmatex">\(K_d\)</span> and <span class="arithmatex">\(T_d\)</span><br />
+D) rise time and settling time</p>
+<p><strong>Answer:</strong> B</p>
+<hr />
+<h3 id="q7">Q7<a class="headerlink" href="#q7" title="Permanent link">&para;</a></h3>
+<p>What does the integral term do when a small error stays for a long time?</p>
+<p>A) ignores it<br />
+B) amplifies noise only<br />
+C) accumulates it<br />
+D) cancels derivative action</p>
+<p><strong>Answer:</strong> C</p>
+<hr />
+<h3 id="q8">Q8<a class="headerlink" href="#q8" title="Permanent link">&para;</a></h3>
+<p>Why is derivative action usually not used alone?</p>
+<p>A) It is too slow<br />
+B) It cannot handle noise well<br />
+C) It removes all error automatically<br />
+D) It does not depend on error</p>
+<p><strong>Answer:</strong> B</p>
+<hr />
+<h2 id="part-b-short-questions">Part B — Short Questions<a class="headerlink" href="#part-b-short-questions" title="Permanent link">&para;</a></h2>
+<h3 id="q1_1">Q1<a class="headerlink" href="#q1_1" title="Permanent link">&para;</a></h3>
+<p>What is the main purpose of PID control?</p>
+<p><strong>Answer:</strong><br />
+To improve system response by reducing error using present, past, and future error information.</p>
+<hr />
+<h3 id="q2_1">Q2<a class="headerlink" href="#q2_1" title="Permanent link">&para;</a></h3>
+<p>Why is proportional control alone often insufficient?</p>
+<p><strong>Answer:</strong><br />
+Because it may leave steady-state error.</p>
+<hr />
+<h3 id="q3_1">Q3<a class="headerlink" href="#q3_1" title="Permanent link">&para;</a></h3>
+<p>What is steady-state error?</p>
+<p><strong>Answer:</strong><br />
+It is the difference between desired output and actual output after the system has settled.</p>
+<hr />
+<h3 id="q4_1">Q4<a class="headerlink" href="#q4_1" title="Permanent link">&para;</a></h3>
+<p>Why can integral action cause oscillation?</p>
+<p><strong>Answer:</strong><br />
+Because it accumulates past error and may apply excessive correction.</p>
+<hr />
+<h3 id="q5_1">Q5<a class="headerlink" href="#q5_1" title="Permanent link">&para;</a></h3>
+<p>What is the main role of derivative action?</p>
+<p><strong>Answer:</strong><br />
+To predict the trend of error and reduce overshoot.</p>
+<hr />
+<h3 id="q6_1">Q6<a class="headerlink" href="#q6_1" title="Permanent link">&para;</a></h3>
+<p>What is <span class="arithmatex">\(K_u\)</span> in Ziegler–Nichols tuning?</p>
+<p><strong>Answer:</strong><br />
+It is the ultimate gain, the proportional gain at which sustained oscillation begins.</p>
+<hr />
+<h3 id="q7_1">Q7<a class="headerlink" href="#q7_1" title="Permanent link">&para;</a></h3>
+<p>What is <span class="arithmatex">\(P_u\)</span> in Ziegler–Nichols tuning?</p>
+<p><strong>Answer:</strong><br />
+It is the oscillation period measured at the ultimate gain.</p>
+<hr />
+<h3 id="q8_1">Q8<a class="headerlink" href="#q8_1" title="Permanent link">&para;</a></h3>
+<p>Why is PID widely used in robotics?</p>
+<p><strong>Answer:</strong><br />
+Because it gives a practical balance of speed, accuracy, and stability.</p>
+<hr />
+<h2 id="part-c-thinking-questions">Part C — Thinking Questions<a class="headerlink" href="#part-c-thinking-questions" title="Permanent link">&para;</a></h2>
+<h3 id="q1_2">Q1<a class="headerlink" href="#q1_2" title="Permanent link">&para;</a></h3>
+<p>Can a system be fast but still inaccurate?</p>
+<p><strong>Answer:</strong><br />
+Yes. A system may respond quickly but still have steady-state error.</p>
+<hr />
+<h3 id="q2_2">Q2<a class="headerlink" href="#q2_2" title="Permanent link">&para;</a></h3>
+<p>Why is tuning necessary even if the PID formula is known?</p>
+<p><strong>Answer:</strong><br />
+Because different systems behave differently, so the gains must be adjusted to match the plant.</p>
+<hr />
+<h3 id="q3_2">Q3<a class="headerlink" href="#q3_2" title="Permanent link">&para;</a></h3>
+<p>Why is Ziegler–Nichols only a starting point?</p>
+<p><strong>Answer:</strong><br />
+Because it often gives aggressive gains, so practical systems usually need further refinement.</p>
+<hr />
+<h1 id="key-idea">Key Idea<a class="headerlink" href="#key-idea" title="Permanent link">&para;</a></h1>
+<p>A good controller is not just mathematically correct.<br />
+It must also match the behavior that the real system needs.</p>
+<p>That is why understanding the meaning of P, I, and D is just as important as knowing the formula.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/math.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1519 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://uk-roy.github.io/cse461/chapters/03/basics/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Lecture 3 - CSE461 - Intro to Robotics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture-3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-header__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CSE461 - Intro to Robotics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../syllabus/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Syllabus
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CSE461 - Intro to Robotics" class="md-nav__button md-logo" aria-label="CSE461 - Intro to Robotics" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    CSE461 - Intro to Robotics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/lecture3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Three
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Two
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Three
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02/RK4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture Four
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lecture-3">Lecture 3<a class="headerlink" href="#lecture-3" title="Permanent link">&para;</a></h1>
+<h1 id="control-system-basics">Control System Basics<a class="headerlink" href="#control-system-basics" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>In this lecture, we introduce the fundamentals of control systems:
+- What is control theory<br />
+- Open-loop vs closed-loop systems<br />
+- Feedback and stability<br />
+- Performance measures<br />
+- Why controllers are needed<br />
+- From diagrams to mathematical models  </p>
+<hr />
+<h1 id="1-what-is-control-theory">1) What is Control Theory?<a class="headerlink" href="#1-what-is-control-theory" title="Permanent link">&para;</a></h1>
+<p>Control theory studies how to <strong>control the behavior of a system</strong> to achieve a desired output.</p>
+<hr />
+<h2 id="intuition">Intuition<a class="headerlink" href="#intuition" title="Permanent link">&para;</a></h2>
+<p>A control system always tries to solve this problem:</p>
+<ul>
+<li>What I want (desired)</li>
+<li>What I get (actual)</li>
+<li>Adjust inputs to reduce the difference</li>
+</ul>
+<hr />
+<h2 id="example-motor-speed-control">Example: Motor Speed Control<a class="headerlink" href="#example-motor-speed-control" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Desired speed = 3 rad/s  </li>
+<li>Actual speed = 2.2 rad/s  </li>
+</ul>
+<p>Problem:
+The system is not behaving as expected.</p>
+<p>Control theory helps us design a system that <strong>reduces this error</strong>.</p>
+<hr />
+<h3 id="why-this-example-works">Why this example works<a class="headerlink" href="#why-this-example-works" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simple and visual  </li>
+<li>Shows mismatch clearly  </li>
+<li>Introduces the need for control immediately  </li>
+</ul>
+<hr />
+<h1 id="2-what-is-a-control-system">2) What is a Control System?<a class="headerlink" href="#2-what-is-a-control-system" title="Permanent link">&para;</a></h1>
+<p>A control system consists of:</p>
+<p>Input → Controller → Process → Output</p>
+<hr />
+<h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Input: Desired value  </li>
+<li>Controller: Decision maker  </li>
+<li>Process: Physical system  </li>
+<li>Output: Actual result  </li>
+</ul>
+<hr />
+<h2 id="example-self-balancing-robot">Example: Self-Balancing Robot<a class="headerlink" href="#example-self-balancing-robot" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Input: Stay upright (angle = 0)  </li>
+<li>Controller: PID  </li>
+<li>Process: Robot + motors  </li>
+<li>Output: Actual angle  </li>
+</ul>
+<hr />
+<h3 id="why-this-example-works_1">Why this example works<a class="headerlink" href="#why-this-example-works_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Strong robotics connection  </li>
+<li>Easy to visualize  </li>
+<li>Maps directly to real systems  </li>
+</ul>
+<hr />
+<h1 id="3-open-loop-control">3) Open Loop Control<a class="headerlink" href="#3-open-loop-control" title="Permanent link">&para;</a></h1>
+<p>Open-loop systems <strong>do not use feedback</strong>.</p>
+<p>They apply input and <strong>never check the output</strong>.</p>
+<hr />
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Apply voltage to motor  </li>
+<li>Assume it reaches desired speed  </li>
+<li>No measurement is taken  </li>
+</ul>
+<hr />
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
+<p>Desired = 3 rad/s<br />
+Actual = 2.2 rad/s  </p>
+<p>Error remains uncorrected.</p>
+<hr />
+<h3 id="why-this-example-works_2">Why this example works<a class="headerlink" href="#why-this-example-works_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Clearly shows limitation  </li>
+<li>Demonstrates why feedback is needed  </li>
+</ul>
+<hr />
+<h2 id="real-life-example">Real-life Example<a class="headerlink" href="#real-life-example" title="Permanent link">&para;</a></h2>
+<p>Fan speed regulator:
+- You set speed<br />
+- Load changes → speed changes<br />
+- System does not correct itself  </p>
+<hr />
+<h1 id="4-closed-loop-control-feedback">4) Closed Loop Control (Feedback)<a class="headerlink" href="#4-closed-loop-control-feedback" title="Permanent link">&para;</a></h1>
+<p>Closed-loop systems use feedback:</p>
+<p>Measure → Compare → Correct</p>
+<hr />
+<h2 id="key-idea">Key Idea<a class="headerlink" href="#key-idea" title="Permanent link">&para;</a></h2>
+<p>The system continuously checks:
+"Am I doing the right thing?"</p>
+<hr />
+<h2 id="example-thermostat">Example: Thermostat<a class="headerlink" href="#example-thermostat" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Desired temperature = 25°C  </li>
+<li>Current temperature = 22°C  </li>
+<li>Heater turns ON  </li>
+</ul>
+<p>System keeps adjusting until the desired value is reached.</p>
+<hr />
+<h3 id="why-this-example-works_3">Why this example works<a class="headerlink" href="#why-this-example-works_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Very familiar system  </li>
+<li>Clearly shows feedback behavior  </li>
+</ul>
+<hr />
+<h2 id="robotics-example">Robotics Example<a class="headerlink" href="#robotics-example" title="Permanent link">&para;</a></h2>
+<p>Self-balancing robot:</p>
+<ul>
+<li>Sensor measures angle  </li>
+<li>Controller adjusts motor  </li>
+<li>Robot stays upright  </li>
+</ul>
+<hr />
+<h1 id="5-feedback-system-components">5) Feedback System Components<a class="headerlink" href="#5-feedback-system-components" title="Permanent link">&para;</a></h1>
+<p>A feedback system includes:</p>
+<ul>
+<li>Controller  </li>
+<li>Sensor  </li>
+<li>Actuator  </li>
+<li>Feedback  </li>
+<li>Error signal  </li>
+</ul>
+<hr />
+<h2 id="example-mapping">Example Mapping<a class="headerlink" href="#example-mapping" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensor</td>
+<td>IMU</td>
+</tr>
+<tr>
+<td>Controller</td>
+<td>PID</td>
+</tr>
+<tr>
+<td>Actuator</td>
+<td>Motor</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Desired - Actual</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="6-stability">6) Stability<a class="headerlink" href="#6-stability" title="Permanent link">&para;</a></h1>
+<p>A system is <strong>stable</strong> if its output remains bounded over time.</p>
+<hr />
+<h2 id="example-balancing-a-pencil">Example: Balancing a Pencil<a class="headerlink" href="#example-balancing-a-pencil" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Disturb the pencil  </li>
+<li>It wobbles  </li>
+<li>Returns to position  </li>
+</ul>
+<hr />
+<h3 id="why-this-example-works_4">Why this example works<a class="headerlink" href="#why-this-example-works_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Easy to visualize  </li>
+<li>Shows recovery behavior clearly  </li>
+</ul>
+<hr />
+<h1 id="7-system-performance">7) System Performance<a class="headerlink" href="#7-system-performance" title="Permanent link">&para;</a></h1>
+<p>We evaluate a system using:</p>
+<ul>
+<li>Transient response  </li>
+<li>Steady-state response  </li>
+</ul>
+<hr />
+<h2 id="71-transient-response">7.1 Transient Response<a class="headerlink" href="#71-transient-response" title="Permanent link">&para;</a></h2>
+<p>Behavior <strong>before the system settles</strong>.</p>
+<hr />
+<h3 id="example-light-switch">Example: Light Switch<a class="headerlink" href="#example-light-switch" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Turn ON  </li>
+<li>Light gradually stabilizes  </li>
+</ul>
+<hr />
+<h3 id="why-this-example-works_5">Why this example works<a class="headerlink" href="#why-this-example-works_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Everyday experience  </li>
+<li>Clearly shows transition phase  </li>
+</ul>
+<hr />
+<h2 id="72-steady-state-response">7.2 Steady-State Response<a class="headerlink" href="#72-steady-state-response" title="Permanent link">&para;</a></h2>
+<p>Behavior <strong>after the system stabilizes</strong>.</p>
+<hr />
+<h3 id="example-elevator">Example: Elevator<a class="headerlink" href="#example-elevator" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Accelerates  </li>
+<li>Moves at constant speed  </li>
+<li>Stops  </li>
+</ul>
+<hr />
+<h3 id="why-this-example-works_6">Why this example works<a class="headerlink" href="#why-this-example-works_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Real system  </li>
+<li>Clearly shows steady operation  </li>
+</ul>
+<hr />
+<h1 id="8-key-performance-metrics">8) Key Performance Metrics<a class="headerlink" href="#8-key-performance-metrics" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="rise-time-tr">Rise Time (Tr)<a class="headerlink" href="#rise-time-tr" title="Permanent link">&para;</a></h2>
+<p>Time to go from 10% → 90% of final value  </p>
+<ul>
+<li>Indicates speed of response  </li>
+</ul>
+<hr />
+<h2 id="peak-time-tp">Peak Time (Tp)<a class="headerlink" href="#peak-time-tp" title="Permanent link">&para;</a></h2>
+<p>Time to reach first maximum peak  </p>
+<ul>
+<li>Shows how quickly system reacts  </li>
+</ul>
+<hr />
+<h2 id="maximum-overshoot-mp">Maximum Overshoot (Mp)<a class="headerlink" href="#maximum-overshoot-mp" title="Permanent link">&para;</a></h2>
+<p>Amount system exceeds final value  </p>
+<ul>
+<li>Indicates oscillation  </li>
+</ul>
+<hr />
+<h2 id="settling-time-ts">Settling Time (Ts)<a class="headerlink" href="#settling-time-ts" title="Permanent link">&para;</a></h2>
+<p>Time to stabilize within tolerance  </p>
+<ul>
+<li>Indicates stability speed  </li>
+</ul>
+<hr />
+<h1 id="9-steady-state-error">9) Steady-State Error<a class="headerlink" href="#9-steady-state-error" title="Permanent link">&para;</a></h1>
+<p>ess = desired - actual</p>
+<hr />
+<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Zero error → perfect system  </li>
+<li>Finite error → small difference  </li>
+<li>Infinite error → system fails  </li>
+</ul>
+<hr />
+<h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Desired = 3  </li>
+<li>Actual = 2.9  </li>
+</ul>
+<p>Small steady-state error exists.</p>
+<hr />
+<h1 id="10-important-system-examples">10) Important System Examples<a class="headerlink" href="#10-important-system-examples" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="example-1-drone-stabilization">Example 1: Drone Stabilization<a class="headerlink" href="#example-1-drone-stabilization" title="Permanent link">&para;</a></h2>
+<p>Situation:
+- Wind disturbs drone  </p>
+<hr />
+<h3 id="desired-behavior">Desired Behavior<a class="headerlink" href="#desired-behavior" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Low rise time → fast reaction  </li>
+<li>Low peak time → quick correction  </li>
+<li>Small overshoot → acceptable  </li>
+</ul>
+<hr />
+<h3 id="why-this-example-works_7">Why this example works<a class="headerlink" href="#why-this-example-works_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Safety-critical system  </li>
+<li>Requires fast response  </li>
+<li>Real-world robotics scenario  </li>
+</ul>
+<hr />
+<h2 id="example-2-chemical-decay">Example 2: Chemical Decay<a class="headerlink" href="#example-2-chemical-decay" title="Permanent link">&para;</a></h2>
+<p>Situation:
+- Substance decays over time  </p>
+<hr />
+<h3 id="desired-behavior_1">Desired Behavior<a class="headerlink" href="#desired-behavior_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Slow response  </li>
+<li>Smooth decay  </li>
+<li>No oscillation  </li>
+</ul>
+<hr />
+<h3 id="why-this-example-works_8">Why this example works<a class="headerlink" href="#why-this-example-works_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Opposite of drone example  </li>
+<li>Shows not all systems need speed  </li>
+</ul>
+<hr />
+<h2 id="key-insight">Key Insight<a class="headerlink" href="#key-insight" title="Permanent link">&para;</a></h2>
+<p>Different systems require different behaviors.</p>
+<hr />
+<h1 id="11-why-do-we-need-a-controller">11) Why Do We Need a Controller?<a class="headerlink" href="#11-why-do-we-need-a-controller" title="Permanent link">&para;</a></h1>
+<p>Problem:
+Systems do not naturally behave as desired.</p>
+<hr />
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
+<p>Introduce a controller to:</p>
+<ul>
+<li>Reduce error  </li>
+<li>Improve stability  </li>
+<li>Adjust response  </li>
+</ul>
+<hr />
+<h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
+<p>PID controller:
+- Adjusts input<br />
+- Improves system performance  </p>
+<hr />
+<h1 id="12-gain">12) Gain<a class="headerlink" href="#12-gain" title="Permanent link">&para;</a></h1>
+<p>Gain = Output / Input</p>
+<hr />
+<h2 id="meaning">Meaning<a class="headerlink" href="#meaning" title="Permanent link">&para;</a></h2>
+<p>Gain shows how strongly the system responds.</p>
+<hr />
+<h2 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h2>
+<p>Input = 2<br />
+Output = 10  </p>
+<p>Gain = 5  </p>
+<hr />
+<h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
+<p>Changing gain affects:</p>
+<ul>
+<li>Speed  </li>
+<li>Overshoot  </li>
+<li>Stability  </li>
+</ul>
+<hr />
+<h1 id="13-from-block-diagram-to-mathematics">13) From Block Diagram to Mathematics<a class="headerlink" href="#13-from-block-diagram-to-mathematics" title="Permanent link">&para;</a></h1>
+<p>Block diagrams give intuition, but we need math to:</p>
+<ul>
+<li>Predict behavior  </li>
+<li>Analyze systems  </li>
+<li>Design controllers  </li>
+</ul>
+<hr />
+<h1 id="14-transfer-function">14) Transfer Function<a class="headerlink" href="#14-transfer-function" title="Permanent link">&para;</a></h1>
+<p>H(s) = Y(s) / X(s)</p>
+<hr />
+<h2 id="meaning_1">Meaning<a class="headerlink" href="#meaning_1" title="Permanent link">&para;</a></h2>
+<p>Relationship between input and output.</p>
+<hr />
+<h2 id="why-useful">Why useful<a class="headerlink" href="#why-useful" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Simplifies analysis  </li>
+<li>Avoids complex differential equations  </li>
+<li>Works in frequency domain  </li>
+</ul>
+<hr />
+<h1 id="15-why-move-to-frequency-domain">15) Why Move to Frequency Domain?<a class="headerlink" href="#15-why-move-to-frequency-domain" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="problem-time-domain">Problem (Time Domain)<a class="headerlink" href="#problem-time-domain" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Signals are mixed  </li>
+<li>Hard to analyze  </li>
+</ul>
+<hr />
+<h2 id="example-sensor-noise">Example: Sensor Noise<a class="headerlink" href="#example-sensor-noise" title="Permanent link">&para;</a></h2>
+<p>IMU sensor gives:
+- real motion<br />
+- vibration noise<br />
+- disturbances  </p>
+<p>All mixed together.</p>
+<hr />
+<h2 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h2>
+<p>Frequency domain separates signals.</p>
+<hr />
+<h3 id="why-this-example-works_9">Why this example works<a class="headerlink" href="#why-this-example-works_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Real robotics problem  </li>
+<li>Shows limitation of time domain  </li>
+<li>Motivates frequency analysis  </li>
+</ul>
+<hr />
+<h1 id="final-summary">Final Summary<a class="headerlink" href="#final-summary" title="Permanent link">&para;</a></h1>
+<p>A control system:</p>
+<ul>
+<li>observes the system  </li>
+<li>compares with desired behavior  </li>
+<li>adjusts inputs  </li>
+</ul>
+<hr />
+<h2 id="key-ideas">Key Ideas<a class="headerlink" href="#key-ideas" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Open loop → no correction  </li>
+<li>Closed loop → uses feedback  </li>
+<li>Performance matters  </li>
+<li>Different systems need different responses  </li>
+<li>Controllers improve behavior  </li>
+<li>Math helps analyze systems  </li>
+</ul>
+<hr />
+<h2 id="big-picture">Big Picture<a class="headerlink" href="#big-picture" title="Permanent link">&para;</a></h2>
+<p>Control systems allow us to:</p>
+<ul>
+<li>make systems stable  </li>
+<li>improve accuracy  </li>
+<li>design intelligent robots  </li>
+</ul>
+<hr />
+<h1 id="self-check-quiz">Self Check Quiz<a class="headerlink" href="#self-check-quiz" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="part-a-conceptual-mcq">Part A — Conceptual MCQ<a class="headerlink" href="#part-a-conceptual-mcq" title="Permanent link">&para;</a></h2>
+<p>Choose the BEST answer.</p>
+<hr />
+<h3 id="q1">Q1<a class="headerlink" href="#q1" title="Permanent link">&para;</a></h3>
+<p>A motor is given a fixed voltage and runs without measuring its actual speed.<br />
+Which type of system is this?</p>
+<p>A) Closed-loop<br />
+B) Feedback system<br />
+C) Open-loop<br />
+D) Adaptive system  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> No feedback is used, so the system cannot correct errors.</p>
+<hr />
+<h3 id="q2">Q2<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h3>
+<p>Which of the following BEST describes feedback?</p>
+<p>A) Sending input to system<br />
+B) Measuring output and using it for correction<br />
+C) Increasing system gain<br />
+D) Reducing system speed  </p>
+<p><strong>Answer:</strong> B<br />
+<strong>Explanation:</strong> Feedback uses output information to adjust the input.</p>
+<hr />
+<h3 id="q3">Q3<a class="headerlink" href="#q3" title="Permanent link">&para;</a></h3>
+<p>Why is closed-loop control preferred over open-loop?</p>
+<p>A) It is cheaper<br />
+B) It is simpler<br />
+C) It corrects errors automatically<br />
+D) It removes sensors  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> Closed-loop systems adjust input based on output, reducing error.</p>
+<hr />
+<h3 id="q4">Q4<a class="headerlink" href="#q4" title="Permanent link">&para;</a></h3>
+<p>Which system requires the FASTEST response?</p>
+<p>A) Chemical decay<br />
+B) Temperature control<br />
+C) Drone stabilization<br />
+D) Water tank filling  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> Drone must react quickly to disturbances to avoid crashing.</p>
+<hr />
+<h3 id="q5">Q5<a class="headerlink" href="#q5" title="Permanent link">&para;</a></h3>
+<p>Which system requires a SLOW and smooth response?</p>
+<p>A) Self-balancing robot<br />
+B) Drone stabilization<br />
+C) Chemical decay<br />
+D) Motor speed control  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> Sudden changes are undesirable in chemical systems.</p>
+<hr />
+<h3 id="q6">Q6<a class="headerlink" href="#q6" title="Permanent link">&para;</a></h3>
+<p>What does gain represent?</p>
+<p>A) Energy consumption<br />
+B) System stability<br />
+C) Output-to-input ratio<br />
+D) Sensor accuracy  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> Gain = Output / Input.</p>
+<hr />
+<h3 id="q7">Q7<a class="headerlink" href="#q7" title="Permanent link">&para;</a></h3>
+<p>A system shows large oscillations before settling. What is most likely high?</p>
+<p>A) Rise time<br />
+B) Overshoot<br />
+C) Steady-state error<br />
+D) Gain = 0  </p>
+<p><strong>Answer:</strong> B<br />
+<strong>Explanation:</strong> Oscillations indicate high overshoot.</p>
+<hr />
+<h3 id="q8">Q8<a class="headerlink" href="#q8" title="Permanent link">&para;</a></h3>
+<p>Which parameter tells how fast a system initially reacts?</p>
+<p>A) Settling time<br />
+B) Steady-state error<br />
+C) Rise time<br />
+D) Gain  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> Rise time measures initial speed of response.</p>
+<hr />
+<h3 id="q9">Q9<a class="headerlink" href="#q9" title="Permanent link">&para;</a></h3>
+<p>A system reaches the desired value but always stays slightly below it.<br />
+This is:</p>
+<p>A) Infinite error<br />
+B) Zero error<br />
+C) Finite steady-state error<br />
+D) Instability  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> A constant difference remains.</p>
+<hr />
+<h3 id="q10">Q10<a class="headerlink" href="#q10" title="Permanent link">&para;</a></h3>
+<p>Why do we move to frequency domain?</p>
+<p>A) To increase system speed<br />
+B) To avoid sensors<br />
+C) To separate signals and simplify analysis<br />
+D) To remove equations  </p>
+<p><strong>Answer:</strong> C<br />
+<strong>Explanation:</strong> Frequency domain helps separate noise and simplifies analysis.</p>
+<hr />
+<h2 id="part-b-short-conceptual-questions">Part B — Short Conceptual Questions<a class="headerlink" href="#part-b-short-conceptual-questions" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="q1_1">Q1<a class="headerlink" href="#q1_1" title="Permanent link">&para;</a></h3>
+<p>What is the main limitation of open-loop systems?</p>
+<p><strong>Answer:</strong><br />
+They cannot correct errors because they do not use feedback.<br />
+If the output differs from desired value, the system cannot adjust itself.</p>
+<hr />
+<h3 id="q2_1">Q2<a class="headerlink" href="#q2_1" title="Permanent link">&para;</a></h3>
+<p>Explain feedback in one sentence.</p>
+<p><strong>Answer:</strong><br />
+Feedback is the process of measuring system output and using it to adjust the input to reduce error.</p>
+<hr />
+<h3 id="q3_1">Q3<a class="headerlink" href="#q3_1" title="Permanent link">&para;</a></h3>
+<p>Why is feedback important in robotics?</p>
+<p><strong>Answer:</strong><br />
+Because real-world environments change constantly, feedback allows robots to adapt and maintain correct behavior.</p>
+<hr />
+<h3 id="q4_1">Q4<a class="headerlink" href="#q4_1" title="Permanent link">&para;</a></h3>
+<p>What is stability?</p>
+<p><strong>Answer:</strong><br />
+Stability means the system output remains bounded and eventually settles after disturbances.</p>
+<hr />
+<h3 id="q5_1">Q5<a class="headerlink" href="#q5_1" title="Permanent link">&para;</a></h3>
+<p>Give one real-life example of closed-loop control.</p>
+<p><strong>Answer:</strong><br />
+Thermostat: It measures temperature and adjusts heating/cooling accordingly.</p>
+<hr />
+<h3 id="q6_1">Q6<a class="headerlink" href="#q6_1" title="Permanent link">&para;</a></h3>
+<p>Why is rise time important for drones?</p>
+<p><strong>Answer:</strong><br />
+Because drones must react quickly to disturbances (like wind) to maintain stability.</p>
+<hr />
+<h3 id="q7_1">Q7<a class="headerlink" href="#q7_1" title="Permanent link">&para;</a></h3>
+<p>Why is overshoot undesirable in some systems?</p>
+<p><strong>Answer:</strong><br />
+Because exceeding the desired value can cause damage or unsafe behavior (e.g., chemical systems, temperature control).</p>
+<hr />
+<h3 id="q8_1">Q8<a class="headerlink" href="#q8_1" title="Permanent link">&para;</a></h3>
+<p>What is steady-state error?</p>
+<p><strong>Answer:</strong><br />
+The difference between desired and actual output after the system has settled.</p>
+<hr />
+<h3 id="q9_1">Q9<a class="headerlink" href="#q9_1" title="Permanent link">&para;</a></h3>
+<p>Why do different systems require different responses?</p>
+<p><strong>Answer:</strong><br />
+Because each system has different goals — some require fast response (drone), others require smooth response (chemical process).</p>
+<hr />
+<h3 id="q10_1">Q10<a class="headerlink" href="#q10_1" title="Permanent link">&para;</a></h3>
+<p>Why do we need controllers?</p>
+<p><strong>Answer:</strong><br />
+Because natural system behavior is often not ideal; controllers help adjust input to achieve desired performance.</p>
+<hr />
+<h2 id="part-c-thinking-questions-optional-for-class-discussion">Part C — Thinking Questions (Optional for Class Discussion)<a class="headerlink" href="#part-c-thinking-questions-optional-for-class-discussion" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="q1_2">Q1<a class="headerlink" href="#q1_2" title="Permanent link">&para;</a></h3>
+<p>What could happen if a drone has very high overshoot?</p>
+<p><strong>Answer:</strong><br />
+It may become unstable and crash due to excessive oscillations.</p>
+<hr />
+<h3 id="q2_2">Q2<a class="headerlink" href="#q2_2" title="Permanent link">&para;</a></h3>
+<p>Can a system be fast but unstable? Explain.</p>
+<p><strong>Answer:</strong><br />
+Yes. A system may respond quickly (low rise time) but overshoot excessively and oscillate, making it unstable.</p>
+<hr />
+<h3 id="q3_2">Q3<a class="headerlink" href="#q3_2" title="Permanent link">&para;</a></h3>
+<p>Why is a purely reactive system not always sufficient?</p>
+<p><strong>Answer:</strong><br />
+Because it lacks long-term planning and may get stuck or fail to reach goals.</p>
+<hr />
+<h3 id="q4_2">Q4<a class="headerlink" href="#q4_2" title="Permanent link">&para;</a></h3>
+<p>Why is a purely planning-based system not always practical?</p>
+<p><strong>Answer:</strong><br />
+Because real environments change, and heavy planning can be too slow.</p>
+<hr />
+<h1 id="key-takeaway">Key Takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h1>
+<p>A good control system balances:
+- speed<br />
+- stability<br />
+- accuracy  </p>
+<p>And uses feedback to adapt to real-world changes.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/math.js"></script>
+      
+    
+  </body>
+</html>
