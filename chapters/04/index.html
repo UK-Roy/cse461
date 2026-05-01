@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#chapter-4-robot-navigation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -899,6 +904,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -916,6 +941,803 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-what-is-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 What is Navigation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-why-navigation-is-important-in-robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Why Navigation is Important in Robotics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-main-parts-of-robot-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Main Parts of Robot Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Main Parts of Robot Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-path-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1 Path Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2 Localization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.3 Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#434-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.4 Exploration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-navigation-problem-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Navigation Problem Characteristics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Navigation Problem Characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#441-known-vs-unknown-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.1 Known vs Unknown Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442-static-vs-dynamic-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.2 Static vs Dynamic Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#443-structured-vs-unstructured-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.3 Structured vs Unstructured Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-path-planning-conceptual-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Path Planning: Conceptual Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-visual-homing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Visual Homing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Visual Homing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-robot-chasing-a-ball" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Robot Chasing a Ball
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-visual-homing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of Visual Homing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-visual-homing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of Visual Homing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-bug-based-path-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 Bug-Based Path Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7 Bug-Based Path Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-robot-in-a-room-with-unknown-obstacles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Robot in a Room with Unknown Obstacles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-bug-based-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of Bug-Based Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-bug-based-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of Bug-Based Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-global-or-metric-path-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8 Global or Metric Path Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8 Global or Metric Path Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-google-maps-style-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Google Maps Style Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-graph-based-path-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.9 Graph-Based Path Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.9 Graph-Based Path Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waypoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waypoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-a-path-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.10 A* Path Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.10 A* Path Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-robot-in-a-grid-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Robot in a Grid Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of A*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of A*
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#411-difference-between-path-planning-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.11 Difference Between Path Planning Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#412-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.12 Localization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#413-dead-reckoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.13 Dead-Reckoning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.13 Dead-Reckoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-wheel-encoder-odometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Wheel Encoder Odometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-dead-reckoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of Dead-Reckoning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-dead-reckoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of Dead-Reckoning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#414-landmark-based-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.14 Landmark-Based Localization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.14 Landmark-Based Localization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-gps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: GPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-indoor-robot-with-qr-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Indoor Robot with QR Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-landmark-based-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of Landmark-Based Localization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-landmark-based-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of Landmark-Based Localization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#415-state-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.15 State Estimation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.15 State Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-robot-moving-in-a-corridor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Robot Moving in a Corridor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-state-estimation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common State Estimation Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#416-kalman-filter-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.16 Kalman Filter Concept
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.16 Kalman Filter Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#417-particle-filter-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.17 Particle Filter Concept
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.17 Particle Filter Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#418-difference-between-localization-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.18 Difference Between Localization Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#419-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.19 Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#420-occupancy-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.20 Occupancy Grid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.20 Occupancy Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-room-as-occupancy-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Room as Occupancy Grid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#421-sensor-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.21 Sensor Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.21 Sensor Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-depth-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Depth Sensor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#422-simple-occupancy-grid-mapping-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.22 Simple Occupancy Grid Mapping Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#423-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.23 Exploration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#424-frontier-based-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.24 Frontier-Based Exploration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.24 Frontier-Based Exploration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-frontier-based-exploration-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Frontier-Based Exploration Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-exploring-a-new-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Exploring a New Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#425-difference-between-mapping-and-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.25 Difference Between Mapping and Exploration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#426-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.26 SLAM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.26 SLAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-robot-in-an-unknown-office" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Robot in an Unknown Office
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#427-full-navigation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.27 Full Navigation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#428-method-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.28 Method Selection Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1001,9 +1823,1114 @@
 
 
 
-  <h1>Chapter 4</h1>
-
-
+<h1 id="chapter-4-robot-navigation">Chapter 4: Robot Navigation<a class="headerlink" href="#chapter-4-robot-navigation" title="Permanent link">&para;</a></h1>
+<p>Robotics becomes truly useful when a robot can move from one place to another without being manually controlled. This ability is called <strong>navigation</strong>.</p>
+<p>A robot may have motors, wheels, sensors, and a controller, but if it cannot answer the following questions, it cannot navigate intelligently:</p>
+<ol>
+<li><strong>Where am I?</strong></li>
+<li><strong>Where do I want to go?</strong></li>
+<li><strong>How do I reach the goal safely?</strong></li>
+<li><strong>What does the environment look like?</strong></li>
+<li><strong>Which part of the environment is still unknown?</strong></li>
+</ol>
+<p>These questions form the foundation of robot navigation.</p>
+<hr />
+<h2 id="41-what-is-navigation">4.1 What is Navigation?<a class="headerlink" href="#41-what-is-navigation" title="Permanent link">&para;</a></h2>
+<p><strong>Navigation</strong> is the process of finding a way to reach a desired place.</p>
+<p>For humans, navigation may mean walking from one building to another, using Google Maps, or remembering a familiar route.</p>
+<p>For robots, navigation means:</p>
+<ul>
+<li>understanding the environment,</li>
+<li>estimating its own position,</li>
+<li>planning a path,</li>
+<li>avoiding obstacles,</li>
+<li>and reaching a goal.</li>
+</ul>
+<p>A simple way to think about robot navigation is:</p>
+<div class="highlight"><pre><span></span><code>Sense the environment → Understand position → Plan path → Move safely
+</code></pre></div>
+<p>Example:</p>
+<p>A delivery robot in a hotel receives a command:</p>
+<div class="highlight"><pre><span></span><code>Go to Room 405.
+</code></pre></div>
+<p>To complete this task, the robot needs to:</p>
+<ol>
+<li>know where it currently is,</li>
+<li>know where Room 405 is,</li>
+<li>find a path through corridors,</li>
+<li>avoid people and obstacles,</li>
+<li>reach the room safely.</li>
+</ol>
+<hr />
+<h2 id="42-why-navigation-is-important-in-robotics">4.2 Why Navigation is Important in Robotics<a class="headerlink" href="#42-why-navigation-is-important-in-robotics" title="Permanent link">&para;</a></h2>
+<p>Navigation is important because most useful robots must operate in real environments.</p>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th>Robot</th>
+<th>Navigation Need</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hospital helper robot</td>
+<td>Move medicine or supplies between rooms</td>
+</tr>
+<tr>
+<td>Office delivery robot</td>
+<td>Carry documents or packages</td>
+</tr>
+<tr>
+<td>Hotel service robot</td>
+<td>Deliver items to guest rooms</td>
+</tr>
+<tr>
+<td>Museum guide robot</td>
+<td>Guide visitors through exhibits</td>
+</tr>
+<tr>
+<td>Autonomous car</td>
+<td>Drive safely on roads</td>
+</tr>
+<tr>
+<td>Warehouse robot</td>
+<td>Move goods between shelves</td>
+</tr>
+<tr>
+<td>Cleaning robot</td>
+<td>Cover floor area efficiently</td>
+</tr>
+</tbody>
+</table>
+<p>Without navigation, these robots would only be machines that can move. With navigation, they become autonomous systems.</p>
+<hr />
+<h2 id="43-main-parts-of-robot-navigation">4.3 Main Parts of Robot Navigation<a class="headerlink" href="#43-main-parts-of-robot-navigation" title="Permanent link">&para;</a></h2>
+<p>Robot navigation is usually divided into four major problems.</p>
+<div class="highlight"><pre><span></span><code>Path Planning: How do I get to my goal?
+Localization: Where am I?
+Mapping: Where have I been?
+Exploration: Where haven’t I been?
+</code></pre></div>
+<p>Each part answers a different question.</p>
+<hr />
+<h3 id="431-path-planning">4.3.1 Path Planning<a class="headerlink" href="#431-path-planning" title="Permanent link">&para;</a></h3>
+<p><strong>Path planning</strong> means finding a route from the robot's current position to a goal.</p>
+<p>Example:</p>
+<p>A robot is at the entrance of a building and wants to go to a classroom. It must decide which corridor to follow and where to turn.</p>
+<p>Path planning asks:</p>
+<div class="highlight"><pre><span></span><code>How can I reach the goal?
+</code></pre></div>
+<p>A good path may be:</p>
+<ul>
+<li>short,</li>
+<li>safe,</li>
+<li>smooth,</li>
+<li>fast,</li>
+<li>energy efficient,</li>
+<li>easy for the robot to follow.</li>
+</ul>
+<hr />
+<h3 id="432-localization">4.3.2 Localization<a class="headerlink" href="#432-localization" title="Permanent link">&para;</a></h3>
+<p><strong>Localization</strong> means estimating the robot's current position.</p>
+<p>It answers:</p>
+<div class="highlight"><pre><span></span><code>Where am I?
+</code></pre></div>
+<p>Example:</p>
+<p>A robot may know the map of a hospital, but it still needs to know whether it is near the reception, the elevator, or a patient room.</p>
+<p>Localization is not always easy because sensors are noisy. Wheels may slip, cameras may fail in low light, and GPS may not work indoors.</p>
+<hr />
+<h3 id="433-mapping">4.3.3 Mapping<a class="headerlink" href="#433-mapping" title="Permanent link">&para;</a></h3>
+<p><strong>Mapping</strong> means building a representation of the environment.</p>
+<p>It answers:</p>
+<div class="highlight"><pre><span></span><code>What does the world look like?
+</code></pre></div>
+<p>Example:</p>
+<p>A robot enters an unknown room. As it moves, it detects walls, open spaces, and obstacles. It gradually creates a map.</p>
+<p>Mapping is like memory. The robot remembers what it has already seen.</p>
+<hr />
+<h3 id="434-exploration">4.3.4 Exploration<a class="headerlink" href="#434-exploration" title="Permanent link">&para;</a></h3>
+<p><strong>Exploration</strong> means deciding where to go next when the environment is unknown.</p>
+<p>It answers:</p>
+<div class="highlight"><pre><span></span><code>Where haven’t I been yet?
+</code></pre></div>
+<p>Example:</p>
+<p>A rescue robot enters a damaged building. It does not know the full layout. It must choose unexplored areas to visit while building a map.</p>
+<hr />
+<h2 id="44-navigation-problem-characteristics">4.4 Navigation Problem Characteristics<a class="headerlink" href="#44-navigation-problem-characteristics" title="Permanent link">&para;</a></h2>
+<p>Navigation becomes easier or harder depending on the environment.</p>
+<hr />
+<h3 id="441-known-vs-unknown-environment">4.4.1 Known vs Unknown Environment<a class="headerlink" href="#441-known-vs-unknown-environment" title="Permanent link">&para;</a></h3>
+<p>A <strong>known environment</strong> means the robot already has a map.</p>
+<p>Example:</p>
+<p>A warehouse robot may already have a map of shelf locations.</p>
+<p>An <strong>unknown environment</strong> means the robot does not have a map before starting.</p>
+<p>Example:</p>
+<p>A robot enters a new building for the first time.</p>
+<table>
+<thead>
+<tr>
+<th>Environment Type</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Known</td>
+<td>Map is available</td>
+<td>Robot in a mapped warehouse</td>
+</tr>
+<tr>
+<td>Unknown</td>
+<td>Map is not available</td>
+<td>Rescue robot in a collapsed building</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="442-static-vs-dynamic-environment">4.4.2 Static vs Dynamic Environment<a class="headerlink" href="#442-static-vs-dynamic-environment" title="Permanent link">&para;</a></h3>
+<p>A <strong>static environment</strong> does not change much while the robot moves.</p>
+<p>Example:</p>
+<p>A closed empty classroom.</p>
+<p>A <strong>dynamic environment</strong> changes over time.</p>
+<p>Example:</p>
+<p>A hospital corridor where people, beds, and carts move.</p>
+<table>
+<thead>
+<tr>
+<th>Environment Type</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Static</td>
+<td>Obstacles stay fixed</td>
+<td>Empty room</td>
+</tr>
+<tr>
+<td>Dynamic</td>
+<td>Obstacles move</td>
+<td>Crowded hallway</td>
+</tr>
+</tbody>
+</table>
+<p>Dynamic environments are harder because the robot must react to changes.</p>
+<hr />
+<h3 id="443-structured-vs-unstructured-environment">4.4.3 Structured vs Unstructured Environment<a class="headerlink" href="#443-structured-vs-unstructured-environment" title="Permanent link">&para;</a></h3>
+<p>A <strong>structured environment</strong> has predictable shape and organization.</p>
+<p>Example:</p>
+<p>An office corridor with walls, doors, and rooms.</p>
+<p>An <strong>unstructured environment</strong> is irregular and less predictable.</p>
+<p>Example:</p>
+<p>A forest, construction site, or disaster area.</p>
+<table>
+<thead>
+<tr>
+<th>Environment Type</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structured</td>
+<td>Organized, predictable</td>
+<td>Office, hospital, classroom</td>
+</tr>
+<tr>
+<td>Unstructured</td>
+<td>Irregular, unpredictable</td>
+<td>Outdoor field, disaster area</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="45-path-planning-conceptual-overview">4.5 Path Planning: Conceptual Overview<a class="headerlink" href="#45-path-planning-conceptual-overview" title="Permanent link">&para;</a></h2>
+<p>Path planning is not one single algorithm. It is a collection of methods.</p>
+<p>A robot may plan differently depending on:</p>
+<ul>
+<li>whether the goal is visible,</li>
+<li>whether it has a map,</li>
+<li>whether obstacles are known,</li>
+<li>whether obstacles are moving,</li>
+<li>whether the robot needs the shortest path,</li>
+<li>whether smoothness is important,</li>
+<li>how much computation is available.</li>
+</ul>
+<p>For example, a small robot with a camera may simply move toward a visible ball. But an autonomous car needs a much more complex planner.</p>
+<hr />
+<h2 id="46-visual-homing">4.6 Visual Homing<a class="headerlink" href="#46-visual-homing" title="Permanent link">&para;</a></h2>
+<p><strong>Visual homing</strong> is a simple reactive navigation method.</p>
+<p>The robot uses vision to keep the goal centered in its camera view.</p>
+<p>The idea is:</p>
+<div class="highlight"><pre><span></span><code>If the goal is left of center → turn left
+If the goal is right of center → turn right
+If the goal is centered → move forward
+</code></pre></div>
+<p>This is called <strong>purely reactive navigation</strong> because the robot reacts directly to what it sees.</p>
+<hr />
+<h3 id="example-robot-chasing-a-ball">Example: Robot Chasing a Ball<a class="headerlink" href="#example-robot-chasing-a-ball" title="Permanent link">&para;</a></h3>
+<p>Imagine a robot soccer player.</p>
+<ul>
+<li>It sees the ball in its camera.</li>
+<li>If the ball appears on the left side of the image, the robot turns left.</li>
+<li>If the ball appears on the right side, the robot turns right.</li>
+<li>If the ball is in the center, the robot moves forward.</li>
+</ul>
+<p>This method does not need a map. It only needs the goal to be visible.</p>
+<hr />
+<h3 id="advantages-of-visual-homing">Advantages of Visual Homing<a class="headerlink" href="#advantages-of-visual-homing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simple to understand.</li>
+<li>Fast reaction.</li>
+<li>Does not require a map.</li>
+<li>Useful when the target is visible.</li>
+<li>Good for simple tasks like following a colored object.</li>
+</ul>
+<hr />
+<h3 id="limitations-of-visual-homing">Limitations of Visual Homing<a class="headerlink" href="#limitations-of-visual-homing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fails if the goal is not visible.</li>
+<li>Cannot plan around complex obstacles.</li>
+<li>May get stuck behind walls or barriers.</li>
+<li>Does not understand the full environment.</li>
+</ul>
+<hr />
+<h2 id="47-bug-based-path-planning">4.7 Bug-Based Path Planning<a class="headerlink" href="#47-bug-based-path-planning" title="Permanent link">&para;</a></h2>
+<p>Bug-based planning is useful when the robot does not have a map but can sense obstacles locally.</p>
+<p>The robot knows the direction of the goal, but it does not know the full environment.</p>
+<p>The basic idea is:</p>
+<ol>
+<li>Move toward the goal.</li>
+<li>If an obstacle blocks the way, follow the obstacle boundary.</li>
+<li>When the path toward the goal becomes clear, leave the obstacle and move toward the goal again.</li>
+</ol>
+<p>This is called "bug-based" because the robot behaves like a small insect crawling around obstacles.</p>
+<hr />
+<h3 id="example-robot-in-a-room-with-unknown-obstacles">Example: Robot in a Room with Unknown Obstacles<a class="headerlink" href="#example-robot-in-a-room-with-unknown-obstacles" title="Permanent link">&para;</a></h3>
+<p>Suppose a robot wants to reach a door but a table blocks the direct path.</p>
+<p>The robot:</p>
+<ul>
+<li>starts moving toward the door,</li>
+<li>touches or detects the table,</li>
+<li>follows the edge of the table,</li>
+<li>moves around it,</li>
+<li>then continues toward the door.</li>
+</ul>
+<hr />
+<h3 id="advantages-of-bug-based-planning">Advantages of Bug-Based Planning<a class="headerlink" href="#advantages-of-bug-based-planning" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Does not require a full map.</li>
+<li>Works with local sensing.</li>
+<li>Easy to understand.</li>
+<li>Useful in unknown environments.</li>
+</ul>
+<hr />
+<h3 id="limitations-of-bug-based-planning">Limitations of Bug-Based Planning<a class="headerlink" href="#limitations-of-bug-based-planning" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Path may be long.</li>
+<li>Robot may waste time following obstacle boundaries.</li>
+<li>Not always efficient.</li>
+<li>Can be slow in cluttered environments.</li>
+</ul>
+<hr />
+<h2 id="48-global-or-metric-path-planning">4.8 Global or Metric Path Planning<a class="headerlink" href="#48-global-or-metric-path-planning" title="Permanent link">&para;</a></h2>
+<p>Global path planning is used when the robot has a map of the environment.</p>
+<p>The robot knows:</p>
+<ul>
+<li>its current position,</li>
+<li>the goal position,</li>
+<li>obstacle locations,</li>
+<li>and free space.</li>
+</ul>
+<p>The goal is to find a good or optimal path.</p>
+<p>Usually, this means the shortest path, but it can also mean:</p>
+<ul>
+<li>safest path,</li>
+<li>smoothest path,</li>
+<li>fastest path,</li>
+<li>least energy path.</li>
+</ul>
+<hr />
+<h3 id="example-google-maps-style-planning">Example: Google Maps Style Planning<a class="headerlink" href="#example-google-maps-style-planning" title="Permanent link">&para;</a></h3>
+<p>If you want to go from Banani to Badda, Google Maps may show different routes:</p>
+<ul>
+<li>shortest route,</li>
+<li>fastest route,</li>
+<li>less traffic route,</li>
+<li>easier route.</li>
+</ul>
+<p>A robot can do something similar if it has a map.</p>
+<hr />
+<h2 id="49-graph-based-path-planning">4.9 Graph-Based Path Planning<a class="headerlink" href="#49-graph-based-path-planning" title="Permanent link">&para;</a></h2>
+<p>Many path planning methods convert the environment into a graph.</p>
+<p>A <strong>graph</strong> contains:</p>
+<ul>
+<li>nodes,</li>
+<li>edges,</li>
+<li>costs.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Node = location or waypoint
+Edge = possible movement between locations
+Cost = distance, time, risk, or energy
+</code></pre></div>
+<p>Then the robot searches the graph to find a path.</p>
+<hr />
+<h3 id="waypoints">Waypoints<a class="headerlink" href="#waypoints" title="Permanent link">&para;</a></h3>
+<p>A path is often represented as a list of waypoints.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Start → Waypoint 1 → Waypoint 2 → Goal
+</code></pre></div>
+<p>The robot follows these waypoints one by one.</p>
+<hr />
+<h2 id="410-a-path-planning">4.10 A* Path Planning<a class="headerlink" href="#410-a-path-planning" title="Permanent link">&para;</a></h2>
+<p><strong>A*</strong> is a popular global path planning algorithm.</p>
+<p>It is used when a map is available.</p>
+<p>A* tries to find a good path by considering:</p>
+<ul>
+<li>how far the robot has already traveled,</li>
+<li>and how close it appears to be to the goal.</li>
+</ul>
+<p>Conceptually, A* is smart because it does not search everywhere blindly. It prefers directions that seem promising.</p>
+<hr />
+<h3 id="example-robot-in-a-grid-map">Example: Robot in a Grid Map<a class="headerlink" href="#example-robot-in-a-grid-map" title="Permanent link">&para;</a></h3>
+<p>Suppose a robot is in a grid world.</p>
+<ul>
+<li>Some cells are free.</li>
+<li>Some cells are occupied.</li>
+<li>The robot starts in one cell.</li>
+<li>The goal is another cell.</li>
+</ul>
+<p>A* searches through free cells and finds a path to the goal while avoiding occupied cells.</p>
+<hr />
+<h3 id="advantages-of-a">Advantages of A*<a class="headerlink" href="#advantages-of-a" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Good for known maps.</li>
+<li>Usually efficient.</li>
+<li>Can find short paths.</li>
+<li>Widely used in robotics and games.</li>
+</ul>
+<hr />
+<h3 id="limitations-of-a">Limitations of A*<a class="headerlink" href="#limitations-of-a" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Needs a map.</li>
+<li>If the environment changes, the plan may need to be recomputed.</li>
+<li>Grid resolution affects performance.</li>
+<li>A path may be geometrically short but not smooth for a real robot.</li>
+</ul>
+<hr />
+<h2 id="411-difference-between-path-planning-methods">4.11 Difference Between Path Planning Methods<a class="headerlink" href="#411-difference-between-path-planning-methods" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Map Needed?</th>
+<th>Sensor Type</th>
+<th>Best Situation</th>
+<th>Main Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual Homing</td>
+<td>No</td>
+<td>Camera/visual goal</td>
+<td>Goal is visible</td>
+<td>Fails when goal is hidden</td>
+</tr>
+<tr>
+<td>Bug-Based Planning</td>
+<td>No full map</td>
+<td>Local obstacle sensing</td>
+<td>Unknown environment with obstacles</td>
+<td>Can produce inefficient paths</td>
+</tr>
+<tr>
+<td>Global/A* Planning</td>
+<td>Yes</td>
+<td>Map + position estimate</td>
+<td>Known environment</td>
+<td>Needs a reliable map</td>
+</tr>
+<tr>
+<td>Frontier-Based Exploration</td>
+<td>Partial map</td>
+<td>Map + sensor updates</td>
+<td>Unknown environment exploration</td>
+<td>Needs mapping and planning together</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="412-localization">4.12 Localization<a class="headerlink" href="#412-localization" title="Permanent link">&para;</a></h2>
+<p>Localization means estimating where the robot is.</p>
+<p>A robot may ask:</p>
+<div class="highlight"><pre><span></span><code>Am I near the door?
+Am I beside the wall?
+Am I at the start position?
+Am I close to the goal?
+</code></pre></div>
+<p>Localization can be done using different methods.</p>
+<hr />
+<h2 id="413-dead-reckoning">4.13 Dead-Reckoning<a class="headerlink" href="#413-dead-reckoning" title="Permanent link">&para;</a></h2>
+<p><strong>Dead-reckoning</strong> estimates the robot's position by tracking its own movement.</p>
+<p>It starts from a known position and updates the position based on actions.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>I started at the door.
+I moved forward.
+I turned right.
+I moved forward again.
+So I estimate that I am near the table.
+</code></pre></div>
+<p>In robotics, dead-reckoning is also called:</p>
+<ul>
+<li>odometry,</li>
+<li>path integration.</li>
+</ul>
+<hr />
+<h3 id="example-wheel-encoder-odometry">Example: Wheel Encoder Odometry<a class="headerlink" href="#example-wheel-encoder-odometry" title="Permanent link">&para;</a></h3>
+<p>A wheeled robot can estimate how far it has moved by measuring wheel rotation.</p>
+<p>If the wheels rotate forward, the robot assumes it moved forward.</p>
+<p>If one wheel rotates more than the other, the robot assumes it turned.</p>
+<hr />
+<h3 id="advantages-of-dead-reckoning">Advantages of Dead-Reckoning<a class="headerlink" href="#advantages-of-dead-reckoning" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Does not require external landmarks.</li>
+<li>Works even when the robot cannot see anything useful.</li>
+<li>Simple and fast.</li>
+<li>Useful for short-term motion tracking.</li>
+</ul>
+<hr />
+<h3 id="limitations-of-dead-reckoning">Limitations of Dead-Reckoning<a class="headerlink" href="#limitations-of-dead-reckoning" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error accumulates over time.</li>
+<li>Wheel slip causes incorrect estimates.</li>
+<li>Small errors become large after long travel.</li>
+<li>It cannot correct itself without external sensing.</li>
+</ul>
+<p>Example:</p>
+<p>If a robot thinks it moved 1 meter but actually moved 0.9 meter because of wheel slip, the error remains. After many movements, the error becomes serious.</p>
+<hr />
+<h2 id="414-landmark-based-localization">4.14 Landmark-Based Localization<a class="headerlink" href="#414-landmark-based-localization" title="Permanent link">&para;</a></h2>
+<p><strong>Landmark-based localization</strong> uses known objects or signals in the environment.</p>
+<p>A landmark can be:</p>
+<ul>
+<li>a visual marker,</li>
+<li>a door,</li>
+<li>a sign,</li>
+<li>a radio tower,</li>
+<li>a GPS satellite,</li>
+<li>a QR code,</li>
+<li>a wall feature,</li>
+<li>a known corner.</li>
+</ul>
+<p>The robot compares what it senses with known landmark positions.</p>
+<hr />
+<h3 id="example-gps">Example: GPS<a class="headerlink" href="#example-gps" title="Permanent link">&para;</a></h3>
+<p>A car uses GPS satellites as landmarks.</p>
+<p>By receiving signals from satellites, it estimates its location on Earth.</p>
+<hr />
+<h3 id="example-indoor-robot-with-qr-codes">Example: Indoor Robot with QR Codes<a class="headerlink" href="#example-indoor-robot-with-qr-codes" title="Permanent link">&para;</a></h3>
+<p>A robot in a building may see QR markers placed on walls.</p>
+<p>If it detects a marker near Room 305, it can localize itself.</p>
+<hr />
+<h3 id="advantages-of-landmark-based-localization">Advantages of Landmark-Based Localization<a class="headerlink" href="#advantages-of-landmark-based-localization" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Can correct accumulated motion error.</li>
+<li>Useful for global position estimation.</li>
+<li>Works well if landmarks are reliable and easy to detect.</li>
+</ul>
+<hr />
+<h3 id="limitations-of-landmark-based-localization">Limitations of Landmark-Based Localization<a class="headerlink" href="#limitations-of-landmark-based-localization" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Needs known landmarks.</li>
+<li>Fails if landmarks are hidden or misdetected.</li>
+<li>GPS does not work well indoors.</li>
+<li>Visual landmarks may fail in poor lighting.</li>
+</ul>
+<hr />
+<h2 id="415-state-estimation">4.15 State Estimation<a class="headerlink" href="#415-state-estimation" title="Permanent link">&para;</a></h2>
+<p>State estimation combines motion information and sensing information.</p>
+<p>The main idea is:</p>
+<div class="highlight"><pre><span></span><code>Motion gives prediction.
+Sensing gives correction.
+State estimation combines both.
+</code></pre></div>
+<p>Dead-reckoning alone accumulates error. Landmark sensing alone may be noisy or unavailable. Combining them gives a better estimate.</p>
+<hr />
+<h3 id="example-robot-moving-in-a-corridor">Example: Robot Moving in a Corridor<a class="headerlink" href="#example-robot-moving-in-a-corridor" title="Permanent link">&para;</a></h3>
+<p>A robot uses wheel odometry to estimate motion.</p>
+<p>But wheel odometry slowly drifts.</p>
+<p>Then the robot detects a known doorway or wall.</p>
+<p>The robot uses that sensor information to correct its position.</p>
+<hr />
+<h3 id="common-state-estimation-methods">Common State Estimation Methods<a class="headerlink" href="#common-state-estimation-methods" title="Permanent link">&para;</a></h3>
+<p>Two common methods are:</p>
+<ul>
+<li><strong>Kalman Filter</strong></li>
+<li><strong>Particle Filter / Monte Carlo Localization</strong></li>
+</ul>
+<hr />
+<h2 id="416-kalman-filter-concept">4.16 Kalman Filter Concept<a class="headerlink" href="#416-kalman-filter-concept" title="Permanent link">&para;</a></h2>
+<p>A Kalman Filter is used to estimate the robot's state when there is uncertainty.</p>
+<p>Conceptually, it works like this:</p>
+<ol>
+<li>Predict where the robot should be after moving.</li>
+<li>Sense the environment.</li>
+<li>Compare prediction with sensor measurement.</li>
+<li>Update the estimate.</li>
+</ol>
+<p>It is useful when the system and noise can be modeled in a structured way.</p>
+<hr />
+<h3 id="simple-example">Simple Example<a class="headerlink" href="#simple-example" title="Permanent link">&para;</a></h3>
+<p>Suppose a robot believes it is 5 meters from a wall.</p>
+<p>Its sensor says it is 4.8 meters from the wall.</p>
+<p>The Kalman Filter combines both pieces of information and updates the estimate to something reasonable, such as 4.9 meters.</p>
+<hr />
+<h2 id="417-particle-filter-concept">4.17 Particle Filter Concept<a class="headerlink" href="#417-particle-filter-concept" title="Permanent link">&para;</a></h2>
+<p>A Particle Filter represents many possible robot positions.</p>
+<p>Each possible position is called a particle.</p>
+<p>The robot updates these particles based on:</p>
+<ul>
+<li>movement,</li>
+<li>sensor measurements,</li>
+<li>likelihood of being correct.</li>
+</ul>
+<p>Particles that match sensor data survive. Particles that do not match become less important.</p>
+<hr />
+<h3 id="simple-example_1">Simple Example<a class="headerlink" href="#simple-example_1" title="Permanent link">&para;</a></h3>
+<p>A robot is lost in a building.</p>
+<p>It creates many guesses about where it might be.</p>
+<p>As it moves and observes walls, doors, and landmarks, incorrect guesses disappear. Eventually, most particles gather around the true location.</p>
+<hr />
+<h2 id="418-difference-between-localization-methods">4.18 Difference Between Localization Methods<a class="headerlink" href="#418-difference-between-localization-methods" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Main Idea</th>
+<th>Good For</th>
+<th>Weakness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dead-Reckoning</td>
+<td>Track movement from start</td>
+<td>Short-term estimation</td>
+<td>Error accumulates</td>
+</tr>
+<tr>
+<td>Landmark-Based</td>
+<td>Use known external references</td>
+<td>Correcting position</td>
+<td>Needs detectable landmarks</td>
+</tr>
+<tr>
+<td>Kalman Filter</td>
+<td>Combine motion and sensing mathematically</td>
+<td>Smooth continuous estimation</td>
+<td>Assumes structured uncertainty</td>
+</tr>
+<tr>
+<td>Particle Filter</td>
+<td>Maintain many possible location guesses</td>
+<td>Global localization and uncertainty</td>
+<td>More computationally expensive</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="419-mapping">4.19 Mapping<a class="headerlink" href="#419-mapping" title="Permanent link">&para;</a></h2>
+<p>Mapping means building a memory of the environment.</p>
+<p>A map allows the robot to answer:</p>
+<div class="highlight"><pre><span></span><code>Where are the walls?
+Where are the obstacles?
+Where is free space?
+Which areas are unknown?
+</code></pre></div>
+<p>Mapping is necessary when the environment is unknown or partially known.</p>
+<hr />
+<h2 id="420-occupancy-grid">4.20 Occupancy Grid<a class="headerlink" href="#420-occupancy-grid" title="Permanent link">&para;</a></h2>
+<p>An <strong>occupancy grid</strong> represents the world as a grid of cells.</p>
+<p>Each cell can be:</p>
+<ul>
+<li>occupied,</li>
+<li>empty,</li>
+<li>unknown.</li>
+</ul>
+<p>Typical meaning:</p>
+<table>
+<thead>
+<tr>
+<th>Cell Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Occupied</td>
+<td>Something is there, such as wall or obstacle</td>
+</tr>
+<tr>
+<td>Empty</td>
+<td>Robot can move through it</td>
+</tr>
+<tr>
+<td>Unknown</td>
+<td>Robot has not observed it yet</td>
+</tr>
+</tbody>
+</table>
+<p>Occupancy grids are useful because they convert the continuous world into a simple map structure.</p>
+<hr />
+<h3 id="example-room-as-occupancy-grid">Example: Room as Occupancy Grid<a class="headerlink" href="#example-room-as-occupancy-grid" title="Permanent link">&para;</a></h3>
+<p>Imagine a classroom divided into square cells.</p>
+<ul>
+<li>Wall cells are occupied.</li>
+<li>Open floor cells are empty.</li>
+<li>Areas behind closed doors may be unknown.</li>
+</ul>
+<p>A robot can plan using this grid.</p>
+<hr />
+<h2 id="421-sensor-model">4.21 Sensor Model<a class="headerlink" href="#421-sensor-model" title="Permanent link">&para;</a></h2>
+<p>A sensor model explains how raw sensor readings update the map.</p>
+<p>A sensor may return distance values, images, or depth information.</p>
+<p>The robot must convert these readings into grid cell states.</p>
+<hr />
+<h3 id="example-depth-sensor">Example: Depth Sensor<a class="headerlink" href="#example-depth-sensor" title="Permanent link">&para;</a></h3>
+<p>Suppose a depth sensor measures an obstacle 3 meters away.</p>
+<p>Then:</p>
+<ul>
+<li>cells before the obstacle are probably empty,</li>
+<li>the cell at the measured obstacle distance is probably occupied,</li>
+<li>cells behind the obstacle remain unknown because the sensor cannot see through it.</li>
+</ul>
+<p>This idea is important for building occupancy grid maps.</p>
+<hr />
+<h2 id="422-simple-occupancy-grid-mapping-algorithm">4.22 Simple Occupancy Grid Mapping Algorithm<a class="headerlink" href="#422-simple-occupancy-grid-mapping-algorithm" title="Permanent link">&para;</a></h2>
+<p>A simple mapping process can be:</p>
+<ol>
+<li>Start with all cells unknown.</li>
+<li>Mark the robot's current cell as empty.</li>
+<li>Use sensor readings to mark visible cells.</li>
+<li>Mark free space as empty.</li>
+<li>Mark detected obstacles as occupied.</li>
+<li>Move to a neighboring empty cell.</li>
+<li>Repeat.</li>
+</ol>
+<p>This gradually builds a map of the environment.</p>
+<hr />
+<h2 id="423-exploration">4.23 Exploration<a class="headerlink" href="#423-exploration" title="Permanent link">&para;</a></h2>
+<p>Exploration means choosing where to go next when the map is incomplete.</p>
+<p>Mapping answers:</p>
+<div class="highlight"><pre><span></span><code>What have I already seen?
+</code></pre></div>
+<p>Exploration answers:</p>
+<div class="highlight"><pre><span></span><code>Where should I go to see more?
+</code></pre></div>
+<p>A robot that explores randomly may waste time. A better robot chooses informative locations.</p>
+<hr />
+<h2 id="424-frontier-based-exploration">4.24 Frontier-Based Exploration<a class="headerlink" href="#424-frontier-based-exploration" title="Permanent link">&para;</a></h2>
+<p><strong>Frontier-based exploration</strong> is a common method for exploring unknown environments.</p>
+<p>A frontier is the boundary between known empty space and unknown space.</p>
+<p>A frontier cell is usually:</p>
+<div class="highlight"><pre><span></span><code>an unknown cell next to an empty cell
+</code></pre></div>
+<p>This means the robot can move near that area and discover new parts of the map.</p>
+<hr />
+<h3 id="how-frontier-based-exploration-works">How Frontier-Based Exploration Works<a class="headerlink" href="#how-frontier-based-exploration-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Build a partial map.</li>
+<li>Identify frontiers between known and unknown regions.</li>
+<li>Choose a frontier, often the closest one.</li>
+<li>Plan a path to that frontier.</li>
+<li>Move there and update the map.</li>
+<li>Repeat until no frontiers remain.</li>
+</ol>
+<p>When no frontiers remain, the map is considered complete for a finite environment.</p>
+<hr />
+<h3 id="example-exploring-a-new-building">Example: Exploring a New Building<a class="headerlink" href="#example-exploring-a-new-building" title="Permanent link">&para;</a></h3>
+<p>A robot starts at the entrance.</p>
+<p>It sees a corridor and some rooms.</p>
+<p>The boundary between the seen corridor and unseen rooms becomes a frontier.</p>
+<p>The robot chooses one frontier and moves toward it.</p>
+<p>After reaching it, more of the building becomes visible.</p>
+<p>The robot continues until all reachable areas are explored.</p>
+<hr />
+<h2 id="425-difference-between-mapping-and-exploration">4.25 Difference Between Mapping and Exploration<a class="headerlink" href="#425-difference-between-mapping-and-exploration" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Main Question</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mapping</td>
+<td>What does the environment look like?</td>
+<td>A map</td>
+</tr>
+<tr>
+<td>Exploration</td>
+<td>Where should I go next to learn more?</td>
+<td>Next target or path</td>
+</tr>
+</tbody>
+</table>
+<p>Mapping builds the memory. Exploration decides how to improve that memory.</p>
+<hr />
+<h2 id="426-slam">4.26 SLAM<a class="headerlink" href="#426-slam" title="Permanent link">&para;</a></h2>
+<p><strong>SLAM</strong> stands for:</p>
+<div class="highlight"><pre><span></span><code>Simultaneous Localization and Mapping
+</code></pre></div>
+<p>SLAM means the robot localizes itself while building a map at the same time.</p>
+<p>This is difficult because:</p>
+<ul>
+<li>to build a good map, the robot needs to know where it is,</li>
+<li>but to know where it is, the robot often needs a map.</li>
+</ul>
+<p>This creates a chicken-and-egg problem.</p>
+<hr />
+<h3 id="example-robot-in-an-unknown-office">Example: Robot in an Unknown Office<a class="headerlink" href="#example-robot-in-an-unknown-office" title="Permanent link">&para;</a></h3>
+<p>A robot enters an office for the first time.</p>
+<p>It does not know the map.</p>
+<p>It also does not know exactly where it is after moving.</p>
+<p>SLAM allows the robot to estimate its position and build the map together.</p>
+<hr />
+<h2 id="427-full-navigation-pipeline">4.27 Full Navigation Pipeline<a class="headerlink" href="#427-full-navigation-pipeline" title="Permanent link">&para;</a></h2>
+<p>A practical navigation system may look like this:</p>
+<div class="highlight"><pre><span></span><code>Sensors → Localization → Mapping → Planning → Control → Robot Motion
+</code></pre></div>
+<p>Example:</p>
+<ol>
+<li>The robot uses LiDAR to sense walls.</li>
+<li>It estimates its position.</li>
+<li>It updates the occupancy grid.</li>
+<li>It plans a path to the goal.</li>
+<li>It sends velocity commands to the motors.</li>
+<li>It repeats the loop.</li>
+</ol>
+<hr />
+<h2 id="428-method-selection-guide">4.28 Method Selection Guide<a class="headerlink" href="#428-method-selection-guide" title="Permanent link">&para;</a></h2>
+<p>Different situations require different methods.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Suitable Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goal is visible and no map is needed</td>
+<td>Visual Homing</td>
+</tr>
+<tr>
+<td>No map, but robot can sense obstacles locally</td>
+<td>Bug-Based Planning</td>
+</tr>
+<tr>
+<td>Full map is available</td>
+<td>A* or Global Path Planning</td>
+</tr>
+<tr>
+<td>Robot needs to estimate position from wheel motion</td>
+<td>Dead-Reckoning</td>
+</tr>
+<tr>
+<td>Robot sees known objects or GPS</td>
+<td>Landmark-Based Localization</td>
+</tr>
+<tr>
+<td>Robot combines motion and sensing with uncertainty</td>
+<td>State Estimation</td>
+</tr>
+<tr>
+<td>Robot is building a map of free and occupied cells</td>
+<td>Occupancy Grid Mapping</td>
+</tr>
+<tr>
+<td>Robot must explore unknown space</td>
+<td>Frontier-Based Exploration</td>
+</tr>
+<tr>
+<td>Robot must build map and localize together</td>
+<td>SLAM</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h1>
+<p>Robot navigation is the ability of a robot to move intelligently in an environment.</p>
+<p>The four major parts are:</p>
+<div class="highlight"><pre><span></span><code>Path Planning → How do I get to my goal?
+Localization → Where am I?
+Mapping → Where have I been?
+Exploration → Where haven’t I been?
+</code></pre></div>
+<p>Important methods:</p>
+<ul>
+<li>Visual Homing</li>
+<li>Bug-Based Planning</li>
+<li>A* / Global Planning</li>
+<li>Dead-Reckoning</li>
+<li>Landmark-Based Localization</li>
+<li>Kalman Filter</li>
+<li>Particle Filter</li>
+<li>Occupancy Grid Mapping</li>
+<li>Frontier-Based Exploration</li>
+<li>SLAM</li>
+</ul>
+<p>A good robot often uses multiple methods together.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Occupancy Grid + Localization + A* + Frontier Exploration
+</code></pre></div>
+<p>This combination allows a robot to map, localize, plan, and explore.</p>
+<hr />
+<h1 id="definition-questions">Definition Questions<a class="headerlink" href="#definition-questions" title="Permanent link">&para;</a></h1>
+<h2 id="q1-define-robot-navigation">Q1. Define robot navigation.<a class="headerlink" href="#q1-define-robot-navigation" title="Permanent link">&para;</a></h2>
+<p>Robot navigation is the ability of a robot to determine its location, understand the environment, plan a path, and move toward a goal.</p>
+<hr />
+<h2 id="q2-define-path-planning">Q2. Define path planning.<a class="headerlink" href="#q2-define-path-planning" title="Permanent link">&para;</a></h2>
+<p>Path planning is the process of finding a route from the robot's current position to a desired goal.</p>
+<hr />
+<h2 id="q3-define-localization">Q3. Define localization.<a class="headerlink" href="#q3-define-localization" title="Permanent link">&para;</a></h2>
+<p>Localization is the process of estimating where the robot is in the environment.</p>
+<hr />
+<h2 id="q4-define-mapping">Q4. Define mapping.<a class="headerlink" href="#q4-define-mapping" title="Permanent link">&para;</a></h2>
+<p>Mapping is the process of building a representation of the environment.</p>
+<hr />
+<h2 id="q5-define-exploration">Q5. Define exploration.<a class="headerlink" href="#q5-define-exploration" title="Permanent link">&para;</a></h2>
+<p>Exploration is the process of deciding where the robot should move next to discover unknown areas.</p>
+<hr />
+<h2 id="q6-define-visual-homing">Q6. Define visual homing.<a class="headerlink" href="#q6-define-visual-homing" title="Permanent link">&para;</a></h2>
+<p>Visual homing is a reactive navigation method where the robot moves to keep a visible goal centered in its camera view.</p>
+<hr />
+<h2 id="q7-define-bug-based-path-planning">Q7. Define bug-based path planning.<a class="headerlink" href="#q7-define-bug-based-path-planning" title="Permanent link">&para;</a></h2>
+<p>Bug-based path planning is a local navigation method where the robot moves toward the goal and follows obstacle boundaries when blocked.</p>
+<hr />
+<h2 id="q8-define-occupancy-grid">Q8. Define occupancy grid.<a class="headerlink" href="#q8-define-occupancy-grid" title="Permanent link">&para;</a></h2>
+<p>An occupancy grid is a map representation where the environment is divided into cells, and each cell is marked as occupied, empty, or unknown.</p>
+<hr />
+<h2 id="q9-define-frontier">Q9. Define frontier.<a class="headerlink" href="#q9-define-frontier" title="Permanent link">&para;</a></h2>
+<p>A frontier is a boundary between known empty space and unknown space in an occupancy grid.</p>
+<hr />
+<h2 id="q10-define-slam">Q10. Define SLAM.<a class="headerlink" href="#q10-define-slam" title="Permanent link">&para;</a></h2>
+<p>SLAM stands for Simultaneous Localization and Mapping. It is the process of building a map while estimating the robot's position at the same time.</p>
+<hr />
+<h1 id="conceptual-questions">Conceptual Questions<a class="headerlink" href="#conceptual-questions" title="Permanent link">&para;</a></h1>
+<h2 id="q1-why-is-navigation-more-than-just-moving-forward">Q1. Why is navigation more than just moving forward?<a class="headerlink" href="#q1-why-is-navigation-more-than-just-moving-forward" title="Permanent link">&para;</a></h2>
+<p>Because a robot must know where it is, where it wants to go, what obstacles exist, and how to safely reach the goal.</p>
+<hr />
+<h2 id="q2-why-is-dynamic-environment-navigation-harder-than-static-environment-navigation">Q2. Why is dynamic environment navigation harder than static environment navigation?<a class="headerlink" href="#q2-why-is-dynamic-environment-navigation-harder-than-static-environment-navigation" title="Permanent link">&para;</a></h2>
+<p>Because moving obstacles can change the path after the robot has planned it.</p>
+<hr />
+<h2 id="q3-why-does-dead-reckoning-accumulate-error">Q3. Why does dead-reckoning accumulate error?<a class="headerlink" href="#q3-why-does-dead-reckoning-accumulate-error" title="Permanent link">&para;</a></h2>
+<p>Because every movement estimate may contain small errors, and these errors add up over time.</p>
+<hr />
+<h2 id="q4-why-is-landmark-based-localization-useful">Q4. Why is landmark-based localization useful?<a class="headerlink" href="#q4-why-is-landmark-based-localization-useful" title="Permanent link">&para;</a></h2>
+<p>It can correct accumulated motion error by comparing sensor observations with known external references.</p>
+<hr />
+<h2 id="q5-why-is-a-not-suitable-when-the-robot-has-no-map">Q5. Why is A* not suitable when the robot has no map?<a class="headerlink" href="#q5-why-is-a-not-suitable-when-the-robot-has-no-map" title="Permanent link">&para;</a></h2>
+<p>A* needs a map or graph to search. Without a map, it does not know which paths are free or blocked.</p>
+<hr />
+<h2 id="q6-why-is-frontier-based-exploration-better-than-random-exploration">Q6. Why is frontier-based exploration better than random exploration?<a class="headerlink" href="#q6-why-is-frontier-based-exploration-better-than-random-exploration" title="Permanent link">&para;</a></h2>
+<p>Because it intentionally moves toward boundaries between known and unknown areas, so the robot discovers new space more systematically.</p>
+<hr />
+<h2 id="q7-why-is-occupancy-grid-useful-for-robots">Q7. Why is occupancy grid useful for robots?<a class="headerlink" href="#q7-why-is-occupancy-grid-useful-for-robots" title="Permanent link">&para;</a></h2>
+<p>It gives a simple representation of free space, obstacles, and unknown regions, which can be used for mapping and planning.</p>
+<hr />
+<h2 id="q8-why-is-slam-difficult">Q8. Why is SLAM difficult?<a class="headerlink" href="#q8-why-is-slam-difficult" title="Permanent link">&para;</a></h2>
+<p>Because the robot needs a map to localize, but it also needs localization to build a good map.</p>
+<hr />
+<h1 id="scenario-based-questions">Scenario-Based Questions<a class="headerlink" href="#scenario-based-questions" title="Permanent link">&para;</a></h1>
+<h2 id="scenario-1">Scenario 1<a class="headerlink" href="#scenario-1" title="Permanent link">&para;</a></h2>
+<p>A robot soccer player sees a ball in its camera. It turns left or right to keep the ball in the center and moves forward.</p>
+<p>What method is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Visual Homing
+</code></pre></div>
+<hr />
+<h2 id="scenario-2">Scenario 2<a class="headerlink" href="#scenario-2" title="Permanent link">&para;</a></h2>
+<p>A robot has no map. It moves toward a goal, detects an obstacle, follows the obstacle boundary, and then continues toward the goal.</p>
+<p>What method is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Bug-Based Path Planning
+</code></pre></div>
+<hr />
+<h2 id="scenario-3">Scenario 3<a class="headerlink" href="#scenario-3" title="Permanent link">&para;</a></h2>
+<p>A warehouse robot has a full map of the warehouse. It needs to find the shortest path from shelf A to shelf B.</p>
+<p>What method is most suitable?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Global Path Planning / A* Path Planning
+</code></pre></div>
+<hr />
+<h2 id="scenario-4">Scenario 4<a class="headerlink" href="#scenario-4" title="Permanent link">&para;</a></h2>
+<p>A robot estimates its position by counting wheel rotations from a known starting point.</p>
+<p>What localization method is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Dead-Reckoning / Odometry
+</code></pre></div>
+<hr />
+<h2 id="scenario-5">Scenario 5<a class="headerlink" href="#scenario-5" title="Permanent link">&para;</a></h2>
+<p>A robot localizes itself by detecting QR codes placed on walls.</p>
+<p>What localization method is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Landmark-Based Localization
+</code></pre></div>
+<hr />
+<h2 id="scenario-6">Scenario 6<a class="headerlink" href="#scenario-6" title="Permanent link">&para;</a></h2>
+<p>A robot uses wheel odometry and wall distance measurements together to estimate its position more accurately.</p>
+<p>What method is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>State Estimation
+</code></pre></div>
+<hr />
+<h2 id="scenario-7">Scenario 7<a class="headerlink" href="#scenario-7" title="Permanent link">&para;</a></h2>
+<p>A robot represents a room as a grid. Some cells are walls, some cells are free floor, and some cells are unknown.</p>
+<p>What representation is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Occupancy Grid
+</code></pre></div>
+<hr />
+<h2 id="scenario-8">Scenario 8<a class="headerlink" href="#scenario-8" title="Permanent link">&para;</a></h2>
+<p>A robot explores an unknown building. It always chooses the closest boundary between known empty space and unknown space.</p>
+<p>What exploration method is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Frontier-Based Exploration
+</code></pre></div>
+<hr />
+<h2 id="scenario-9">Scenario 9<a class="headerlink" href="#scenario-9" title="Permanent link">&para;</a></h2>
+<p>A robot enters an unknown building and builds a map while also estimating its own position.</p>
+<p>What concept is being used?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>SLAM
+</code></pre></div>
+<hr />
+<h2 id="scenario-10">Scenario 10<a class="headerlink" href="#scenario-10" title="Permanent link">&para;</a></h2>
+<p>A robot vacuum cleaner moves randomly and gradually covers parts of a room, but it often repeats the same area.</p>
+<p>Which problem is shown here?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Inefficient exploration
+</code></pre></div>
+<hr />
+<h2 id="scenario-11">Scenario 11<a class="headerlink" href="#scenario-11" title="Permanent link">&para;</a></h2>
+<p>A delivery robot in a hospital has a map, but people are moving in the hallway. The robot must continuously avoid them.</p>
+<p>What type of environment is this?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Dynamic environment
+</code></pre></div>
+<hr />
+<h2 id="scenario-12">Scenario 12<a class="headerlink" href="#scenario-12" title="Permanent link">&para;</a></h2>
+<p>A robot is navigating in a forest where the ground is irregular and obstacles are not arranged in a predictable way.</p>
+<p>What type of environment is this?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Unstructured environment
+</code></pre></div>
+<hr />
+<h2 id="scenario-13">Scenario 13<a class="headerlink" href="#scenario-13" title="Permanent link">&para;</a></h2>
+<p>A robot can see the goal directly, but there is a wall between the robot and the goal. It keeps trying to move toward the visible direction and gets stuck.</p>
+<p>Which method is failing?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Visual Homing
+</code></pre></div>
+<hr />
+<h2 id="scenario-14">Scenario 14<a class="headerlink" href="#scenario-14" title="Permanent link">&para;</a></h2>
+<p>A robot uses a LiDAR sensor. Cells before the measured obstacle are marked empty, the obstacle cell is marked occupied, and cells behind it remain unknown.</p>
+<p>What concept is being applied?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Sensor Model for Occupancy Grid Mapping
+</code></pre></div>
+<hr />
+<h2 id="scenario-15">Scenario 15<a class="headerlink" href="#scenario-15" title="Permanent link">&para;</a></h2>
+<p>A robot has many possible guesses about its location. After sensing the environment, wrong guesses are reduced and good guesses remain.</p>
+<p>What localization method does this describe?</p>
+<p>Answer:</p>
+<div class="highlight"><pre><span></span><code>Particle Filter / Monte Carlo Localization
+</code></pre></div>
+<hr />
+<h1 id="big-discussion-questions">Big Discussion Questions<a class="headerlink" href="#big-discussion-questions" title="Permanent link">&para;</a></h1>
+<h2 id="q1-compare-visual-homing-bug-based-planning-and-a-planning">Q1. Compare visual homing, bug-based planning, and A* planning.<a class="headerlink" href="#q1-compare-visual-homing-bug-based-planning-and-a-planning" title="Permanent link">&para;</a></h2>
+<p>Visual homing is the simplest and uses direct visual feedback. It works when the goal is visible. Bug-based planning does not need a map and can move around obstacles using local sensing. A* planning requires a map and searches for a good path globally.</p>
+<hr />
+<h2 id="q2-explain-why-localization-and-mapping-are-connected">Q2. Explain why localization and mapping are connected.<a class="headerlink" href="#q2-explain-why-localization-and-mapping-are-connected" title="Permanent link">&para;</a></h2>
+<p>To build a correct map, the robot needs to know where it is. To know where it is, the robot often needs a map. This connection is the reason SLAM is important.</p>
+<hr />
+<h2 id="q3-why-is-occupancy-grid-mapping-suitable-for-exploration">Q3. Why is occupancy grid mapping suitable for exploration?<a class="headerlink" href="#q3-why-is-occupancy-grid-mapping-suitable-for-exploration" title="Permanent link">&para;</a></h2>
+<p>Because it clearly separates the world into occupied, empty, and unknown cells. Unknown cells near empty cells become frontiers, which help the robot decide where to explore next.</p>
+<hr />
+<h2 id="q4-which-method-would-you-choose-for-a-hotel-delivery-robot-and-why">Q4. Which method would you choose for a hotel delivery robot and why?<a class="headerlink" href="#q4-which-method-would-you-choose-for-a-hotel-delivery-robot-and-why" title="Permanent link">&para;</a></h2>
+<p>A hotel delivery robot should use localization, a known map, and global path planning such as A*. It may also use local obstacle avoidance because people and luggage can move in the hallway.</p>
+<hr />
+<h2 id="q5-which-method-would-you-choose-for-a-rescue-robot-in-an-unknown-building-and-why">Q5. Which method would you choose for a rescue robot in an unknown building and why?<a class="headerlink" href="#q5-which-method-would-you-choose-for-a-rescue-robot-in-an-unknown-building-and-why" title="Permanent link">&para;</a></h2>
+<p>A rescue robot should use mapping, exploration, occupancy grid representation, frontier-based exploration, and SLAM because it does not know the environment beforehand.</p>
+<hr />
+<h1 id="quick-review-table">Quick Review Table<a class="headerlink" href="#quick-review-table" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Question Answered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path Planning</td>
+<td>How do I get to the goal?</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>Where am I?</td>
+</tr>
+<tr>
+<td>Mapping</td>
+<td>What does the world look like?</td>
+</tr>
+<tr>
+<td>Exploration</td>
+<td>Where should I go to discover more?</td>
+</tr>
+<tr>
+<td>Visual Homing</td>
+<td>Can I move toward what I see?</td>
+</tr>
+<tr>
+<td>Bug Planning</td>
+<td>Can I reach the goal without a map?</td>
+</tr>
+<tr>
+<td>A* Planning</td>
+<td>What is the best path on a known map?</td>
+</tr>
+<tr>
+<td>Dead-Reckoning</td>
+<td>Where am I based on my movement?</td>
+</tr>
+<tr>
+<td>Landmark Localization</td>
+<td>Where am I based on known objects?</td>
+</tr>
+<tr>
+<td>Occupancy Grid</td>
+<td>Which cells are free, occupied, or unknown?</td>
+</tr>
+<tr>
+<td>Frontier Exploration</td>
+<td>Which unknown boundary should I visit next?</td>
+</tr>
+<tr>
+<td>SLAM</td>
+<td>Can I map and localize at the same time?</td>
+</tr>
+</tbody>
+</table>
 
 
 
